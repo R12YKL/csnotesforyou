@@ -71,21 +71,13 @@
 
 			async function loadSolutions(){
 				try {
-					const res = await fetch('/api/posts');
-					if(!res.ok) throw new Error('api down');
+					const res = await fetch('data/posts.clean.json');
 					const allPosts = await res.json();
 					solutions = allPosts.filter(p => p.type === 'solution');
-				} catch (e) {
-					try {
-						const res2 = await fetch('data/posts.clean.json');
-						const allPosts = await res2.json();
-						solutions = allPosts.filter(p => p.type === 'solution');
-					} catch (err) {
-						solutionsEl.innerHTML = '<p>Unable to load solutions.</p>';
-						return;
-					}
+					renderItems(solutions, solutionsEl);
+				} catch (err) {
+					solutionsEl.innerHTML = '<p>Unable to load solutions.</p>';
 				}
-				renderItems(solutions, solutionsEl);
 			}
 
 			loadSolutions();

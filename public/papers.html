@@ -91,21 +91,17 @@
 
 			async function loadPosts(){
 				try {
-					const res = await fetch('/api/posts');
-					if(!res.ok) throw new Error('api down');
+					const res = await fetch('data/posts.clean.json');
 					const allPosts = await res.json();
 					posts = allPosts.filter(p => p.type === 'paper');
-				} catch (e) {
-					try {
-						const res2 = await fetch('data/posts.clean.json');
-						const allPosts = await res2.json();
-						posts = allPosts.filter(p => p.type === 'paper');
-					} catch (err) {
-						postsEl.innerHTML = '<p>Unable to load posts.</p>';
-						return;
+					if(posts.length === 0){
+						postsEl.innerHTML = '<p style="padding:2rem;text-align:center;color:var(--muted);">No past papers available yet. Check back soon or <a href="contribute.html" style="color:var(--accent);font-weight:600">contribute</a> your own!</p>';
+					} else {
+						renderItems(posts, postsEl);
 					}
+				} catch (err) {
+					postsEl.innerHTML = '<p>Unable to load papers.</p>';
 				}
-				renderItems(posts, postsEl);
 			}
 
 			loadPosts();
