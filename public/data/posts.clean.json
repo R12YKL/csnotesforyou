@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "title": "ExamCraft 2023 — HL Paper",
+    "type": "solution",
+    "author": "Alice",
+    "date": "2023-06-12",
+    "excerpt": "Worked solutions and annotations for ExamCraft 2023 HL paper.",
+    "files": ["pdfs/2023-Examcraft-Computer-Science-HL.pdf"]
+  },
+  {
+    "id": "2",
+    "title": "ExamCraft 2022 — HL ABC",
+    "type": "notes",
+    "author": "Bob",
+    "date": "2022-11-02",
+    "excerpt": "Key notes and answer outlines for 2022 HL sections.",
+    "files": ["pdfs/2022-Examcraft_Computer-Science-HL-ABC.pdf"]
+  },
+  {
+    "id": "3",
+    "title": "DEB 2024 — HL All Sections",
+    "type": "example",
+    "author": "Carol",
+    "date": "2024-05-20",
+    "excerpt": "Complete 2024 DEB HL paper with examples and marking notes.",
+    "files": ["pdfs/2024 -DEB- Computer Science - HL_AllSections.pdf"]
+  }
+]

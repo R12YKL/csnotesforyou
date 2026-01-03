@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Development Process - CS Notes For You</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+        }
+        .section h3 {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        .key-term {
+            font-weight: bold;
+            color: #764ba2;
+        }
+        .definition-box {
+            background: #f0f8ff;
+            border-left: 4px solid #667eea;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        .comparison-box {
+            background: #fffbf0;
+            border-left: 4px solid #ff9800;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1>CS Notes For You</h1>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../notes.html">Study Notes</a></li>
+                <li><a href="../topics.html">Topics</a></li>
+                <li><a href="../revision.html">Revision</a></li>
+                <li><a href="../solutions.html">Solutions</a></li>
+                <li><a href="../papers.html">Papers</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contribute.html">Contribute</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Software Development Process</h1>
+
+        <div class="section">
+            <h3>Introduction to SDLC</h3>
+            <p>The <span class="key-term">Software Development Life Cycle (SDLC)</span> is a structured process for planning, creating, testing, and deploying software applications.</p>
+            <p>Following a systematic approach ensures quality, reduces errors, manages costs, and meets user expectations.</p>
+        </div>
+
+        <div class="section">
+            <h3>Stages of SDLC</h3>
+
+            <h4>1. Planning and Requirements</h4>
+            <ul>
+                <li>Define project scope and objectives</li>
+                <li>Identify stakeholders and their needs</li>
+                <li>Assess feasibility and resources required</li>
+                <li>Create project timeline and budget</li>
+                <li>Document functional and non-functional requirements</li>
+            </ul>
+
+            <h4>2. Analysis</h4>
+            <ul>
+                <li>Study system requirements in detail</li>
+                <li>Identify potential problems and constraints</li>
+                <li>Create system specifications</li>
+                <li>Document data flow and processes</li>
+                <li>Plan system architecture</li>
+            </ul>
+
+            <h4>3. Design</h4>
+            <ul>
+                <li>Create system design and architecture</li>
+                <li>Design database structure</li>
+                <li>Plan user interface layout</li>
+                <li>Create detailed design documents</li>
+                <li>Plan security measures</li>
+            </ul>
+
+            <h4>4. Development/Implementation</h4>
+            <ul>
+                <li>Write the actual code</li>
+                <li>Follow coding standards</li>
+                <li>Use version control for code management</li>
+                <li>Document code with comments</li>
+                <li>Integrate components regularly</li>
+            </ul>
+
+            <h4>5. Testing</h4>
+            <ul>
+                <li>Unit testing: Test individual components</li>
+                <li>Integration testing: Test components working together</li>
+                <li>System testing: Test complete system</li>
+                <li>User acceptance testing: User validates requirements</li>
+                <li>Document and fix bugs</li>
+            </ul>
+
+            <h4>6. Deployment</h4>
+            <ul>
+                <li>Release software to production environment</li>
+                <li>Install and configure systems</li>
+                <li>Train users</li>
+                <li>Migrate data if needed</li>
+                <li>Monitor initial performance</li>
+            </ul>
+
+            <h4>7. Maintenance and Support</h4>
+            <ul>
+                <li>Fix bugs discovered in production</li>
+                <li>Provide user support</li>
+                <li>Make updates and improvements</li>
+                <li>Ensure system security</li>
+                <li>Plan for future enhancements</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Waterfall Model</h3>
+
+            <p>The <span class="key-term">Waterfall Model</span> is a traditional, linear SDLC approach where each phase flows into the next.</p>
+
+            <h4>Waterfall Characteristics:</h4>
+            <ul>
+                <li>Sequential: Phases completed one after another</li>
+                <li>No iteration: Difficult to return to previous phases</li>
+                <li>Documentation-heavy: Extensive documentation required</li>
+                <li>Predictable: Timeline and costs easier to forecast</li>
+            </ul>
+
+            <h4>Waterfall Advantages:</h4>
+            <ul>
+                <li>Clear structure and milestones</li>
+                <li>Good for well-defined projects</li>
+                <li>Suitable for fixed-price contracts</li>
+                <li>Easy to manage large teams</li>
+            </ul>
+
+            <h4>Waterfall Disadvantages:</h4>
+            <ul>
+                <li>Inflexible to changing requirements</li>
+                <li>Problems discovered late in development</li>
+                <li>Users see product only at end</li>
+                <li>Can result in wasted effort</li>
+            </ul>
+
+            <h4>Best For:</h4>
+            <p>Projects with clear, fixed requirements (e.g., government contracts, safety-critical systems)</p>
+        </div>
+
+        <div class="section">
+            <h3>Agile Development</h3>
+
+            <p>The <span class="key-term">Agile Model</span> emphasizes iterative development, continuous feedback, and flexibility.</p>
+
+            <h4>Agile Principles:</h4>
+            <ul>
+                <li>Customer collaboration over comprehensive documentation</li>
+                <li>Responding to change over fixed plans</li>
+                <li>Individuals and interactions over processes</li>
+                <li>Working software over extensive documentation</li>
+            </ul>
+
+            <h4>Agile Process (Scrum):</h4>
+            <ol>
+                <li><strong>Sprint Planning:</strong> Select work for 1-4 week sprint</li>
+                <li><strong>Daily Standup:</strong> 15-minute team synchronization</li>
+                <li><strong>Development:</strong> Team works on selected tasks</li>
+                <li><strong>Sprint Review:</strong> Demonstrate completed work to stakeholders</li>
+                <li><strong>Retrospective:</strong> Team reflects and improves process</li>
+            </ol>
+
+            <h4>Agile Advantages:</h4>
+            <ul>
+                <li>Flexible to changing requirements</li>
+                <li>Regular working software deliverables</li>
+                <li>Early problem detection</li>
+                <li>Better team communication</li>
+                <li>Faster time to market</li>
+            </ul>
+
+            <h4>Agile Disadvantages:</h4>
+            <ul>
+                <li>Requires experienced team</li>
+                <li>Less predictable budget/timeline</li>
+                <li>Can lack comprehensive documentation</li>
+                <li>Depends on customer availability</li>
+            </ul>
+
+            <h4>Best For:</h4>
+            <p>Projects with evolving requirements, innovation-focused work, fast-moving environments</p>
+        </div>
+
+        <div class="section">
+            <h3>Testing Types</h3>
+
+            <h4>Unit Testing</h4>
+            <ul>
+                <li>Testing individual functions or methods</li>
+                <li>Done by developers during development</li>
+                <li>Catches bugs early</li>
+                <li>Example: Testing a password validation function</li>
+            </ul>
+
+            <h4>Integration Testing</h4>
+            <ul>
+                <li>Testing components working together</li>
+                <li>Checks data flow between modules</li>
+                <li>Identifies interface issues</li>
+                <li>Example: Testing payment and inventory systems together</li>
+            </ul>
+
+            <h4>System Testing</h4>
+            <ul>
+                <li>Testing complete integrated system</li>
+                <li>Validates end-to-end functionality</li>
+                <li>Tests non-functional requirements (performance, security)</li>
+                <li>Example: Testing entire e-commerce system</li>
+            </ul>
+
+            <h4>User Acceptance Testing (UAT)</h4>
+            <ul>
+                <li>Users test system against requirements</li>
+                <li>Validates business requirements are met</li>
+                <li>Final approval before deployment</li>
+                <li>Example: Client reviewing custom software</li>
+            </ul>
+
+            <h4>Other Testing Types:</h4>
+            <ul>
+                <li><strong>Performance Testing:</strong> Checks speed and scalability</li>
+                <li><strong>Security Testing:</strong> Identifies vulnerabilities</li>
+                <li><strong>Regression Testing:</strong> Ensures fixes don't break existing features</li>
+                <li><strong>Load Testing:</strong> Tests system under heavy usage</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Development Team Roles</h3>
+
+            <h4>Project Manager</h4>
+            <ul>
+                <li>Overall project coordination</li>
+                <li>Manages timeline, budget, resources</li>
+                <li>Communicates with stakeholders</li>
+            </ul>
+
+            <h4>Business Analyst</h4>
+            <ul>
+                <li>Gathers and analyzes requirements</li>
+                <li>Bridges business and technical teams</li>
+                <li>Documents specifications</li>
+            </ul>
+
+            <h4>Software Developer/Programmer</h4>
+            <ul>
+                <li>Writes code according to specifications</li>
+                <li>Performs unit testing</li>
+                <li>Collaborates with other developers</li>
+            </ul>
+
+            <h4>Software Architect</h4>
+            <ul>
+                <li>Designs overall system structure</li>
+                <li>Makes technology decisions</li>
+                <li>Ensures scalability and reliability</li>
+            </ul>
+
+            <h4>Quality Assurance (QA) Tester</h4>
+            <ul>
+                <li>Performs testing to find bugs</li>
+                <li>Documents test cases and results</li>
+                <li>Validates requirements are met</li>
+            </ul>
+
+            <h4>DevOps Engineer</h4>
+            <ul>
+                <li>Manages deployment and infrastructure</li>
+                <li>Automates testing and deployment</li>
+                <li>Monitors system performance</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Version Control</h3>
+
+            <p><span class="key-term">Version Control</span> systems track code changes and enable collaboration.</p>
+
+            <h4>Benefits:</h4>
+            <ul>
+                <li>Maintains history of all changes</li>
+                <li>Allows reverting to previous versions</li>
+                <li>Enables multiple developers to work together</li>
+                <li>Prevents code conflicts</li>
+                <li>Provides code review capability</li>
+            </ul>
+
+            <h4>Common Systems:</h4>
+            <ul>
+                <li><strong>Git:</strong> Most widely used distributed version control</li>
+                <li><strong>GitHub:</strong> Cloud-based Git repository</li>
+                <li><strong>SVN:</strong> Centralized version control</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Software Quality Metrics</h3>
+
+            <h4>Code Coverage</h4>
+            <p>Percentage of code tested by automated tests. Higher coverage = fewer untested paths.</p>
+
+            <h4>Bug Density</h4>
+            <p>Number of bugs per 1000 lines of code. Lower is better.</p>
+
+            <h4>Technical Debt</h4>
+            <p>Cost of fixing shortcuts and poor decisions made during development.</p>
+
+            <h4>Cyclomatic Complexity</h4>
+            <p>Measure of code complexity. Lower values indicate simpler, more maintainable code.</p>
+        </div>
+
+        <div class="section">
+            <h3>Key Revision Points</h3>
+            <ul>
+                <li>SDLC provides structured approach to software development</li>
+                <li>Waterfall: Sequential, fixed requirements</li>
+                <li>Agile: Iterative, flexible, customer-focused</li>
+                <li>Testing is critical at multiple levels</li>
+                <li>Teams include multiple specialized roles</li>
+                <li>Version control essential for team collaboration</li>
+                <li>Quality metrics help measure software success</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CS Notes For You. All rights reserved.</p>
+    </footer>
+</body>
+</html>

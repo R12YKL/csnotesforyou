@@ -1,0 +1,200 @@
+[
+  {
+    "id": "1",
+    "title": "2025 LC Computer Science — Higher Level Paper",
+    "type": "paper",
+    "author": "CS Notes For You",
+    "date": "2025-01-01",
+    "excerpt": "Latest 2025 Leaving Certificate Computer Science paper for Higher Level.",
+    "file": "pdfs/2025-LC-Computer-Science-Higher.pdf"
+  },
+  {
+    "id": "2",
+    "title": "2023 LC Computer Science — Higher Level",
+    "type": "paper",
+    "author": "CS Notes For You",
+    "date": "2023-01-01",
+    "excerpt": "2023 Leaving Certificate Computer Science paper for Higher Level.",
+    "file": "pdfs/2023-Examcraft-Computer-Science-HL.pdf"
+  },
+  {
+    "id": "3",
+    "title": "2023 LC Computer Science — Ordinary Level",
+    "type": "paper",
+    "author": "CS Notes For You",
+    "date": "2023-01-01",
+    "excerpt": "2023 Leaving Certificate Computer Science paper for Ordinary Level.",
+    "file": "pdfs/2023-Examcraft-Computer-Science-OL.pdf"
+  },
+  {
+    "id": "4",
+    "title": "2022 LC Computer Science — Ordinary Level (Section C only)",
+    "type": "paper",
+    "author": "CS Notes For You",
+    "date": "2022-01-01",
+    "excerpt": "2022 Leaving Certificate Computer Science paper for Ordinary Level, Section C (Programming only).",
+    "file": "pdfs/1374dca8-774e-4ac4-8e18-06e76516a802.pdf"
+  },
+  {
+    "id": "5",
+    "title": "2021 LC Computer Science — Ordinary Level (Section C only)",
+    "type": "paper",
+    "author": "CS Notes For You",
+    "date": "2021-01-01",
+    "excerpt": "2021 Leaving Certificate Computer Science paper for Ordinary Level, Section C (Programming only).",
+    "file": "pdfs/1ca77924-adcc-4c00-9313-8e68529f4e19.pdf"
+  },
+  {
+    "id": "6",
+    "title": "2020 LC Computer Science — Higher Level (Sample Paper, Sections A & B)",
+    "type": "paper",
+    "author": "CS Notes For You",
+    "date": "2020-01-01",
+    "excerpt": "2020 Leaving Certificate Computer Science sample paper for Higher Level, Sections A and B.",
+    "file": "pdfs/2c775614-9285-4528-93d4-18d35da4fe0e.pdf"
+  },
+  {
+    "id": "7",
+    "title": "2024 LC Computer Science — Higher Level (Full exam)",
+    "type": "paper",
+    "author": "CS Notes For You",
+    "date": "2024-01-01",
+    "excerpt": "2024 Leaving Certificate Computer Science full exam paper for Higher Level, all sections (A, B & C).",
+    "file": "pdfs/2fa12a3e-a6cd-4b09-b144-017dd2dc4659.pdf"
+  },
+  {
+    "id": "8",
+    "title": "2022 LC Computer Science — Higher Level (Full exam)",
+    "type": "paper",
+    "author": "CS Notes For You",
+    "date": "2022-01-01",
+    "excerpt": "2022 Leaving Certificate Computer Science full exam paper for Higher Level, all sections (A, B & C).",
+    "file": "pdfs/39beedac-9790-4b1b-9795-65e8a3a5c0f8.pdf"
+  },
+  {
+    "id": "9",
+    "title": "2023 LC Computer Science — Ordinary Level (Full exam)",
+    "type": "paper",
+    "author": "CS Notes For You",
+    "date": "2023-01-01",
+    "excerpt": "2023 Leaving Certificate Computer Science full exam paper for Ordinary Level, all sections (A, B & C).",
+    "file": "pdfs/3c1dedc6-756d-4df1-9180-2f3296a7d0bb.pdf"
+  },
+  {
+    "id": "10",
+    "title": "2020 LC Computer Science — Ordinary Level (Sample Paper, Section C only)",
+    "type": "paper",
+    "author": "CS Notes For You",
+    "date": "2020-01-01",
+    "excerpt": "2020 Leaving Certificate Computer Science sample paper for Ordinary Level, Section C (Programming only).",
+    "file": "pdfs/3dac5f7f-6941-44d9-946b-164ad772e46f.pdf"
+  },
+  {
+    "id": "11",
+    "title": "2021 LC Computer Science — Higher Level (Sections A & B only)",
+    "type": "paper",
+    "author": "CS Notes For You",
+    "date": "2021-01-01",
+    "excerpt": "2021 Leaving Certificate Computer Science full exam paper for Higher Level, Sections A and B.",
+    "file": "pdfs/51319db7-5789-4fb2-b301-887b97f11d15.pdf"
+  },
+  {
+    "id": "12",
+    "title": "2025 LC Computer Science — Ordinary Level (Full exam)",
+    "type": "paper",
+    "author": "CS Notes For You",
+    "date": "2025-01-01",
+    "excerpt": "2025 Leaving Certificate Computer Science full exam paper for Ordinary Level, all sections (A, B & C).",
+    "file": "pdfs/6c936235-1eb0-42a0-bfc1-83a5fb8bfbe4.pdf"
+  },
+  {
+    "id": "13",
+    "title": "2020 LC Computer Science — Higher Level (Section C only)",
+    "type": "paper",
+    "author": "CS Notes For You",
+    "date": "2020-01-01",
+    "excerpt": "2020 Leaving Certificate Computer Science paper for Higher Level, Section C (Programming only).",
+    "file": "pdfs/a366682f-e50f-4fb1-95b5-061f36a4cb75.pdf"
+  },
+  {
+    "id": "14",
+    "title": "2020 LC Computer Science — Ordinary Level (Sample Paper, Sections A & B)",
+    "type": "paper",
+    "author": "CS Notes For You",
+    "date": "2020-01-01",
+    "excerpt": "2020 Leaving Certificate Computer Science sample paper for Ordinary Level, Sections A and B.",
+    "file": "pdfs/a7cb815d-eac1-4245-b1ab-aabb6b4cd4a8.pdf"
+  },
+  {
+    "id": "15",
+    "title": "Community Submission",
+    "type": "paper",
+    "author": "Community",
+    "date": "2026-01-01",
+    "excerpt": "User submitted exam paper or study material",
+    "file": "pdfs/aa01c12d-5b4a-4eaf-b78d-897d45cd8176.pdf"
+  },
+  {
+    "id": "16",
+    "title": "Community Submission",
+    "type": "paper",
+    "author": "Community",
+    "date": "2026-01-01",
+    "excerpt": "User submitted exam paper or study material",
+    "file": "pdfs/c34fd2c8-449d-4ca7-9a9b-bea464484f28.pdf"
+  },
+  {
+    "id": "17",
+    "title": "Community Submission",
+    "type": "paper",
+    "author": "Community",
+    "date": "2026-01-01",
+    "excerpt": "User submitted exam paper or study material",
+    "file": "pdfs/c606ffac-339c-4663-9ce5-0930e63b72f8.pdf"
+  },
+  {
+    "id": "18",
+    "title": "Community Submission",
+    "type": "paper",
+    "author": "Community",
+    "date": "2026-01-01",
+    "excerpt": "User submitted exam paper or study material",
+    "file": "pdfs/c967dbfa-45c2-498c-b778-2a60466f423c.pdf"
+  },
+  {
+    "id": "19",
+    "title": "Community Submission",
+    "type": "paper",
+    "author": "Community",
+    "date": "2026-01-01",
+    "excerpt": "User submitted exam paper or study material",
+    "file": "pdfs/dfc94fa7-95cd-435d-834d-b04d3492adf2.pdf"
+  },
+  {
+    "id": "20",
+    "title": "Community Submission",
+    "type": "paper",
+    "author": "Community",
+    "date": "2026-01-01",
+    "excerpt": "User submitted exam paper or study material",
+    "file": "pdfs/e0f70a3b-c486-47f2-b3ed-a391a771df2d.pdf"
+  },
+  {
+    "id": "21",
+    "title": "Community Submission",
+    "type": "paper",
+    "author": "Community",
+    "date": "2026-01-01",
+    "excerpt": "User submitted exam paper or study material",
+    "file": "pdfs/e2513bf3-bee8-417f-b4c3-3f08f909a3b3.pdf"
+  },
+  {
+    "id": "22",
+    "title": "Community Submission",
+    "type": "paper",
+    "author": "Community",
+    "date": "2026-01-01",
+    "excerpt": "User submitted exam paper or study material",
+    "file": "pdfs/f2d5be6c-b9c2-480b-91d1-2a6f07c2521d.pdf"
+  }
+]

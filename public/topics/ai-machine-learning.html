@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artificial Intelligence & Machine Learning - CS Notes For You</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+        }
+        .section h3 {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        .key-term {
+            font-weight: bold;
+            color: #764ba2;
+        }
+        .definition-box {
+            background: #f0f8ff;
+            border-left: 4px solid #667eea;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        .example-box {
+            background: #fffbf0;
+            border-left: 4px solid #ff9800;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1>CS Notes For You</h1>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../notes.html">Study Notes</a></li>
+                <li><a href="../topics.html">Topics</a></li>
+                <li><a href="../revision.html">Revision</a></li>
+                <li><a href="../solutions.html">Solutions</a></li>
+                <li><a href="../papers.html">Papers</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contribute.html">Contribute</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Artificial Intelligence & Machine Learning</h1>
+
+        <div class="section">
+            <h3>Introduction to AI</h3>
+            <p><span class="key-term">Artificial Intelligence (AI)</span> is the simulation of human intelligence by computer systems. It involves creating machines that can think, learn, and make decisions.</p>
+            <p>From virtual assistants to recommendation algorithms, AI is increasingly integrated into everyday life.</p>
+        </div>
+
+        <div class="section">
+            <h3>Types of AI</h3>
+
+            <h4>Narrow AI (Weak AI)</h4>
+            <ul>
+                <li>Designed for specific tasks</li>
+                <li>Cannot transfer learning to other domains</li>
+                <li>Current state of technology</li>
+                <li>Examples: Chess engines, image recognition, chatbots</li>
+            </ul>
+
+            <h4>General AI (Strong AI)</h4>
+            <ul>
+                <li>Hypothetical: AI as intelligent as humans</li>
+                <li>Could learn and apply knowledge across domains</li>
+                <li>Does not yet exist</li>
+                <li>Would have consciousness and understanding</li>
+            </ul>
+
+            <h4>Super AI (ASI)</h4>
+            <ul>
+                <li>Theoretical: AI more intelligent than humans</li>
+                <li>Subject of science fiction and speculation</li>
+                <li>Could be existential risk if misaligned</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>What is Machine Learning?</h3>
+
+            <p><span class="key-term">Machine Learning (ML)</span> is a subset of AI where systems learn from data without being explicitly programmed.</p>
+
+            <h4>Key Idea:</h4>
+            <p>Instead of writing rules, you provide data and let the algorithm find patterns.</p>
+
+            <div class="example-box">
+                <strong>Traditional Programming vs Machine Learning:</strong><br><br>
+                <strong>Traditional:</strong> Write rules to classify emails as spam<br>
+                "If email contains 'FREE', mark as spam"<br><br>
+                <strong>Machine Learning:</strong> Show system thousands of emails labeled spam/not spam<br>
+                Algorithm learns patterns and classifies new emails
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Machine Learning Process</h3>
+
+            <h4>Step 1: Data Collection</h4>
+            <ul>
+                <li>Gather large amounts of relevant data</li>
+                <li>Quality and quantity critical for success</li>
+                <li>More data generally means better results</li>
+            </ul>
+
+            <h4>Step 2: Data Preprocessing</h4>
+            <ul>
+                <li>Clean data: Remove errors and outliers</li>
+                <li>Format data: Convert to usable format</li>
+                <li>Feature engineering: Create useful variables</li>
+            </ul>
+
+            <h4>Step 3: Choose Algorithm</h4>
+            <ul>
+                <li>Different algorithms for different problems</li>
+                <li>Consider trade-offs between accuracy, speed, and interpretability</li>
+            </ul>
+
+            <h4>Step 4: Train Model</h4>
+            <ul>
+                <li>Feed training data to algorithm</li>
+                <li>Algorithm learns patterns and adjusts weights</li>
+                <li>Training takes hours or days for large models</li>
+            </ul>
+
+            <h4>Step 5: Evaluate Performance</h4>
+            <ul>
+                <li>Test on data the model hasn't seen</li>
+                <li>Measure accuracy and other metrics</li>
+                <li>Check for overfitting (memorizing rather than learning)</li>
+            </ul>
+
+            <h4>Step 6: Deploy Model</h4>
+            <ul>
+                <li>Use model on real data</li>
+                <li>Monitor performance over time</li>
+                <li>Retrain periodically with new data</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Types of Machine Learning</h3>
+
+            <h4>Supervised Learning</h4>
+            <p>Learning from labeled data (input-output pairs).</p>
+            <ul>
+                <li><strong>Classification:</strong> Predict category (email spam or not)</li>
+                <li><strong>Regression:</strong> Predict number (house price)</li>
+                <li>Examples: Neural networks, decision trees, support vector machines</li>
+            </ul>
+
+            <h4>Unsupervised Learning</h4>
+            <p>Finding patterns in unlabeled data.</p>
+            <ul>
+                <li><strong>Clustering:</strong> Group similar items (customer segmentation)</li>
+                <li><strong>Dimensionality reduction:</strong> Simplify complex data</li>
+                <li>No correct answers, discovering structure in data</li>
+            </ul>
+
+            <h4>Reinforcement Learning</h4>
+            <p>Learning from rewards and penalties.</p>
+            <ul>
+                <li>Agent learns by interacting with environment</li>
+                <li>Receives rewards for good actions, penalties for bad</li>
+                <li>Examples: Game-playing AIs (AlphaGo, chess engines)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Neural Networks and Deep Learning</h3>
+
+            <p><span class="key-term">Neural Networks</span> are inspired by how biological brains work, with interconnected nodes processing information.</p>
+
+            <h4>How They Work:</h4>
+            <ul>
+                <li>Input layer: Receives data</li>
+                <li>Hidden layers: Process information</li>
+                <li>Output layer: Produces prediction</li>
+                <li>Each connection has a weight that gets adjusted during training</li>
+            </ul>
+
+            <h4>Deep Learning:</h4>
+            <ul>
+                <li>Neural networks with many layers</li>
+                <li>Can learn very complex patterns</li>
+                <li>Powers modern AI successes (image recognition, language models)</li>
+                <li>Requires large amounts of data and computing power</li>
+            </ul>
+
+            <div class="example-box">
+                <strong>Example: Image Recognition</strong><br><br>
+                Early layers detect simple features (edges, colors)<br>
+                Middle layers combine features (shapes, textures)<br>
+                Deep layers recognize objects (faces, cars, animals)
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>AI Applications</h3>
+
+            <h4>Healthcare:</h4>
+            <ul>
+                <li>Medical image analysis for diagnosis</li>
+                <li>Drug discovery and development</li>
+                <li>Personalized treatment plans</li>
+                <li>Predicting patient outcomes</li>
+            </ul>
+
+            <h4>Finance:</h4>
+            <ul>
+                <li>Fraud detection</li>
+                <li>Credit scoring</li>
+                <li>Algorithmic trading</li>
+                <li>Risk assessment</li>
+            </ul>
+
+            <h4>Transportation:</h4>
+            <ul>
+                <li>Autonomous vehicles</li>
+                <li>Route optimization</li>
+                <li>Predictive maintenance</li>
+            </ul>
+
+            <h4>Natural Language Processing:</h4>
+            <ul>
+                <li>Machine translation (Google Translate)</li>
+                <li>Chatbots and virtual assistants</li>
+                <li>Sentiment analysis</li>
+                <li>Text generation and summarization</li>
+            </ul>
+
+            <h4>Computer Vision:</h4>
+            <ul>
+                <li>Face recognition</li>
+                <li>Object detection</li>
+                <li>Medical imaging</li>
+                <li>Autonomous driving</li>
+            </ul>
+
+            <h4>Recommendation Systems:</h4>
+            <ul>
+                <li>Netflix recommendations</li>
+                <li>Amazon product suggestions</li>
+                <li>Spotify song recommendations</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Challenges and Limitations</h3>
+
+            <h4>Data Bias:</h4>
+            <ul>
+                <li>Training data may reflect human biases</li>
+                <li>Model learns and perpetuates discrimination</li>
+                <li>Example: Facial recognition worse for darker skin tones</li>
+            </ul>
+
+            <h4>Explainability:</h4>
+            <ul>
+                <li>Deep neural networks are "black boxes"</li>
+                <li>Difficult to understand why model made a decision</li>
+                <li>Critical in high-stakes applications (medical, legal)</li>
+            </ul>
+
+            <h4>Data Requirements:</h4>
+            <ul>
+                <li>Need large amounts of quality data</li>
+                <li>Data collection expensive and time-consuming</li>
+                <li>Privacy concerns with data usage</li>
+            </ul>
+
+            <h4>Computational Cost:</h4>
+            <ul>
+                <li>Training large models requires powerful computers</li>
+                <li>Significant energy consumption and environmental impact</li>
+                <li>Favors well-funded organizations</li>
+            </ul>
+
+            <h4>Overfitting:</h4>
+            <ul>
+                <li>Model memorizes training data rather than learning patterns</li>
+                <li>Performs well on training data but poorly on new data</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Ethical Considerations</h3>
+
+            <h4>Bias and Discrimination:</h4>
+            <p>AI systems can perpetuate or amplify discrimination in hiring, lending, criminal justice.</p>
+
+            <h4>Privacy:</h4>
+            <p>ML often requires personal data. How is it collected, stored, and used?</p>
+
+            <h4>Autonomous Weapons:</h4>
+            <p>AI systems making life-or-death decisions without human control.</p>
+
+            <h4>Job Displacement:</h4>
+            <p>Automation may eliminate jobs faster than new ones are created.</p>
+
+            <h4>Misinformation:</h4>
+            <p>AI-generated content (deepfakes, fake news) becomes difficult to distinguish from real.</p>
+
+            <h4>Alignment Problem:</h4>
+            <p>How to ensure AI systems' goals align with human values?</p>
+        </div>
+
+        <div class="section">
+            <h3>Recent Breakthroughs</h3>
+
+            <h4>Large Language Models (LLMs):</h4>
+            <ul>
+                <li>GPT-3, ChatGPT can understand and generate human language</li>
+                <li>Can solve complex reasoning tasks</li>
+                <li>Demonstrates emergent abilities from scaling</li>
+            </ul>
+
+            <h4>AlphaFold:</h4>
+            <ul>
+                <li>DeepMind AI predicts protein structures</li>
+                <li>Solved decades-old problem in biology</li>
+                <li>Accelerates drug discovery</li>
+            </ul>
+
+            <h4>Multimodal Models:</h4>
+            <ul>
+                <li>Models that work with text, images, and audio</li>
+                <li>GPT-4 can understand images</li>
+                <li>More human-like understanding of world</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>The Future of AI</h3>
+
+            <h4>Near Term (Years):</h4>
+            <ul>
+                <li>More capable language models</li>
+                <li>Better integration into applications</li>
+                <li>Improved interpretability</li>
+            </ul>
+
+            <h4>Medium Term (Decades):</h4>
+            <ul>
+                <li>General-purpose AI possibly achieved</li>
+                <li>Major disruption to job market</li>
+                <li>Significant ethical and regulatory challenges</li>
+            </ul>
+
+            <h4>Long Term (Speculative):</h4>
+            <ul>
+                <li>Super-intelligent AI potentially emerged</li>
+                <li>Fundamental changes to human society</li>
+                <li>Unknown existential risks</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Key Revision Points</h3>
+            <ul>
+                <li>AI is simulation of human intelligence by computers</li>
+                <li>Machine Learning learns patterns from data</li>
+                <li>Three types: Supervised, Unsupervised, Reinforcement</li>
+                <li>Neural networks and deep learning enable modern AI</li>
+                <li>AI has transformative applications across industries</li>
+                <li>Challenges: bias, privacy, explainability, computational cost</li>
+                <li>Ethical considerations critical for responsible AI development</li>
+                <li>Future of AI has significant implications for society</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CS Notes For You. All rights reserved.</p>
+    </footer>
+</body>
+</html>

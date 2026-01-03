@@ -1,0 +1,1853 @@
+22 - Introduction to databases.pptx
+===================================
+
+--- Slide 1 ---
+Introduction to databases
+Computer Science
+Leaving Cert
+
+--- Slide 2 ---
+Lesson Objectives
+Students will learn about:
+The difference between structured data and unstructured data
+The database and its structure
+The relational database and its advantage over a flat-file database
+How entities (or tables) are related to each other in a relational database.
+2
+
+--- Slide 3 ---
+Content
+1.
+
+--- Slide 4 ---
+What is a database?
+A database is an organised collection of data, that allows users to access and search the information easily.
+4
+
+--- Slide 5 ---
+Advantages of using database
+Databases are better storage techniques compared to file systems. 
+Many users can access the data at the same time.
+Databases can hold very large amounts of data.
+The data is only stored once and, hence, data duplication is avoided. 
+The data is consistent as the changes need to be made only once. These changes are then reflected for all the users using the database.
+The data is stored in an organised way, which makes it easier and faster to carry out searches of the data
+Databases can interact with many different types of systems e.g. phone apps, web pages, business software
+5
+
+--- Slide 6 ---
+6
+
+--- Slide 7 ---
+Flat File Database (the simplest)
+The simplest form of database is called a flat file. An example is a .csv file
+A flat file  database contains only a single table. For example: contact details, product details, etc. A table is a collection of related data and is made up of rows and columns. 
+Each row represents a record in the database. A record holds specific items of data about someone of something
+7
+
+--- Slide 8 ---
+Structure of a table: Example
+8
+Employee number
+Name
+Gender
+Date of birth
+Department
+Date of joining
+Salary
+Record 1
+Record 2
+
+--- Slide 9 ---
+Flat File Database (the simplest)
+In a database table, an attribute refers to a column name and the data that it contains
+
+
+
+The term record is used to refer to one entry (or row) in the database. Each record contains various fields
+9
+
+--- Slide 10 ---
+Database Data Types
+Each attribute in the database table contains a specific type of data, just like python variable types (string, Boolean, integer, float)
+Varchar -> the first attribute in our table below contains a string. In database terminology, a string is called a varchar. 
+Number -> The attributes labelled phoneNum and age contain numbers. These are of datatype number. 
+Date -> The attribute labelled DOB contain the data type date.
+10
+
+--- Slide 11 ---
+Creating a database (flat file)
+11
+
+--- Slide 12 ---
+Appending records to the CSV file
+12
+
+--- Slide 13 ---
+Read and Display records from the CSV file
+13
+
+--- Slide 14 ---
+Structured vs. unstructured data
+Unstructured data
+Information that is not structured in a predefined manner is called unstructured data. 
+Data in a word document or notepad are examples of unstructured data.
+Structured data
+Information that is stored in a predefined manner, that is, in a structure is called structured data.
+ Databases help us to store data in a structured manner.
+14
+
+--- Slide 15 ---
+15
+
+--- Slide 16 ---
+Issues with single table of data
+The table contains details of patients’ record in a doctor’s clinic. If we were to build a database system for a doctor’s clinic, you will need to cross-reference by doctor as well as patient. 
+Each doctor has many patients, but each patient normally has only one doctor
+Notice the duplication of data for the doctors in the below file.
+16
+
+--- Slide 17 ---
+Issues with single table of data
+Notice the duplication of data for the doctors in the below file. This causes problems such as:
+Wasted time/effort when entering and updating the data. Every occurrence of the doctor attributes will need to be updated if a detail changes e.g doctor retires or changes jobs.
+Wasted storage space as duplicated data takes up extra memory space
+17
+
+--- Slide 18 ---
+What is a relational database?
+A relational database is a type of database that is structured  and is distributed over various tables that are connected using a relationship in a relational database. Hence, no redundant data.
+18
+
+--- Slide 19 ---
+Use or two or more related tables
+ - Relational Database
+It is better practice to split this information into 2 tables. Then define a relationship between the table
+A patient’s table
+A Doctor’s table
+19
+Patient’s Table
+Doctor’s Table
+
+--- Slide 20 ---
+Primary key
+The purpose of a primary key is to provide a unique key to a record.
+To prevent data duplication, each record uses a primary key field, which must be unique. It can be automatically generated. 
+A primary key may be just numbers or a combination of letters and numbers. 
+In the employee table, an employee number is unique for each employee and serves as the primary key.
+20
+
+--- Slide 21 ---
+Use or two or more related tables
+ - Relational Database
+First, need to create a PRIMARY KEY for Each patient record and each doctor record
+21
+Patient’s Table
+Doctor’s Table
+
+--- Slide 22 ---
+Relational Database – The Foreign Key
+In the patient’s table a new attribute (column) is added called  doctorID. This creates the link (relationship) back to the doctor’s table. This is the FOREIGN KEY and it is always the primary key from the other table with which you want to make the link
+22
+Patient’s Table
+Doctor’s Table
+
+--- Slide 23 ---
+Relational database
+A large set of data is distributed over various tables and connected using a relationship in a relational database. Hence, no redundant data.  
+A relational database is efficient over flat-file databases as it is more efficient and takes up less space in memory.
+Flat-file database
+Presence of redundant data, that is, repetition of data in a database.
+Due to the presence of redundant data, more memory space is required and it is also less efficient.
+23
+Relational databases vs. Flat file databases
+
+--- Slide 24 ---
+Advantages of using a relational database
+For example, a library may store information such as a book list, member list, department, book location, research paper list, staff details and many more. 
+Storing these details in a single flat-file system would lead to more memory space requirement and data redundancy.
+24
+
+--- Slide 25 ---
+Characteristics of relational database
+An entity is an object in a system for which the information is stored. 
+A characteristic of an entity is its attribute. 
+In a record, attributes about an entity are stored. 
+For example, let us consider a book as an entity. 
+Author, name of the publisher, year of publication, price of the book, and ISBN number are its attributes.
+25
+Entity: Book
+Attributes:
+Author
+Name of publisher
+Year of publication
+ISBN number
+
+--- Slide 26 ---
+Characteristics of relational database
+In a relational database, each table contains information about just one entity. 
+Each table has a primary key and these tables are linked together using these primary keys and foreign keys. 
+Foreign keys are a link to primary keys.
+26
+
+--- Slide 27 ---
+Characteristics of relational database: Example
+Let us consider the database of a library with three tables:
+Book with a primary key BookID 
+Member with primary key MemberID
+Bookslent with foreign keys Book ID and Member ID
+27
+
+--- Slide 28 ---
+Characteristics of relational database: Example
+The entity descriptions for the entities book and member are given as:
+Book (BookID, Title, Author, Publisher)
+Member(MemberID, FirstName, LastName, ValidUntil, PhoneNumber)
+The primary key is underlined in entity descriptions.
+28
+
+--- Slide 29 ---
+29
+Book:
+BookID
+Title
+Author
+Publisher
+1
+Cambridge IGCSE Computer Science
+David Watson and Helen Williams
+Hodder Education
+2
+Complete Chemistry for Cambridge IGCSE
+Paul Ingram and Rosemarie Gallagher
+Oxford University Press
+3
+Complete Mathematics for Cambridge IGCSE
+David Rayner
+4
+Cambridge International AS and A Level Computer Science Coursebook
+Dave Duddell and S. Langfield
+Cambridge University Press
+
+--- Slide 30 ---
+30
+Member:
+MemberID
+FirstName
+LastName
+ValidUntil
+PhoneNumber
+M18535
+Stephen
+Watson
+31/12/2019
+1864012854
+M11935
+Mary
+Rayner
+5/10/2020
+7911039811
+M25183
+Marian
+Miller
+4/11/2018
+8111092210
+
+--- Slide 31 ---
+31
+Bookslent table:
+It can be noticed that other attributes of books and members are not included, as these are referenced using their respective IDs.
+Book ID and Member ID are the foreign keys of this table that act as a reference to other tables. These foreign keys also act as primary key for this table.
+Book ID
+Member ID
+Date
+Fine
+2
+M18535
+12/10/2018
+0
+1
+M11935
+15/9/2018
+£ 1
+3
+M25183
+21/07/2018
+£ 3
+
+--- Slide 32 ---
+Referential integrity
+Referential integrity ensures that all foreign keys represent a valid and existing primary key in its parent table. 
+For example: In Books table, if you delete the record for BookID=2, it will create an orphaned record (shown in red colour) in Bookslent table.
+32
+BookID
+MemberID
+Date
+Fine
+2
+M18535
+12-10-2018
+0
+1
+M11935
+15-9-2018
+£ 1
+3
+M25183
+21-07-2018
+£ 3
+
+--- Slide 33 ---
+Relationship between entities (tables)
+Entities(table) are related to each other using one of the following relationships:
+One to one
+One to many
+Many to many
+33
+
+--- Slide 34 ---
+Relationship between entities: One to one
+One entity is related to another entity only. For example: A person has one email address.
+34
+Person
+Email iD
+Course 3
+Student 3
+has
+
+--- Slide 35 ---
+Relationship between entities: One to many
+One entity is related to many entities. For example: A library has many members.
+35
+Library
+Member
+has
+
+--- Slide 36 ---
+Relationship between entities: Many to many
+Many entities are related to many entities. For example: Many students can take a course and a course can have many students.
+36
+
+--- Slide 37 ---
+Let’s review some concepts
+Database
+A database is an organised collection of data, which allows users to obtain and process information according to their requirements.
+Structure of a database
+Data in a database is stored in the form of tables.
+Table
+A table consists of various records. Each record consists of several fields.
+37
+Relational database
+A relational database is a type of database that is structured and allows users to identify and access data which is in relation to other data.
+Entity
+An entity is an object in a system for which the information is stored. In a relational database, each table contains information about just one entity.
+Attribute
+A characteristic of an entity is its attribute. In a record, attributes about an entity are stored.
+
+--- Slide 38 ---
+Activity
+2.
+
+--- Slide 39 ---
+Activity-1
+Duration: 20 minutes
+An online airline ticket-booking websites process the customer’s request, shows available flight details with price and prompts the user to select one of them, books the tickets and sends a copy of the ticket to the customer’s email address.
+Identify the entities(tables) in the above scenario.
+What relationship exists between these entities? Draw flowcharts to explain your answer.
+39
+
+--- Slide 40 ---
+Activity-1
+Duration: 20 minutes
+What tables do you require for an online airline ticket booking website? Show the attributes of all entities. Mark the primary keys and foreign keys (if any) of each table. Show the relationship between tables as a flowchart.
+40
+
+--- Slide 41 ---
+End of topic questions
+3.
+
+--- Slide 42 ---
+End of topic questions
+What is a database? What are the advantages of using a database?
+What are the applications of the database?
+How is a database structured?
+What is a relational database? What are its advantages over a flat-file database?
+What I meant by the term entity, record and attributes? How are these represented in the form of a table?
+42
+
+--- Slide 43 ---
+End of topic questions
+What is the difference between a primary key and foreign key?
+What are the different relationship between entities? Give examples for each relationship with entity-relationship diagrams.
+43
+
+--- Slide 44 ---
+End of topic questions
+A car dealer builds a database for the following entities:
+Customer (CustomerID, FirstName, LastName, PhoneNumber)
+Car (ProductCode, Brand, Model, Price)
+Order (CustomerID, ProductCode, Accessories, TotalPrice)
+Draw the entity relationship diagrams between these entities.
+What is the primary key for the Order table? 
+What is referential integrity? In this database, how is referential integrity maintained?
+44
+
+
+
+23 - Searching & Sorting Algorithms.pptx
+========================================
+
+--- Slide 1 ---
+Searching & Sorting Algorithms
+Simple (selection) sort, bubble sort, insertion sort, quick sort.
+Linear (Sequential) search, binary search
+Chp 9 page 209
+
+--- Slide 2 ---
+Tutorials for sorting and searching algorithms
+Visual Representation of the Sorting Algorithms
+https://visualgo.net/en/sorting
+
+Video Tutorial – how not to forget the sorting and searching algorithms
+https://www.youtube.com/watch?v=zuwBCImIyaw
+Searching Algorithms
+Linear Search
+Binary Search
+Sorting Algorithms
+Insertion Sort
+Bubble Sort
+Simple (Selection) Sort
+Quick Sort (HL)
+
+--- Slide 3 ---
+Searching & Sorting Algorithms
+
+--- Slide 4 ---
+Linear Search
+A linear search checks each item of the list in turn to see if it’s the correct one.
+It stops when it either finds the item its looking for, or has checked every item in the list
+Visual representation of the sorting algorithms
+
+--- Slide 5 ---
+Linear Search
+
+--- Slide 6 ---
+Linear Search
+
+--- Slide 7 ---
+Linear Search Code
+The function returns a -1 if no match was found. -1 is used because index -1 does not exist. This lets programmer know no key was found.
+This code only returns the location of the index the first time the key was found.
+
+--- Slide 8 ---
+Linear Search - Pros and Cons
+Pros
+Will perform fast searches of small to medium lists. With today's powerful computers, small to medium arrays can be searched relatively quickly.
+The list does not need to sorted. Unlike a binary search, linear searching does not require an ordered list.
+Not affected by insertions and deletions. As the linear search does not require the list to be sorted, additional elements can be added and deleted. As other searching algorithms may have to reorder the list after insertions or deletions, this may sometimes mean a linear search will be more efficient.
+Cons
+Slow searching of large lists. For example, when searching through a database of everyone in the Northern Ireland to find a particular name, it might be necessary to search through 1.8 million names before you found the one you wanted. This speed disadvantage is why other search methods have been developed.
+
+--- Slide 9 ---
+Exam Question (Ordinary)
+
+--- Slide 10 ---
+Exam Question (Ordinary)
+
+--- Slide 11 ---
+Exam Question (Ordinary)
+
+--- Slide 12 ---
+Binary Search
+A binary search differs from a linear search as it requires that the list is already sorted and takes advantage of this. We can use the built-in function .sort() for this 
+Binary search is known as “divide and conquer” algorithm where the problem in hand, is divided into smaller sub-problems and then each problem is solved independently
+
+--- Slide 13 ---
+Binary Search
+
+--- Slide 14 ---
+Binary Search
+
+--- Slide 15 ---
+Binary Search Tutorial Video
+https://www.youtube.com/watch?v=KXJSjte_OAI
+
+--- Slide 16 ---
+Binary Search- Pros and Cons
+Pros
+One of the main advantages of a binary search is that it is much quicker than a linear search because the data that needs to be searched halves with each step. For example, it is possible to search through 1024 values and find the one you want within 10 steps, every time.
+Cons
+The biggest problem with a binary search is that you can only use this if the data is sorted into an order.
+
+--- Slide 17 ---
+Linear Search vs Binary Search
+A linear search is much simpler than a binary search, but not as efficient. A linear search can be used on any type of list. The list DOES NOT have to be ordered. Due to its inefficiency , a linear search is often only used on small lists.
+Once the list has been ordered, a binary search is much more efficient than a linear search. A binary search takes fewer steps to find the item you’re looking for, making it more suitable for large lists of items
+
+--- Slide 18 ---
+Code for the binary search
+
+--- Slide 19 ---
+Exam Question (Ordinary)
+
+--- Slide 20 ---
+Exam Question (Ordinary)
+Divide the list by 2 each time
+
+--- Slide 21 ---
+Exam Question (Higher 2020 Q13)
+
+--- Slide 22 ---
+Exam Question (Higher 2020 Q13)
+
+--- Slide 23 ---
+Exam Question (Higher 2020 Q13)
+
+--- Slide 24 ---
+SORTING ALGORITHMS
+For leaving cert you will need to know these 4 sorts:
+Insertion Sort
+Simple Sort also known as Selection Sort
+Bubble Sort
+Quicksort (Higher Level only)
+
+--- Slide 25 ---
+Sorting Algorithms – Insertion Sort
+This is the simplest sorting algorithm to understand. It takes each item in turn and puts it in the correct place using the first item in the list as the starting point.
+This is an in-place comparison-based sorting algorithm. This means all sorting done on original list, it doesn’t require much additional memory
+
+--- Slide 26 ---
+Insertion Sort Example
+
+--- Slide 27 ---
+Insertion Sort - Pros and Cons
+Pros
+Intuitive way to sort the list and easy to code
+Copes very well with small lists
+All sorting done on original list, so like bubble sort, it doesn’t require much additional memory
+Very quick to add items to already ordered list
+Very quick way to check if list is already sorted
+Cons
+Similar to bubble sort, it doesn’t work well with very large lists
+Best case scenario (when list is already sorted) requires n-1 comparisons
+Worst case scenario requires          n(n-1)/2 comparisons
+
+--- Slide 28 ---
+The Insertion Sort – Video Tutorial
+https://www.youtube.com/watch?v=OGzPmgsI-pQ
+
+--- Slide 29 ---
+The Insertion Sort – The Code
+
+--- Slide 30 ---
+Exam Questions – Higher Level
+
+--- Slide 31 ---
+Exam Questions – Higher Level
+
+--- Slide 32 ---
+Exam Questions – Higher Level
+
+--- Slide 33 ---
+The Bubble Sort
+
+--- Slide 34 ---
+Bubble Sort Example
+
+--- Slide 35 ---
+The Bubble Sort
+Pros
+It’s a simple algorithm that is easy to implement
+It’s an efficient way to check if a list is already in order. For a list of n items you only have to do one pass of (n-1) comparisons to check if the list is ordered or not.
+This is an in-place comparison-based sorting algorithm. This means all sorting done on original list, it doesn’t require much additional memory
+Cons
+It’s an inefficient way to sort a list – for a list of n items, the worse case scenario would involve you doing n(n-1)/2 comparisons. 
+Due to being inefficient, the bubble sort algorithm does not cope well with a very large list of items.
+
+--- Slide 36 ---
+The Bubble Sort - Mistakes Students Make
+A common mistake is to forget the final pass because you realise that the list is already in order. Always show a pass, even if nothing changes to complete the algorithm as a computer would
+
+Video Tutorial for Bubble Sort
+https://www.youtube.com/watch?v=WaNLJf8xzC4
+
+--- Slide 37 ---
+The Bubble Sort – The Code
+
+--- Slide 38 ---
+Exam Question _ Higher Level
+
+--- Slide 39 ---
+Simple or Selection Sort
+
+--- Slide 40 ---
+Simple or Selection Sort
+
+--- Slide 41 ---
+Simple or Selection Sort
+
+--- Slide 42 ---
+Simple or Selection Sort
+
+--- Slide 43 ---
+Simple or Selection Sort
+Algorithm
+
+--- Slide 44 ---
+The Selection Sort
+Pros
+The main advantage of the selection sort is that it performs well on a small list. 
+It is an in-place sorting algorithm, so no additional temporary storage is required beyond what is needed to hold the original list
+Cons
+The primary disadvantage of the selection sort is its poor efficiency when dealing with a huge list of items.
+The selection sort requires n-squared number of steps for sorting n elements. 
+Its performance is easily influenced by the initial ordering of the items before the sorting process. Because of this, the selection sort is only suitable for a list of few elements that are in random order.
+
+--- Slide 45 ---
+Simple or Selection Sort – Video Tutorial
+https://www.youtube.com/watch?v=xWBP4lzkoyM
+
+--- Slide 46 ---
+Simple or Selection Sort – The Code
+
+--- Slide 47 ---
+Exam Questions – Higher Level 2022 - Paper A + B - Question 14
+
+--- Slide 48 ---
+Exam Questions – Higher Level
+
+--- Slide 49 ---
+Exam Questions – Higher Level
+
+--- Slide 50 ---
+Exam Questions – Higher Level
+
+--- Slide 51 ---
+Quick Sort (Higher Level)
+QuickSort is a Divide and Conquer algorithm. A divide-and-conquer algorithm recursively breaks down a problem into two or more sub-problems, until these become simple enough to be solved directly
+It picks an element as a pivot and partitions the given array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways. 
+Always pick the first element as a pivot.
+Always pick the last element as a pivot 
+Pick a random element as a pivot.
+Pick median as the pivot.
+
+--- Slide 52 ---
+Quick Sort (Higher Level)
+https://www.youtube.com/watch?v=h8eyY7dIiN4
+ 
+https://towardsdatascience.com/an-overview-of-quicksort-algorithm-b9144e314a72
+
+--- Slide 53 ---
+Quick Sort (Higher Level)
+
+--- Slide 54 ---
+The quicksort algorithm can be implemented recursively (it calls itself and works on a subset of the problem until a specific point is reached).
+Quick Sort (Higher Level)
+
+--- Slide 55 ---
+The quicksort algorithm can be implemented recursively (it calls itself and works on a subset of the problem until a specific point is reached).
+Quick Sort (Higher Level)
+
+--- Slide 56 ---
+The quicksort algorithm can be implemented recursively (it calls itself and works on a subset of the problem until a specific point is reached).
+Quick Sort (Higher Level)
+
+--- Slide 57 ---
+The quicksort algorithm can be implemented recursively (it calls itself and works on a subset of the problem until a specific point is reached).
+Quick Sort (Higher Level)
+
+--- Slide 58 ---
+The Quick Sort
+Pros
+The quick sort is regarded as the best sorting algorithm. 
+Its significant advantage in terms of efficiency because it is able to deal well with a huge list of items.
+It is an in-place sorting algorithm so no additional storage is required as well.
+Cons
+The slight disadvantage of quick sort is that its worst-case performance is similar to average performances of the bubble, insertion or selections sorts. 
+Difficult to implement due to the recursion
+In general, the quick sort produces the most effective and widely used method of sorting a list of any item size.
+
+--- Slide 59 ---
+The Quick Sort – The Code
+
+--- Slide 60 ---
+Exam Questions – Higher Level - 2020 - Sample Paper A&B - Question 15
+The worst case occurs when the picked pivot is always an extreme (smallest or largest) element. This happens when input array is sorted or reverse sorted and either first or last element is picked as pivot. This first results in 2 sublists: one of length (0) and one of length (n-1). The pivot value then needs to be compared with all (n-1) of the other values. If you pick the worst pivot on each recursion, you'll only have one group to sort, with everything in that group other than the original pivot that you picked. This in essence gives you n groups that each need to be iterated through n times, hence the O(n^2) complexity
+
+--- Slide 61 ---
+Exam Questions – Higher Level
+
+--- Slide 62 ---
+Exam Questions – Higher Level
+
+--- Slide 63 ---
+Algorithms Time Complexity (HL)
+Sometimes there are more than one algorithm to solve a problem. e.g.
+You learned 2 searching algorithm: Linear & Binary
+You learned 4 sorting algorithms: Insertion, Bubble, Selection, Quicksort
+
+Algorithmic Complexity is an important area in computing. Algorithmic Complexity is a measure of how long an algorithm would take to complete, given an input size of n. 
+
+Big O notation is used to describe algorithmic complexity
+
+--- Slide 64 ---
+Algorithmic Time Complexity (HL)
+https://www.youtube.com/watch?v=RGuJga2Gl_k
+
+--- Slide 65 ---
+Big O – Algorithmic Complexity
+
+--- Slide 66 ---
+Big O – Algorithmic Complexity
+
+--- Slide 67 ---
+Big O – Algorithmic Complexity
+
+--- Slide 68 ---
+Intractable Problems and Heuristics - HL
+There are many simple but important problems that are considered to be intractable i.e. no algorithms can solve them in a reasonable amount of time
+One such problem is the travelling salesperson problem. A travelling salesperson needs to visit n towns. The sales person starts at one of the towns. The distance between each of the towns is known. The problem is : which route, visiting all the towns, then returning back to the starting point, covers the least distance?
+
+--- Slide 69 ---
+Intractable Problems and Heuristics - HL
+The travelling salesperson problem is very similar to many real life problems involving planning, deliveries etc.
+There is no known algorithm to solve this problem exactly, in an efficient way, even for a relatively small number of towns. 
+The straightforward solution of just trying all the available options turns out to be O(n!) . Even with just 30 towns that ends up with 265252859812191058636308480000000 combinations. The fastest computer would require many millions of years to check all of these.
+
+--- Slide 70 ---
+Intractable Problems and Heuristics - HL
+What can be done with problems such as the travelling salesperson. Heuristic algorithms are one solution. A heuristic algorithm is not guaranteed to return the exact answer, but one that is sufficient.
+A Heuristic algorithm allows us to produce an approximate, but useable solution to the problem.
+Using heuristics with problems to be solved by the computer involves making a small change that sacrifices something e.g. accuracy or precision,  in order to reduce the time taken to complete the algorithm.
+
+--- Slide 71 ---
+Intractable Problems and Heuristics - HL
+By using heuristics, sometimes the problem is changed slightly. This can produce a solution that is close enough to that of the original to be acceptable.
+It is possible to mathematically guarantee that the solution to the problem found using heuristics is within some close limit of the original problem’s answer.
+Many heuristic algorithms written for the travelling salesman problem are estimated to be within a 5% degree of accuracy of the original answer.
+
+--- Slide 72 ---
+The Travelling Salesman Problem
+
+
+
+24-Modelling&Simulation.pptx
+============================
+
+--- Slide 1 ---
+Modelling and Simulation
+Computer Science – ALT3
+
+--- Slide 2 ---
+What is a computer Model?
+A model is a representations of a real-world event, system, behavior, or natural phenomenon, such as the workings of a nuclear reactor or the evacuation of a football stadium.
+
+--- Slide 3 ---
+What is a computer model?
+A collection of rules is created to study what would happen in real-life situations. Changes are made to see how they affect the outcome. For example, before a new football stadium is built, a computer model could be used to see if there are enough fire exits and if they’re in the safest places.
+
+--- Slide 4 ---
+What is a computer model?
+A collection of rules is created to study what would happen in real-life situations. Changes are made to see how they affect the outcome. For example, before a new football stadium is built, a computer model could be used to see if there are enough fire exits and if they’re in the safest places.
+
+--- Slide 5 ---
+Simple Models can be built on a spreadsheet (excel)
+Simple models can be built in a spreadsheet. A spreadsheet model could be used to plan a school prom. To make sure it came in on budget the spending on food, drinks, entertainment, and the price of tickets could be varied.
+
+It could also be used to see how much money would be made from ticket sales. These are called 'what if…' questions, for example:
+
+What if only 20 people attend?
+What if costs go up by 10 per cent?
+
+--- Slide 6 ---
+https://www.youtube.com/watch?v=M0iZ52kUOiQ
+
+--- Slide 7 ---
+What is simulation?
+Simulation is a type of computer model. A simulation imitates a particular environment. It can be used for research or training
+They allow different scenarios to be tested. These scenarios can be an actual or probable real-life events that: 
+find a cause of a past occurrence (such as an accident), 
+forecast future effects (outcomes) of assumed circumstances or factors.
+
+--- Slide 8 ---
+Simulation in real-life?
+Ever wonder how pilots practice flying before climbing into the cockpit?
+Well they use very advanced simulation software to train in all sorts of conditions.
+
+--- Slide 9 ---
+(no extractable text)
+
+--- Slide 10 ---
+Building a basic model in python
+According to the Census 2021 Northern Ireland Population is 1,903,175 and :
+45.7% of inhabitants are Catholic / Catholic background
+43.48% from Protestant or other Christian background
+
+The 2011 census figures were 45% Catholic and 48% Protestant
+Prepare a model for the increase and decrease in population over the next 10 years, 20 years, 50 years
+
+--- Slide 11 ---
+Solution to the previous problem – Pg 1
+
+--- Slide 12 ---
+Solution to the previous problem – Pg 2
+
+--- Slide 13 ---
+Solution to the previous problem – Pg 3
+
+--- Slide 14 ---
+Model of the population of a town
+Carrick Population 
+Prepare a model for the increase and decrease in population of Carrick (current population 1,535) year-by-year. Given the following details: 
+Births: 3% of the population per year 
+Deaths 2% of the population per year 
+The model can be an interactive Python program.
+When you have completed the above you may extend the problem: People leaving: 3 equally likely scenarios depending on Economic factors: 
+1. 100 net people coming in. 
+2. 50 net people coming in. 
+3. 200 net people leaving.)
+Use the previous example’s code and modify it
+
+--- Slide 15 ---
+Evaluating a compound interest model
+The next model has a mathematical core and is used to calculate the compound interest
+
+--- Slide 16 ---
+Running Simulations and evaluating models
+
+--- Slide 17 ---
+Evaluate the model
+
+--- Slide 18 ---
+Running Simulations and evaluating models
+
+--- Slide 19 ---
+Running Simulations and evaluating models
+
+--- Slide 20 ---
+Improving  this compound interest model
+Further modification of the model would allow us to find the most suitable loan deal for a user, given the user’s salary as a representation of their ability to pay back the loan.
+
+Front-end Debt To Income measures how much of your monthly gross (pre-tax) income goes toward your mortgage payment (both principal and interest. Mortgage lenders want their borrowers to be able to keep this below 28%.
+
+Improve the previous model by inputting the yearly gross salary, calculate the monthly gross income and check if the Debt to Income is below 28%. Print the result to screen in a user friendly format
+
+--- Slide 21 ---
+Model extended to check for loan eligibility
+
+--- Slide 22 ---
+Decision Making Models
+This tennis data set comes from a famous introductory model problem.
+
+It shows the weather conditions on different days and whether or not it is suitable for playing tennis
+
+We will use this data to model a tennis player’s decision making based on a weather scenario. 
+
+This model has FOUR attributes involved in the decision
+Outlook
+Temperature
+Humidity]
+Wind
+
+--- Slide 23 ---
+Decision Trees
+In the tennis data set, it is not easy to identify the scenarios. The logic is not clear. One way to approach this problem is with a Decision Tree
+A Decision tree allows us to identify all possible decision making paths, making it easier to write the conditions in the code
+Each branch from the from the root at the top to a leaf at the bottom represents the decision that lead to a particular outcome
+
+--- Slide 24 ---
+Tennis Decision Tree
+Start by putting the first attribute outlook at the top. There are 3 possible values for outlook: sunny, overcast, rain
+The next step is examine the data to find out what happens for each of these outlook values
+If sunny, sometimes the player plays and sometimes not. The decision must depend on some other attribute
+If overcast, the player plays tennis. The other attributes do not affect the decision
+If raining, sometimes the player plays and sometimes not. The decision must depend on some other attribute
+
+--- Slide 25 ---
+Tennis Decision Tree
+When raining, the player plays what ever the temperature. There is no data for when it is hot so we can ignore this
+When raining, when humidity is high or not the player may or may not play. We can ignore this 
+When raining, when the wind is weak, the player plays but if wind is strong the player does not play. This variable is significant for player decision
+
+--- Slide 26 ---
+Decision Tree
+The starting point of the tree is always the root. It contains the first attribute, outlook. The other attributes are in the boxes below. The values for each attribute are connected from the root to the leaves using branches.
+Each branch from root to leaf represents a decision making path
+A major benefit of Decision Trees are they are easy to understand and follow.
+It is now possible to write python code for this decision tree. We can use conditionals (if, elif, else) with and or or operators, or nested conditionals.
+
+--- Slide 27 ---
+The code for the decision tree
+Start with the function definition and it has 3 attributes : outlook, humidity and wind
+
+
+ we can start with the most straight forward conditional, overcast:
+
+--- Slide 28 ---
+The code for the decision tree
+Start with the function definition and it has 3 attributes : outlook, humidity and wind
+
+
+ we can start with the most straight forward conditional, overcast:
+
+--- Slide 29 ---
+The code for the decision tree
+Next, we look at when the outlook is sunny. The decision to play also depends on another attribute humidity.
+If outlook is sunny and humidity high, the decision to play is no
+If outlook is sunny and humidity low, the decision to play is yes.
+
+--- Slide 30 ---
+The code for the decision tree
+Finally look at the decision path for raining. Rain is affected by another attribute wind.
+If outlook is rain and wind is strong, decision to play is no
+If outlook is rain and wind is weak, decision to play is yes
+
+--- Slide 31 ---
+The code for the decision tree
+Evaluate the model using one example with an expected result of no
+
+--- Slide 32 ---
+Task 1
+A mechanic has to check the parts in a machine. They must decide what to do about each part in terms of maintenance. The problem is described in the decision tree.
+Develop a python function with two arguments to determine which of the following actions to take:
+No problem, do nothing
+Apply lubricant
+Apply tape
+
+--- Slide 33 ---
+Task 2
+This decision tree was developed for automatically classifying fruit, based on several attributes.
+Use a python function, develop a computer model for automatic classification of fruit, based on this decision tree
+
+--- Slide 34 ---
+Agent Based Modelling (HL)
+Agent based modelling(ABM) involves building models to simulate the actions and interactions of individual “agents” within an environment.
+These agents are autonomous and independent of each other and the environment. This means that the environment contains multiple models, each of which is an agent.
+ABM allows us to simulate the behaviours of the agents to investigate how specific attributes of an agent may affect other agents or the environment as a whole.
+https://www.youtube.com/watch?v=Z8Wf1vF_xgQ
+https://www.youtube.com/watch?v=n6h3WiRLmp8
+
+--- Slide 35 ---
+Real World ABM Exampes - HL
+
+--- Slide 36 ---
+Ant Model Pattern Example
+
+--- Slide 37 ---
+Ant Model
+Each ant must have an initial state, which could be randomly generated or have a default value e.g work to be done set to yes or no.
+The rules might be as follows:
+If ant is hungry the ABM will get the ant to go find food
+If ant is Not hungry and there is work to be done, the ant must go to work
+If there is no work to do and the ant is not hungry it will join another group of ants and will walk around in an army
+Therefor each ant is responsible for his own actions -> it is autonomous
+Next we can add models for multiple agents
+This Photo by Unknown Author is licensed under CC BY-NC-ND
+
+--- Slide 38 ---
+Ant Model continued
+The starting conditions for the environment could be set, or generated at random. E.g. if there is plenty of food close to an ant, I will not take long to find the food so it can spend more time working.
+This could be used to simulate the productivity of the environment when food is plentiful and widely dispersed. This could be compared to productivity when food is scare and concentrated in just one location
+This Photo by Unknown Author is licensed under CC BY
+
+--- Slide 39 ---
+Benefits of Agent Based Modelling
+
+--- Slide 40 ---
+ABM and Emergent Behaviour
+
+--- Slide 41 ---
+Examples of ABM
+
+--- Slide 42 ---
+Excellent introduction to Agent Based Modeling (its 2 hours long)
+https://www.youtube.com/watch?v=clPu6wMuLfg
+
+--- Slide 43 ---
+Agent Based Modelling Toolkits
+https://www.youtube.com/watch?v=QtZ3M5UNKhI
+
+
+
+25- Software Development Process.pptx
+=====================================
+
+--- Slide 1 ---
+The Software Development Process
+Leaving Cert Computer Science
+
+--- Slide 2 ---
+Introduction
+The terms software engineering and software development are used interchangeably. 
+The term software engineering was coined by Margaret Hamilton who led a team that developed the flight software for the NASA Apollo program in 1960’s.
+Most software development projects follow an organised, structured process because this results in a greater chance of:
+Meeting the needs of the user
+Keeping the cost of development within budget
+Delivering the software on time
+Minimising the cost of maintenance
+
+--- Slide 3 ---
+Introduction
+When developing a solution to a problem for a computer system, programmers work through a number of distinct stages. 
+Collectively, these stages are known as the Software Development Lifecycle (SDLC).
+The arrangement of these stages and how programmers move from one stage to another, is known as the Software Development Methodology
+The 2 main methodologies you need to be aware of are:
+Waterfall
+Agile
+
+--- Slide 4 ---
+The Client and the user
+The client is the person in an organisation who has commissioned the software project
+The User, the individual(s) who will actually be using the software
+
+--- Slide 5 ---
+Stages of Software Development Life Cycle
+
+--- Slide 6 ---
+Stage 1 -> Investigate (Analyse)
+Understand the problem: the developers need to know what they're trying to solve. They figure out what the software needs to do, who will use it, and what problems it should solve.
+Research: Next, they look at similar projects or existing solutions to gather ideas and learn from them. This helps them avoid repeating mistakes and find better ways to approach the problem.
+Gather Requirements: This step involves talking to the people who will use the software (BOTH clients and end-users) to understand their needs and preferences. They ask questions to clarify what features the software should have and how it should work.
+
+--- Slide 7 ---
+Stage 1 -> Investigate (Analyse)
+Hardware and Software Requirements: An initial assessment of the most suitable hardware and software to be used is made
+Carry out a feasibility study: The developers check if what the client wants is possible within the available resources like time, budget, and technology. A report is written for the client giving an opinion as to whether a feasible solution to the problem is possible.
+
+--- Slide 8 ---
+Stage 2 -> Plan
+A software development plan is necessary to ensure that everyone concerned understands clearly what must happen, when and by whom, in order to complete the new software system. 
+
+Timescales: A timeline or schedule is made to outline when each part of the project should be completed. This helps keep everyone on track and ensures the project stays on schedule.
+Assign Tasks: Roles and responsibilities are defined, and tasks are assigned to different team members based on their skills and expertise.
+Budgeting: The budget for the project is planned out, including costs for resources, tools, and personnel.
+
+--- Slide 9 ---
+Stage 3 -> Design
+There are many different approaches to software design, each with their own advantages and disadvantages. Not all of these approaches are used on any given project.
+Top Down Design -> A top-down design approach starts with the main system at the top and breaks it down into smaller units, in a hierarchical fashion. Each unit is broken down until each aspect is manageable. This is an example of DECOMPOSITION
+
+--- Slide 10 ---
+Stage 3 -> Design
+Modular Design -> This a software design approach where a system is divided into a set of smaller, independent software modules. Each module is responsible for a distinct aspect of the system’s functionality and can be developed, tested, and maintained separately. 
+The benefits of Modular Design are:
+The modules of code can be re-used, even on other projects.
+Each module is relatively small so problems and bugs are easier to find and fix. 
+The design of the system as a whole is easier to understand, and manage.
+
+--- Slide 11 ---
+Stage 3 -> Design
+User Interface Design: This is like designing the layout and appearance of rooms in a house. Designers figure out how users will interact with the software, like where buttons will be placed and how screens will look.
+Flowcharting : This can be used at the design stage to represent the flow of operation of the system. Flowcharts provide a clear way of communicating the software solution visually. This results in:
+A shared understanding on the part of the team and users
+A means of checking that the development process is correct
+A way of identifying and getting rid of unnecessary steps.
+
+--- Slide 12 ---
+Stage 3 -> Design
+Prototyping : Sometimes, designers create prototypes, which are like rough drafts or models of the software. This helps them see how things will work and get feedback from users and clients before building the final product.
+Description of Algorithms -> All the main functionalities that the software will require should be listed and their algorithms described. The descriptions can be written in pseudocode, normal language or flowcharts
+Data Tables -> A data table lists all the data to be used, its type and how it will be stored.
+Variables Tables -> A variable table can be created to list all the variables that the software will need, and to decide on the name, type, and length of each one.
+
+--- Slide 13 ---
+Stage 3 -> Design -> USER CENTRED DESIGN
+User centered design gives top priority to the needs of the user. It is important the user can use the software as effectively as possible. The users themselves should be involved to make sure the software is useable by ALL users. 
+Two important considerations for user-centered design are: 
+USER EXPERIENCE (UX)
+UNIVERSAL DESIGN
+
+
+Video on User Centred Design
+
+--- Slide 14 ---
+Stage 3 -> Design -> USER CENTRED DESIGN
+USER EXPERIENCE 
+This is the experience of the user when interacting with the product or software. This includes perception, preferences, emotions and other factors before, during and after use. A key part of user experience is the USER INTERFACE (UI). This could be the physical buttons and dials on a washing machine or the  graphical interface of an operating system or website. 
+UNIVERSAL DESIGN (UD)
+This can be applied when designing anything from a car, to furniture to software. Universal design is the process of designing a product so that everyone can understand, access and use it, regardless of their age, size or ability.
+
+--- Slide 15 ---
+Stage 3 -> Design -> Universal Design
+Video on universal design
+
+--- Slide 16 ---
+Stage 3 -> Design -> Adaptive and Assistive Technology
+Adaptive Technologies -> provide features to existing technologies to aid their use specifically for people with impairments and disabilities, and older people. Adaptive technologies would RARELY be used by non-disabled people. Examples are screen-readers, alternative keyboards and text-to-speech synthesizers. 
+Assistive Technology - > this refers to something that can help people with disabilities, but also may be used by the non-disabled. An example is the Microsoft Windows Magnifier app which allows users to magnify anything on-screen
+
+--- Slide 17 ---
+Stage 4 -> Create
+This is the stage the software is actually written AND tested. The programmers create the system based on all the work that has been carried out during the previous stages. 
+The design of the system may be changed as a result of an issue that happens during its coding. This is another example of iteration, where you loop back to an earlier stage.
+Such iteration can cause delays to the programming schedule.
+
+Testing will be carried out during the Create Stage
+
+--- Slide 18 ---
+Stage 4 -> Create (The General Steps in Testing)
+Requirement Understanding:  Testers need to understand what the software is supposed to do. This involves reading the requirements documents or discussing with stakeholders to know the expected behavior of the software.
+Test Planning: Testers plan how they're going to test the software. They decide what to test, how to test it, and what resources they'll need.
+Test Case Design: Testers create specific scenarios, called test cases, that they'll use to check if the software behaves as expected. These test cases include steps to follow and expected results.
+Test Execution: Testers actually run the test cases. They interact with the software, input data, and observe the output to see if it matches what's expected.
+
+--- Slide 19 ---
+Stage 4 -> Create (The General Steps in Testing)
+5.	Defect Reporting: If testers find any issues during testing, they report them. They provide details like what they did, what went wrong, and how severe the issue is.
+6.	Defect Resolution: Developers fix the reported issues. Testers verify these fixes to make sure they work correctly and don't cause new problems.
+7.	Regression Testing: Testers re-run previous tests to ensure that the fixes and changes haven't broken anything else in the software. This helps maintain overall quality.
+8.	Test Closure: Once testing is complete and the software meets the desired quality standards, testers document the results and close out the testing process.
+These steps form a cycle, and they may be repeated multiple times during the software development lifecycle to ensure the software meets user expectations and quality standards.
+
+--- Slide 20 ---
+Stage 4 -> Create (Unit Testing & Integration Testing)
+Unit Testing
+ Individual components or units of code are tested in isolation to ensure they work correctly. Each unit, like a function or method, is tested independently to verify that it produces the expected output for a given input. Unit tests help developers catch bugs early, maintain code quality, and ensure that each piece of code functions as intended before integrating it into the larger software system.
+Integration Testing
+Integration testing is like assembling a puzzle to see if all the pieces fit together. It's a testing technique in software development where individual units or components of a system are combined and tested as a group to ensure they interact correctly. The focus is on verifying that the interfaces between these components work as expected and that they communicate and exchange data properly.
+
+--- Slide 21 ---
+Stage 4 -> Create (White Box Testing)
+White Box Testing or Structural Testing
+Imagine you’re an electrician tasked with checking the wiring in a house. White Box Testing is like having the complete blueprint of the house, including all the hidden electrical circuits, outlets, switches, and even the color coding of the wires. You’re not just checking if the lights turn on when you flip the switch (that would be more like Black Box Testing), but you’re examining the actual wiring behind the walls.
+White Box Testing, or structural, code-based, or glass box testing, is a software testing technique that focuses on the software’s internal logic, structure, and coding. It provides testers with complete application knowledge, including access to source code and design documents, enabling them to inspect and verify the software’s inner workings, infrastructure, and integrations.
+
+--- Slide 22 ---
+Stage 4 -> Create (Functional Testing)
+Functional Testing also known as Black Box Testing
+Software functional testing involves verifying that a piece of software or an application meets its functional requirements. In other words, it ensures that the software performs the specific functions it's designed to do accurately and reliably.
+
+During functional testing, testers typically focus on testing individual features or functionalities of the software to confirm that they behave as expected. This can involve testing various inputs and scenarios to ensure that the software responds correctly and produces the expected outputs.
+
+Functional testing is often carried out through a combination of manual testing, where testers interact with the software directly to validate its behavior, and automated testing, where scripts are created to simulate user interactions and verify expected outcomes automatically.
+
+--- Slide 23 ---
+Stage 4 -> Create (System Testing)
+System Testing
+System testing differs from functional testing in that it tests the entire system while functional testing only tests a single function or feature at a time.
+The aim of system testing is to ensure the software meets the client and users requirements.
+System testing can be broken down into ALPHA and BETA testing
+Alpha testing refers to testing the software in-house. It aims to test as many paths through the system as possible in order to discover problems and fix them before the system is tested by users.
+Beta testing occurs when an early version of the software is sent to potential users for testing. Users perform tests that are typical of what would take place in real life conditions. They record any problems that they find and notify the developers who must then rectify the problem
+
+--- Slide 24 ---
+Stage 4 -> Create (Non-functional Testing)
+Non-functional Testing
+Purpose: Non-functional testing evaluates the performance, reliability, usability, and other non-functional aspects of the software system. It ensures that the software meets quality attributes beyond just its functional requirements.
+Focus: It focuses on characteristics like performance, reliability, security, usability, scalability, and maintainability.
+Examples: Load testing, stress testing, security testing, usability testing, reliability testing, and compatibility testing are all examples of non-functional testing. These tests evaluate how the system behaves under various conditions and assess its compliance with non-functional requirements.
+
+--- Slide 25 ---
+Stage 4 -> Create (Acceptance Testing)
+Acceptance Testing
+Firstly, programs are tested with normal, erroneous and boundary data. 
+Then, unit testing, module testing, and system testing is carried out. 
+Then, the system is tested whether it meets the user’s requirements. This is called acceptance testing. 
+The test data supplied to the acceptance data is supplied by the end-user instead of the data used for testing purposes. 
+The system is also tested in an environment where a realistic volume of data is supplied. This is a part of the hand-over process and is carried out by the intended user.
+
+--- Slide 26 ---
+Stage 5 -> Evaluate
+When the testing is over, a broader evaluation of the system should take place. This evaluation compares the finished system with the specifications of the requirements.
+This phase comes to action three to six months after the software has come to use. 
+This time duration allows the user and organisation to get used to the new software environment. 
+User may identify a few shortcomings at this stage and their feedback is evaluated. 
+The software must be effective in solving the problem, easy to use and easy to maintain.
+
+--- Slide 27 ---
+Stage 6 -> Document
+Effective communication is key to the success of any software project. This includes meetings and phones calls as well as more formal documentation. 
+The specific documents produced will vary from project to project.This will include:
+Feasibility Study
+Specifications of Requirements
+Project Plan
+Design Documents
+The code itself with comments andsupporting technical documentation
+Test Plans & Test Data & Test Results
+System Documentation of the final version
+Installation & set-up guide
+Training & End-user documents
+Evaluation Report
+
+--- Slide 28 ---
+Agile Software Development Methodology
+Imagine building a house. Instead of planning every detail upfront and building it all at once, Agile is like building one room at a time, getting feedback from the homeowner as you go.
+
+In software development, Agile means breaking the project into small pieces called "sprints." Each sprint typically lasts a few weeks, and the team works on a specific set of tasks during that time. After each sprint, there's a review where the team and stakeholders give feedback, and adjustments are made for the next sprint. This way, the software evolves gradually, adapting to changing needs and priorities along the way. It's like taking small steps forward, always ready to adjust course based on feedback.
+
+--- Slide 29 ---
+Agile Software Development Methodology
+Pros of Agile Methodology:
+
+Flexibility: Easily adapts to changes in requirements and priorities.
+Faster Delivery: Incremental development leads to quicker delivery of working software.
+Stakeholder Engagement: Regular collaboration ensures alignment with customer needs.
+Continuous Improvement: Iterative approach allows for ongoing enhancements and feedback.
+Reduced Risks: Early detection and mitigation of issues lead to minimized project risks.
+
+--- Slide 30 ---
+Agile Software Development Methodology
+Cons of Agile Methodology:
+
+Lack of Predictability: Difficulty in estimating timelines and project costs accurately.
+Resource Intensive: Requires active participation and commitment from all team members.
+Dependency on Customer Availability: Relies on consistent feedback and involvement from stakeholders.
+Documentation Challenges: Emphasis on working software over comprehensive documentation can lead to insufficient documentation.
+Scope Creep: Susceptible to the addition of new features or requirements throughout the development process, potentially impacting project scope and deadlines.
+
+--- Slide 31 ---
+Waterfall Software Development Methodology
+Waterfall software development is a traditional approach to creating software that follows a sequential, linear process. In the waterfall model, each phase of development must be completed before moving on to the next phase, similar to water flowing downward in a waterfall.
+Waterfall development is characterized by its rigid structure and emphasis on extensive upfront planning and documentation. While this approach can provide clarity and predictability, it can also be less flexible and less responsive to changes compared to Agile methodologies. Issues or changes discovered late in the process can be more difficult and costly to address in a waterfall model.
+
+--- Slide 32 ---
+Waterfall Software Development Methodology
+Pros of Waterfall Software Development:
+
+Clear Structure: The sequential nature of waterfall development provides a clear roadmap for the entire project, making it easier to plan and manage.
+Early Documentation: Requirements and design documentation are established upfront, providing a comprehensive understanding of the project scope and objectives.
+Predictability: Waterfall development often results in more predictable timelines and budgets, as each phase is completed before moving on to the next.
+Stakeholder Involvement: Stakeholders have a clear understanding of the project's progress and can provide input at each stage.
+
+--- Slide 33 ---
+Waterfall Software Development Methodology
+Cons of Waterfall Software Development:
+
+Limited Flexibility: Changes in requirements or priorities can be difficult and costly to implement once the project is underway, as each phase must be completed before moving on to the next.
+Late Feedback: Stakeholders may not see the software until late in the development process, leading to potential misunderstandings or misalignments with expectations.
+Risk of Requirements Errors: Since all requirements are gathered upfront, there's a risk of overlooking or misunderstanding key requirements, which may not be discovered until later stages.
+Difficulty Managing Complex Projects: Waterfall is less suited for large, complex projects where requirements may evolve over time or where there's a need for rapid iteration and feedback.
+
+--- Slide 34 ---
+(no extractable text)
+
+--- Slide 35 ---
+Roles in a Software Development Team
+Project Manager
+Involved in producing the feasibility study and the specification of requirements
+Forms the project team and the supervises their work
+Ensures that the workloads are properly allocated
+Monitors everyone’s progress and ensure the project stays on track both timewise and financially
+Main point of communication between the client and the development team and regularly communicates with both parties to ensure any problems are reported and sorted out
+
+--- Slide 36 ---
+Roles in a Software Development Team
+Business Analyst
+Involved in the Investigation Stage, before the rest of the team is formed
+A business analyst acts like a bridge between the technical side of things and the business goals. They talk to different people, like clients or end users, to understand what they need from the software. Then, they translate those needs into requirements that the development team can understand and work on. They're kind of like detectives, investigating what the software should do and making sure everyone's on the same page before the development work starts.
+
+--- Slide 37 ---
+Roles in a Software Development Team
+Systems Analyst
+Involved in the Investigation Phase, before the rest of the team is formed
+A system analyst is like a detective who investigates how different parts of a software system should work together. They talk to users, study existing systems, and figure out what changes or improvements are needed. Then, they create detailed plans and diagrams to guide the development team in building the right solution. They're like architects, designing the blueprint for the software before it's built.
+
+--- Slide 38 ---
+Roles in a Software Development Team
+Designer
+Designs the software to meet the specification
+Produces the design documentation
+
+--- Slide 39 ---
+Roles in a Software Development Team
+Developer
+Writes the code
+Maintains backup copies of the programs
+Carries out unit testing
+Produces the software documentation
+
+--- Slide 40 ---
+Roles in a Software Development Team
+Tester
+Produce the test plans and the test data
+Carries out all the testing
+Documents all the test results and make sure they are reported to the developers.
+
+
+
+26 - Brief History of Computing.pptx
+====================================
+
+--- Slide 1 ---
+Brief History of Computing
+Leaving Cert Computer Science
+
+--- Slide 2 ---
+Learning Intentions
+Identify important computer developments that have taken place in the last 100 years
+Consider emerging trends that could shape future computing technologies
+
+--- Slide 3 ---
+Excellent website for this topic
+https://www.livescience.com/20718-computer-history.html
+
+--- Slide 4 ---
+Learning Intentions – 1st November
+Identify important computer developments that have taken place in the last 100 years
+Consider emerging trends that could shape future computing technologies
+
+--- Slide 5 ---
+What is a computer?
+A computer is a general-purpose machine that can take in data(input), processes the data using a set of arithmetic or logical operations (program) and produces a result (output).
+
+--- Slide 6 ---
+A General purpose machine
+This means the device can carry out wide range of tasks, not just follow a limited set of instructions to achieve a specific purpose e.g desk calculator
+A desk calculator not a computer as it can only carry out a small set of mathematical calculations.
+
+--- Slide 7 ---
+Todays Computers
+They are programmable, and general purpose but such machines are a very specific type of computer. They are also digital, electronic computers
+
+--- Slide 8 ---
+Digital and Analogue signals (video)
+https://www.khanacademy.org/science/ms-physics/x1baed5db7c1bb50b:waves/x1baed5db7c1bb50b:digital-signals/v/digital-and-analog-information
+
+--- Slide 9 ---
+Digital computer
+A signal is a representation of changing information. They are used to transmit information from place to place.
+A digital computer operates using digital signals. These are discrete representations of information i.e. they can only have a limited number of values, in the below case 0 or 1
+
+--- Slide 10 ---
+Digital computer
+Information can also be transmitted using an analogue signal. In analog signals, the value changes continuously with time. The signal can have an infinite number of values
+
+--- Slide 11 ---
+THe first Computers
+The first computers were people.
+As early as 17th century, the term computer was used to describe a person who performed mathematical calculations for different reasons:
+Compiling maths tables such as logarithms or trigonmetric values
+Calculating movements of celestial bodies such as planets, stars, moons etc
+Working out the trajectories of missiles for armies
+
+--- Slide 12 ---
+Early computing machines
+THE SLIDE RULE
+Early 1600’s, a mechanical analog computing device called a slide rule was invented
+They were continually improved until they could calculate 
+Logarithms
+Trigonometric functions
+Squares, cubes and their roots
+Widely used up to1970s when they                                           were replaced by the electronic calculator
+
+--- Slide 13 ---
+Charles Babbage – The Father of the computer
+
+--- Slide 14 ---
+Charles Babbage – The Father of the computer
+
+--- Slide 15 ---
+Charles Babbage – The Analytical Engine
+The Analytical Enginewas invented by Babbage around 1830
+Designed to carry out general purpose computation on data stored on punched cards
+The computation was specified by programs stored on punched cards. The designs for the Analytical Engine included mechanical memory and a Central Processing Unit (CPU) to carry out the programmed instructions 
+The Analytical Engine never competed due to lack of funds
+In todays terminology, the machine was programmable and general purpose and arguably the FIRST (NON_HUMAN) COMPUTER
+https://www.youtube.com/watch?v=dWDQdwlK1GM
+
+--- Slide 16 ---
+Ada lovelace – the first computer  programmer
+London-born Ada Lovelace (1815–1852) is credited with being the world's first computer programmer, as she drafted plans for how a machine called the Analytical Engine could perform computations.
+
+--- Slide 17 ---
+The early 20th Century.
+Many types of computers invented using mechanical, hydraulic and pneumatic means
+All very complex, large and heavy making them very expensive and difficult to produce in large numbers
+
+--- Slide 18 ---
+Alan Turing and the Turing Machine
+Alan Turing was one of the first computer scientists
+In 1936, Alan Turing described a Mathematical Model of computation called the automatic machine (a-machine). This later became known as the Turing machine
+The Turing Test – The Turing Test is a method of inquiry in artificial intelligence (AI) for determining whether or not a computer is capable of thinking like a human being
+https://www.youtube.com/watch?v=4VROUIAF2Do
+
+--- Slide 19 ---
+Alan Turing and the Turing Machine
+Alan Turing was one of the first computer scientists
+In 1936, Alan Turing described a Mathematical Model of computation called the automatic machine (a-machine). This later became known as the Turing machine
+The Turing machine is a simple theoretical “machine” that showed the true power of computing before modern computers actually existed.
+
+--- Slide 20 ---
+the Turing Machine consists of 4 parts
+A tape that symbols can be written to and read from
+A head that does the reading and writing
+A state register that stores the state of the machine any point in time
+A table of instructions to tell the machine what to do next, depending on the current state and the symbol being read at the time e.g. write or erase symbol, move the head
+
+--- Slide 21 ---
+Turing Machine – why are they important?
+Turning machines provide a simple way to model general and powerful computational concepts and programs. This allowed modern computers to be theoretically studied before they physically existed
+Video on turing machines
+LC219ALP038EV.pdf ( examinations.ie)
+
+--- Slide 22 ---
+Electromechanical Computers
+1940’s – electromechanical computers developed. They had electrical switches to move mechanical parts. 
+1941 - The electromechanical Z3 was the first digital programmable computer to be built. The Z3 used binary numbers, high voltage represented a 1, low voltage represented a 0.
+The use of binary reduced complexity compared to the decimal numbers used in Babbage’s Difference and Analytical Machines.
+https://www.youtube.com/watch?v=3WNFBjoJbBA
+
+--- Slide 23 ---
+Impact of the second World War
+There was increased spending on computers and related devices by government and military during WW2
+Code breaking was a critical challenge for the allies during WW2
+A top secret operation was set up by the allies in Bletchley Park to address code breaking
+
+--- Slide 24 ---
+Impact of the second World War
+Alan Turing was a key figure at Bletchley Park. They used electromechanical devices called Bombes to crack codes created by the German Enigma machines (also electromechanical machines). This codebreaking helped shorten the war by several years
+The Enigma machines and Bombes were designed for a specific purpose so are NOT general purpose computers. However they advanced many of the technologies needed to jump-start the era of the modern computer.
+
+--- Slide 25 ---
+Impact of the second World War
+Video on breaking the Enigma code
+
+--- Slide 26 ---
+Vacuum Tubes – 
+The start of the electronic computer
+1st generation of computers
+Vacuum tubes are electronic devices that control the flow of electricity. They looked somewhat like a light bulb and similar in size. 
+Vacuum tubes are a glass tube device, which has had its gas removed, creating a vacuum space. It is comprised of electrodes that are designed to control electron flow between the electrodes sealed inside the vacuum tubes.
+
+--- Slide 27 ---
+Vacuum Tubes and Electronic Computers
+The development of the vacuum tubes led to rapid growth of electronic devices such as radio television and computers based on vacuum tube technology.
+The relatively small size of these devices based on vacuum tubes and their relatively small cost of production, heralded the start of the modern electronic era
+
+--- Slide 28 ---
+Vacuum Tubes and Electronic Computers
+From 1940s onward electronic computer technology progressed at a rapid speed. Colossus in Bletchley Park was the first electronic, digital, programmable computer in later years of WW2. It was NOT a general purpose computer as it was designed for codebreaking 
+The first electronic, digital (1 and 0s) , programmable, general purpose computer was the ENIAC
+
+--- Slide 29 ---
+Vacuum Tubes and Electronic Computers
+The ENIAC was programmed by plugging and unplugging cables and controlling various switches. They could not store computer programs in their own memory. An Irishwoman Kay McNulty was one of the first programmers of ENIAC https://www.youtube.com/watch?v=k4oGI_dNaPc
+
+These machines, all-electronic and based on vacuum tubes are known as the First Generation of Computers
+Video on Vacuum Tube Computers
+
+--- Slide 30 ---
+Transistors
+The 2nd generation of computers
+Transistors replaced the Vacuum tubes and this revolutionised electronics.
+Transistors are very small electronic switches. They performed the same tasks as the Vacuum tubes but were smaller and more reliable, easier to mass produce, cost and energy efficient.
+
+--- Slide 31 ---
+Transistors
+Transistors were developed over many years mainly at the Bell Laboratory in New Jersey, USA. By late 1950’s transistor technology was so advanced that it rapidly changed the electronics industry, leading to 2nd Generation of Computers based on transistors instead of vacuum tubes
+
+--- Slide 32 ---
+Transistors
+The IBM 608 is considered the 1st fully transistorised computer that was available commercially. It performed 4,500 operations per second and cost over €500,000 in todays money
+Transistors allowed for the development of “supercomputers” that could perform operation much faster than commonly available computers
+
+--- Slide 33 ---
+Transistors
+The Control Data Corporation (CDC) 6600 (1964) is considered the 1st commercially viable supercomputer. It could perform 3 million operations per second and cost approx. €20 million in todays money.
+Video about 2nd generation computers
+
+--- Slide 34 ---
+Integrated Circuits – 
+3rd generation of computers
+3rd generation of computers came around 1960s and were based on integrated circuits
+An integrated circuit is a collection of electronic components (resistors, transistors, capacitors, etc.) all stuffed into a tiny chip, and connected together to achieve a common goal.
+
+--- Slide 35 ---
+Integrated Circuits
+One of the most famous 3rd Generation computers is Apollo Guidance Computer (AGC) (1966) designed by Massachusetts Institute of Technology (MIT).
+Margaret Hamilton designed the software for the AGC. Without this software, the Apollo program, which included landing the 1st people on the moon, would not have been possible
+The AGC was designed to be small, around 32kg, and very robust because of the conditions it would work in.
+
+--- Slide 36 ---
+Margaret Hamilton Takes Humans to the Moon
+Margaret Hamilton, born in 1936, is an American computer scientist and systems engineer from Indiana who led the Software Engineering Division of the MIT Instrumentation Laboratory. NASA credits her with coining the term “software engineering.” Hamilton worked on software development for Apollo 11, the first spacecraft to complete a successful mission that placed humans on the moon in 1969. Hamilton's insistence on thorough testing is credited with the mission's success and safety of its astronauts.
+
+--- Slide 37 ---
+Integrated Circuits
+In 1960’s and 1970’s, the 3rd generation of computers allowed the development of “minicomputers” which were small enough to move between different locations easily.
+The integrated chip allowed computers to become much more powerful quickly. In 1970’s Cray Research, developed its own supercomputer, the Cray-. This started the modern era of supercomputing, which continues to drive many scientific discoveries.
+Video on 3rd Generation Computers
+
+--- Slide 38 ---
+Microprocessors
+The 4th generation of computers is based on microprocessors. Most of todays computers are of this generation.
+A microprocessor is a device used as the main brain of a computer system. A microprocessor is what we now call CPU, central processing unit.
+CPU takes in binary data, performs operations on that data from instructions stored in its memory and the proves the result as output.
+
+--- Slide 39 ---
+Microprocessors
+Intel 4004 (1971) was the first microprocessor developed
+Todays microprocessors contain billions of transistors on a single chip, less than the size of your palm. This allows personal computers to become practical and affordable in the late 1970’s / early 1980’s. This had led to computers everywhere in our lives today
+
+--- Slide 40 ---
+Personal computers
+1975 - The 1st personal computers included models from Commodore, Apple, IBM. 
+These PCs had to be usable by non-experts. This led to the creation of operating systems and user-friendly interfaces such as Microsoft Windows (founded 1975) and hardware devices such as mice, keyboards and displays that we are familiar with today.
+
+--- Slide 41 ---
+Modern computers
+Modern computers include laptops, PCs, tablets, mobile phones as they are all digital, electronic, programmable and are multi purpose.
+PCs costing a few hundred euros now have memory capacities and chips that operate at speeds that would have cost millions in the 1980s.
+
+--- Slide 42 ---
+Modern computers
+
+--- Slide 43 ---
+The fastest computers - No 1
+Frontier was built in 2022 by Hewlett Packard Enterprise in collaboration with its subsidiary Cray. 
+Frontier has a total of 8,730,112 cores. Each of its 74 computing cabinets weigh about 3650 kg and the entire system costs a whopping $600 million in total.
+https://www.youtube.com/watch?v=etVzy1z_Ptg
+
+--- Slide 44 ---
+Moore’s Law
+The first Intel microprocessor (CPU), Intel 4004 (1972), had 2,300 transistors
+Nowadays, a microprocessor (on a single chip) has billions of transistors. For instance an Xbox One has 5 billion.
+ In 1965 Gordon Moore states that the number of transistors on a microchip doubles every two years. The law claims that we can expect the speed and capability of our computers to increase every two years because of this, yet we will pay less for them. This is known as Moore’s Law.
+
+--- Slide 45 ---
+(no extractable text)
+
+--- Slide 46 ---
+Moore’s Law
+Experts agree that computers should reach the physical limits of Moore's Law at some point in the 2020s. One reason is:
+transistors will be unable to operate within smaller circuits at increasingly higher temperatures. This is due to the fact that cooling the transistors will require more energy than the energy that passes through the transistor itself. 
+
+https://www.youtube.com/watch?v=1qQE5Xwe7fs
+
+--- Slide 47 ---
+The Next Generation of computers
+This is difficult to predict due to rapid pace of development.
+Possibly Quantum Computers based on quantum mechanical principles. 
+Quantum Computer prototypes exist but many barriers to overcome before they become viable. They are very sensitive to heat so must be kept at ultra cold temperature -273 celcius
+
+--- Slide 48 ---
+Grace Hopper Pioneers Computer Programming
+American Grace Hopper (1906–1992) was an admiral in the United States Navy and a computer scientist who was one of the first programmers for the Harvard Mark I computer, which was a general purposes electromechanical computer used in the war effort for World War II.
+1953: Grace Hopper develops the first computer language, which eventually becomes known as COBOL,
+
+--- Slide 49 ---
+Katherine Johnson Executes Critical Space Calculations
+Katherine Johnson, born in 1918, is one of the women immortalized in the 2016 book and movie Hidden Figures. A West Virginia native and American mathematician, Johnson helped confirm the accuracy of electronic computers used by NASA and performed critical calculations that ensured safe space travel from the 1950s on. She coauthored a research report that used equations for orbital spaceflight in 1960, performed trajectory analysis for the first human space flight in 1961, and ran equations on a desktop mechanical calculating machine before the 1962 orbital mission of John Glenn. 
+In 2015, she received the Presidential Medal of Freedom.
+
+--- Slide 50 ---
+Female pioneers in computer science
+https://www.youtube.com/watch?v=_ZjGOiJXVBA
+
+
+
+27 - WWW, Internet &Protocols.pptx
+==================================
+
+--- Slide 1 ---
+WWW, Internet &Protocols
+6th yr Computer Science
+
+--- Slide 2 ---
+The Internet
+The Internet is a global network, which allows computers to talk to each other.
+https://www.telstra.com.sg/content/dam/shared-component-assets/tecom/networks/global-networks/global-internet/hero-banner.jpg
+
+--- Slide 3 ---
+The Internet
+It requires hardware and software to operate and allows vast amounts of data to be transmitted over land and under oceans, from one side of the world to the other.
+Routers, switches and servers in millions of locations around the globe use over 300 underwater cables and countless cables above ground to connect to each other.
+
+--- Slide 4 ---
+The World Wide Web
+The World Wide Web (WWW) is an application that runs on the Internet.
+There are many applications and protocols operating on the Internet that provide the services we use every second of every day.
+HTTP
+HTML
+URL
+CSS
+DNS
+Javascript
+FTP
+Email
+
+--- Slide 5 ---
+The World Wide Web
+The World Wide Web (WWW) uses the Internet as a transmission medium. Without the Internet, the Web wouldn’t work.
+
+The web was invented by Tim Berners-Lee in 1989. He created a way of putting websites onto the Internet. All these websites together are what is known as the World Wide Web.
+
+Think of the Web as a vast collection of documents (often HTML that represent web sites) with links to each other.
+
+The web is only one use of the Internet. Other uses are email, instant messaging, streaming services etc
+
+--- Slide 6 ---
+Client Server Relationships
+When you visit a web page, your computer (the client) issues a request that eventually makes its way to the appropriate server.
+
+The server is a computer that provides resources or services to other computers.
+
+The server then carries out that request and the information representing the webpage/resources is transmitted back to your computer(the client)
+
+Your browser then renders the information received into the website you see.
+
+--- Slide 7 ---
+Client Server Relationships
+Client - Server Model
+
+The WWW application uses the client-server model to communicate.
+
+There are two sides in this model:
+Server (a device where data is stored)
+Web Server
+Email Server
+
+Client (the applications on our phones, tablets & computers)
+Internet Browser
+Email Application
+
+--- Slide 8 ---
+Client Server Relationships
+Client - Server Model
+
+In general, CLIENTS request the resources or services and servers provide them.
+
+The client-server model is a simple distributed (shared) system. A distributed system is where the workloads required to complete a task are shared between more than one computer. These computers are connected by a network, over which messages re sent in order to complete the required task.
+
+--- Slide 9 ---
+Communication Protocols
+A communication protocol is a set of rules describing how to transmit data across a network. This network , can be the internet.
+
+The client server model uses several different protocols, each governing communication in its own protocol LAYER of the network. Without these protocol (set of rules) the client server model would not work.
+
+--- Slide 10 ---
+TCP / IP Suite of Protocols
+Transmission Control Protocol / Internet Protocol (TCP/IP) refers to a suite of protocols used to send and receive messages over the internet. The TCP/IP protocol suite contains a number of different layers.
+
+1. **Application Layer**: encodes / decodes the message into a form that is understood by the sender and the recipient devices using protocols such as HTTP, FTP and SMTP.
+   
+2. **Transport Layer**: **: breaks down the message into small pieces called packets. Each packet is given a packet number and the total number of packets. The recipient uses this information to re-assemble the packets in the correct order. It also allows the recipient to see if there are any missing packets. .This  uses protocols like TCP (Transmission Control Protocol)
+
+--- Slide 11 ---
+TCP / IP Suite of Protocols
+Transmission Control Protocol / Internet Protocol (TCP/IP) refers to a suite of protocols used to send and receive messages over the internet. The TCP/IP protocol suite contains a number of different layers.
+
+3. **Internet Layer**: Also known as the Network Layer,adds the sender’s IP address and that of the recipient. The network then knows where to send the message, and where it came from. The primary protocol at this layer is IP (Internet Protocol
+   
+4. **Link Layer**: enables the physical transfer of packets between nodes on a network, and between one network and another. It includes protocols that govern communication within a single network segment, such as Ethernet or Wi-Fi
+
+--- Slide 12 ---
+Communication Protocols
+Client - Server Model
+This is the path taken by a client request, via the internet, to a particular server.
+The request travels “down” through the the protocol layers in the client, 
+then through the internet,
+The passes “up” through the protocol layers in the server.
+Request is then handled by the server and the information is sent back to the client via the same path
+
+--- Slide 13 ---
+Exam Questions
+
+--- Slide 14 ---
+Exam Questions
+
+--- Slide 15 ---
+Exam Questions
+
+--- Slide 16 ---
+HTTP (Communication Protocols)
+HTTP – Hyper Text Transfer Protocol -> Application Layer
+- Shown at the beginning of web addresses
+Operates in the application (program) layer of the network
+Known as the request-response protocol as it allows a client to issue a request for a resource (e.g. website) and the server to respond to the right computer with the resource required.
+
+--- Slide 17 ---
+HTTPS (Communication Protocols)
+HTTPS - Hyper Text Transfer Protocol Secure
+- is the secure version of HTTP which automatically encrypts all traffic to and from the server.
+- theoretically, anyone intercepting communications between the client and the server can’t read the messages. (They are encrypted)
+- This has allowed for secure banking and online shopping to become as popular as they are.
+
+--- Slide 18 ---
+TCP (Communication Protocols)
+TCP – transmission control protocol -> Transport Layer
+TCP operates at the transport layer, 
+The message is broken into “packets” for efficient routing
+breaks down the message into small pieces called packets. Each packet is given a packet number and the total number of packets. The recipient uses this information to re-assemble the packets in the correct order. It also allows the recipient to see if there are any missing packets.
+
+--- Slide 19 ---
+IP  - Internet protocol (Communication Protocols) -> Network Layer
+IP operates at the network layer.
+IP is responsible for the routing of packets from the source device to the destination device via a network of inter-connected computer called the internet
+Does this using IP addresses e.g  192.168.4.210
+IP address is a unique code that identifies a computer network or particular computer on a network.
+
+--- Slide 20 ---
+WiFi (Communication Protocols) -> Physical Layer
+The WiFi protocol operates at the physical layer. It manages the flow of data around a WiFi network such as the one in your home.
+WiFi is the radio wave technology that allows devices (phones, TVs, laptops, printers) to communicate with each other and access the internet wirelessly.
+
+--- Slide 21 ---
+Recap of TCP/IP Protocol Layers Recap
+Video -> What is TCP/IP?
+
+--- Slide 22 ---
+Internet Hardware Components
+The internet is made up of many different hardware components  that connect the end-user devices such as computers or laptops.
+These internet hardware components move data from place to place and include gateways, routers, bridges, switches and repeaters
+-These components typically connect to each other over a combination of radio signals, copper cables and fibre optic cables
+Introduction to Network Devices
+
+--- Slide 23 ---
+Cloud Computing
+Cloud computing is a technology that uses the internet for storing and managing data on remote servers and then access data via the internet. This type of system allows users to work on the remote. Cloud computing customers do not own the physical infrastructure; they rent the usage from a third-party provider.
+These third party providers are responsible for keeping the data available, accessible and secure. Customers need only pay for as much storage and processing power as they require
+
+--- Slide 24 ---
+What are the security threats faced by computer users ?
+
+--- Slide 25 ---
+What are the security threats faced by computer users ?
+
+--- Slide 26 ---
+What is Malware ?
+Malware, or malicious software, is any program or file that is intentionally harmful to a computer, network or server.
+
+The aim of malware is :
+damage or delete files
+Steal information
+Take control of the system
+
+What are the different types of malware?
+Different types of malware have unique traits and characteristics. Types of malware include the following:
+A virus is the most common type of malware that can execute itself and spread by infecting other programs or files.
+A worm can self-replicate without a host program and typically spreads without any interaction from the malware authors.
+A Trojan horse is designed to appear as a legitimate software program to gain access to a system. Once activated following installation, Trojans can execute their malicious functions.
+
+--- Slide 27 ---
+Different Types of Malware ?
+Spyware collects information and data on the device and user, as well as observes the user's activity without their knowledge.
+Ransomware infects a user's system and encrypts its data. Cybercriminals then demand a ransom payment from the victim in exchange for decrypting the system's data.
+A rootkit obtains administrator-level access to the victim's system. Once installed, the program gives threat actors root or privileged access to the system.
+A backdoor virus or remote access Trojan (RAT) secretly creates a backdoor into an infected computer system that enables threat actors to remotely access it without alerting the user or the system's security programs.
+Adware tracks a user's browser and download history with the intent to display pop-up or banner advertisements that lure the user into making a purchase. For example, an advertiser might use cookies to track the webpages a user visits to better target advertising.
+Keyloggers, also called system monitors, track nearly everything a user does on their computer. This includes emails, opened webpages, programs and keystrokes
+
+--- Slide 28 ---
+How is malware spread ?
+Malware is spread in simple ways that trick people or take advantage of weak spots in computers. Here are the main ways:
+Email Attachments or Links: You get an email that looks real, but it has a file or link that, when clicked, installs malware.
+Infected Websites: You visit a website that secretly downloads malware onto your device, especially if your browser or software isn’t up to date.
+Fake Apps or Software: You download an app or program that looks legit but actually contains malware.
+USB Drives: Plugging in an infected USB stick can spread malware to your computer.
+Social Media or Messages: Links sent through social media or messaging apps can lead to malware-infected sites.
+Software Vulnerabilities: Hackers can exploit flaws in programs or operating systems to install malware without you doing anything.
+
+--- Slide 29 ---
+Malware, how to protect yourself ?
+Here are some simple and effective tips to protect yourself from malware:
+Don't click on suspicious links or attachments – Even if it looks like it’s from someone you know, be cautious.
+Use antivirus software – It helps detect and block malware before it can harm your system.
+Keep software updated – Updates often fix security holes that malware can exploit.
+Download apps and programs only from trusted sources – Stick to official websites and app stores.
+Use strong, unique passwords – This helps prevent hackers from breaking into your accounts.
+Back up your data regularly – If malware strikes, you won’t lose your important files.
+Be cautious with public Wi-Fi – Use a VPN if you need to access sensitive information on public networks.
+
+--- Slide 30 ---
+What is artificial intelligence (AI) ?
+Artificial Intelligence is the capability of a computer system to mimic human cognitive functions such as learning and problem-solving.
+Examples of Artificial intelligence
+•Autonomous vehicles: AI is used to enable self-driving cars, which use sensors and machine learning algorithms to navigate roads and make driving decisions.
+•Healthcare: AI is used in healthcare to analyze medical images, assist in diagnosis, and develop personalized treatment plans.
+
+--- Slide 31 ---
+Different Types of AI
+•Narrow AI: This type of AI is designed to perform a specific task, and it operates within a limited scope. Narrow AI is commonly used in applications such as virtual assistants, image recognition software, and language translation programs.
+
+•General or Strong AI: This type of AI is capable of performing any intellectual task that a human can. However, currently, there is no true strong AI that has been developed, and it remains a theoretical concept.
+
+--- Slide 32 ---
+Simple AI  Vs Machine Learning
+With simple AI, a programmer can tell a machine how to respond to various sets of instructions by hand-coding each “decision.”
+With machine learning models, computer scientists can “train” a machine by feeding it large amounts of data. The machine follows a set of rules—called an algorithm—to analyze and draw inferences from the data. The more data the machine parses, the better it can become at performing a task or making a decision.
+
+--- Slide 33 ---
+What is Machine Learning
+Machine learning is a way for computers to learn from data and make decisions or predictions without being told exactly what to do.
+Think of it like this:
+Instead of programming a computer with step-by-step instructions, we give it lots of examples (data).
+The computer looks for patterns in that data.
+Then, it uses those patterns to guess or decide things in the future.
+For example:
+Show it thousands of photos of cats and dogs, and it learns to tell them apart.
+Give it information about houses and prices, and it can predict how much a new house might cost.
+It’s like teaching a child by showing examples instead of just giving rules.
+
+--- Slide 34 ---
+Types of machine learning
+1. Supervised Learning
+The computer is taught with labeled data (the answers are already given).
+Example: Show pictures of animals with labels like "cat" or "dog", and the computer learns to tell the difference.
+It’s like learning with a teacher who gives you the right answers to study.
+2. Unsupervised Learning
+The computer is given data without any labels and has to find patterns or groups on its own.
+Example: Give it photos of animals, but don’t say what they are—it might group cats together and dogs together by noticing similarities.
+It’s like solving a puzzle without any instructions.
+
+--- Slide 35 ---
+Types of Machine Learning
+3. Reinforcement Learning
+The computer learns by trial and error, getting rewards or penalties.
+Example: Like training a dog—if it does the right thing, it gets a treat.
+Used in things like game-playing robots or self-driving cars.
+
+--- Slide 36 ---
+Positives of AI
+1. Saves Time
+AI can do tasks faster than humans, like sorting emails or answering simple questions.
+
+
+2. Works 24/7
+AI doesn’t get tired—it can work all day and night without breaks.
+
+
+3. Helps in Healthcare
+AI helps doctors by finding diseases earlier, reading X-rays, or suggesting treatments.
+
+--- Slide 37 ---
+Positives of AI
+4. Smart Assistants
+Tools like Siri, Alexa, or Google Assistant make life easier by helping with reminders, directions, and more.
+
+
+5. Personalized Recommendations
+AI suggests movies, music, or shopping items you might like, based on your past choices.
+
+
+6. Better Safety
+AI is used in self-driving cars and security systems to help reduce accidents and protect people.
+
+
+7. Solves Big Problems
+AI helps with things like predicting weather, fighting climate change, and advancing science.
+
+--- Slide 38 ---
+Problems with AI
+1. Bias
+AI can be unfair if it learns from biased data.
+Example: If it’s only trained on pictures of light-skinned people, it may not work well for darker-skinned people.
+
+2. Lack of Understanding
+AI doesn’t really understand like humans do—it just finds patterns.
+It can make strange or wrong decisions if the situation is new or confusing.
+
+3. Job Loss
+AI can replace human workers in some jobs, especially repetitive or routine ones.
+
+--- Slide 39 ---
+Problems with AI
+4. Privacy Concerns
+AI often needs lots of data, which can mean people’s personal information is collected and used without them knowing.
+
+5. Hard to Control
+Some AI systems are so complex that even the people who made them can’t fully explain how they work or why they make certain choices.
+
+6. Misuse
+AI can be used for bad purposes, like fake videos (deepfakes), hacking, or spreading lies.
+

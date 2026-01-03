@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics & Logic Gates - CS Notes For You</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+        }
+        .section h3 {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        .key-term {
+            font-weight: bold;
+            color: #764ba2;
+        }
+        .definition-box {
+            background: #f0f8ff;
+            border-left: 4px solid #667eea;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: center;
+        }
+        table th {
+            background: #667eea;
+            color: white;
+        }
+        .truth-table {
+            display: inline-block;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1>CS Notes For You</h1>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../notes.html">Study Notes</a></li>
+                <li><a href="../topics.html">Topics</a></li>
+                <li><a href="../revision.html">Revision</a></li>
+                <li><a href="../solutions.html">Solutions</a></li>
+                <li><a href="../papers.html">Papers</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contribute.html">Contribute</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Electronics & Logic Gates</h1>
+
+        <div class="section">
+            <h3>From Electronics to Computing</h3>
+            <p>Modern computers are built from millions of transistors that work together as <span class="key-term">logic gates</span>. Understanding how these electronic building blocks work helps explain how computers process information at the fundamental level.</p>
+        </div>
+
+        <div class="section">
+            <h3>Transistors</h3>
+
+            <p>A <span class="key-term">transistor</span> is a semiconductor device that acts as an electronic switch. It can be in one of two states:</p>
+            <ul>
+                <li><strong>ON (conducting):</strong> Allows current to flow, represented as 1</li>
+                <li><strong>OFF (blocking):</strong> Blocks current flow, represented as 0</li>
+            </ul>
+
+            <p>Modern CPUs contain billions of transistors, each measuring just a few nanometers. A nanometer is one billionth of a meter!</p>
+
+            <h4>Transistor Properties:</h4>
+            <ul>
+                <li>Can switch on and off very quickly (nanoseconds)</li>
+                <li>Consume very little power</li>
+                <li>Generate minimal heat</li>
+                <li>Can be manufactured extremely small</li>
+                <li>Combine with each other to form logic gates</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Logic Gates Fundamentals</h3>
+
+            <p>A <span class="key-term">logic gate</span> is a digital electronic device that implements Boolean logic. It takes one or more binary inputs and produces a single binary output.</p>
+
+            <h4>Boolean Logic:</h4>
+            <p><span class="key-term">Boolean algebra</span> uses TRUE (1) and FALSE (0) values to represent logical operations.</p>
+            <ul>
+                <li><strong>AND:</strong> Both inputs must be TRUE for output to be TRUE</li>
+                <li><strong>OR:</strong> At least one input must be TRUE for output to be TRUE</li>
+                <li><strong>NOT:</strong> Inverts the input (TRUE becomes FALSE, FALSE becomes TRUE)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Basic Logic Gates</h3>
+
+            <h4>AND Gate</h4>
+            <p>Output is 1 only if ALL inputs are 1.</p>
+
+            <div class="truth-table">
+                <h5>AND Gate Truth Table:</h5>
+                <table>
+                    <tr>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>A AND B</th>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+            </div>
+
+            <p><strong>Example:</strong> A security system: Door AND Window sensors must both be open to trigger alarm.</p>
+
+            <h4>OR Gate</h4>
+            <p>Output is 1 if AT LEAST ONE input is 1.</p>
+
+            <div class="truth-table">
+                <h5>OR Gate Truth Table:</h5>
+                <table>
+                    <tr>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>A OR B</th>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+            </div>
+
+            <p><strong>Example:</strong> Light switch: Kitchen light OR hallway light can trigger lighting.</p>
+
+            <h4>NOT Gate</h4>
+            <p>Output is the inverse of the input.</p>
+
+            <div class="truth-table">
+                <h5>NOT Gate Truth Table:</h5>
+                <table>
+                    <tr>
+                        <th>A</th>
+                        <th>NOT A</th>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                </table>
+            </div>
+
+            <p><strong>Example:</strong> Temperature control: If temperature is NOT high, turn on heating.</p>
+        </div>
+
+        <div class="section">
+            <h3>Derived Logic Gates</h3>
+
+            <h4>NAND Gate (NOT AND)</h4>
+            <p>Output is 0 only if ALL inputs are 1.</p>
+
+            <div class="definition-box">
+                Truth Table:<br>
+                A | B | Output<br>
+                0 | 0 | 1<br>
+                0 | 1 | 1<br>
+                1 | 0 | 1<br>
+                1 | 1 | 0
+            </div>
+
+            <h4>NOR Gate (NOT OR)</h4>
+            <p>Output is 1 only if ALL inputs are 0.</p>
+
+            <h4>XOR Gate (Exclusive OR)</h4>
+            <p>Output is 1 if inputs are different.</p>
+
+            <div class="definition-box">
+                Truth Table:<br>
+                A | B | Output<br>
+                0 | 0 | 0<br>
+                0 | 1 | 1<br>
+                1 | 0 | 1<br>
+                1 | 1 | 0
+            </div>
+
+            <h4>XNOR Gate (NOT XOR)</h4>
+            <p>Output is 1 if inputs are the same.</p>
+        </div>
+
+        <div class="section">
+            <h3>Combining Logic Gates</h3>
+
+            <p>Complex digital circuits are created by combining multiple logic gates.</p>
+
+            <h4>Example: Half Adder</h4>
+            <p>A circuit that adds two single bits:</p>
+            <ul>
+                <li>XOR gate produces the Sum</li>
+                <li>AND gate produces the Carry</li>
+            </ul>
+
+            <div class="definition-box">
+                Input | Input | Sum | Carry<br>
+                0 | 0 | 0 | 0<br>
+                0 | 1 | 1 | 0<br>
+                1 | 0 | 1 | 0<br>
+                1 | 1 | 0 | 1
+            </div>
+
+            <h4>Example: Full Adder</h4>
+            <p>More complex circuit that adds two bits plus a carry-in bit. Multiple full adders can be chained to add larger numbers.</p>
+        </div>
+
+        <div class="section">
+            <h3>Boolean Expressions</h3>
+
+            <p><span class="key-term">Boolean expressions</span> use logical operators to describe circuit behavior.</p>
+
+            <h4>Common Notation:</h4>
+            <ul>
+                <li>AND: · (dot) or ∧ (caret)</li>
+                <li>OR: + (plus) or ∨ (vee)</li>
+                <li>NOT: ' (apostrophe) or ¯ (overline)</li>
+            </ul>
+
+            <h4>Example Expressions:</h4>
+            <div class="definition-box">
+                A AND B = A · B<br>
+                A OR B = A + B<br>
+                NOT A = A'<br>
+                (A AND B) OR C = A·B + C
+            </div>
+
+            <h4>De Morgan's Laws:</h4>
+            <div class="definition-box">
+                (A + B)' = A' · B'<br>
+                (A · B)' = A' + B'<br><br>
+                These laws help simplify Boolean expressions
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Digital Circuits and Integration</h3>
+
+            <h4>Integrated Circuits (ICs):</h4>
+            <p>Multiple transistors and logic gates are combined on a single chip (integrated circuit).</p>
+            <ul>
+                <li><strong>SSI (Small Scale Integration):</strong> Tens of transistors</li>
+                <li><strong>MSI (Medium Scale Integration):</strong> Hundreds of transistors</li>
+                <li><strong>LSI (Large Scale Integration):</strong> Thousands of transistors</li>
+                <li><strong>VLSI (Very Large Scale Integration):</strong> Millions of transistors</li>
+                <li><strong>ULSI (Ultra Large Scale Integration):</strong> Billions of transistors (modern CPUs)</li>
+            </ul>
+
+            <h4>Moore's Law:</h4>
+            <p>The number of transistors on a chip doubles approximately every two years, allowing more powerful computers in smaller packages.</p>
+        </div>
+
+        <div class="section">
+            <h3>From Gates to CPU</h3>
+
+            <p>The progression from simple transistors to a working CPU:</p>
+            <ol>
+                <li>Transistors act as switches</li>
+                <li>Transistors combine to form logic gates</li>
+                <li>Logic gates combine to form circuits (adders, multiplexers, etc.)</li>
+                <li>Circuits combine to form functional units (ALU, registers, control unit)</li>
+                <li>Functional units combine to form a complete CPU</li>
+            </ol>
+
+            <p>This hierarchical approach allows extremely complex systems to be built from simple, repeating building blocks.</p>
+        </div>
+
+        <div class="section">
+            <h3>Key Revision Points</h3>
+            <ul>
+                <li>Transistors are electronic switches fundamental to all digital devices</li>
+                <li>Logic gates implement Boolean logic with binary inputs and outputs</li>
+                <li>AND, OR, and NOT are the three basic logic gates</li>
+                <li>Complex gates (NAND, NOR, XOR) can be derived from basic gates</li>
+                <li>Boolean expressions describe how circuits behave</li>
+                <li>Millions of transistors combine to form modern CPUs</li>
+                <li>Understanding gates is essential to understanding computer hardware</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CS Notes For You. All rights reserved.</p>
+    </footer>
+</body>
+</html>

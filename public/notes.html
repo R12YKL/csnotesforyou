@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Study Notes - CS Notes For You</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-row">
+            <h1 class="logo">CS Notes For You</h1>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="papers.html">Papers</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="notes.html" class="active">Notes</a>
+                <a href="revision.html">Revision</a>
+                <a href="contribute.html">Contribute</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="notes-layout">
+            <aside class="notes-sidebar">
+                <h3>Topics</h3>
+                <ul id="topics-list"></ul>
+            </aside>
+            <section class="notes-section">
+                <h2>Study Notes</h2>
+                <div id="notes-root"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer id="footer" class="site-footer container">
+        <p>Built for CS students — view and share past papers, solutions and notes.</p>
+    </footer>
+
+    <script>
+        const notesData = [
+            {
+                title: "Introduction to Computer Science",
+                notes: [{
+                    title: "Overview & Learning Outcomes",
+                    content: `INTRODUCTION TO COMPUTER SCIENCE\n\nWhat is Computer Science?\nComputer Science is the study of computation, automation, and information. It encompasses:\n- The theory of how computers process information\n- The design and implementation of practical computing systems\n- The application of computational thinking to solve problems\n- The impact of technology on society, culture, and the economy\n\nThe Three Strands:\n\n1. REPRESENTATION AND STORAGE\n- Number systems (binary, decimal, hexadecimal)\n- Data representation (text, images, sound, video)\n- Storage mechanisms and memory organization\n\n2. COMPUTER SYSTEMS\n- Computer architecture (Von Neumann model)\n- Operating systems and their functions\n- Networks and communication protocols\n\n3. COMPUTATIONAL THINKING\n- Decomposition, pattern recognition, abstraction\n- Algorithm design and analysis\n- Programming and implementation\n\nWhy Study Computer Science?\n- Career Opportunities in fastest-growing sector\n- Problem-Solving Skills applicable everywhere\n- Understanding Modern Society\n- Digital Literacy for 21st century\n`}]
+            },
+            {title: "Computer Systems", notes: [{title: "Von Neumann Architecture", content: `COMPUTER SYSTEMS\n\nVon Neumann Architecture (proposed 1945)\n\nKey Components:\n- CPU: Executes instructions and performs calculations\n- Memory: Stores programs and data (RAM and storage)\n- Input Devices: keyboard, mouse, sensors\n- Output Devices: screen, speakers, printers\n- Control Unit: Directs data flow\n- ALU: Performs calculations and logical operations\n- Buses: Communication pathways\n\nFetch-Decode-Execute Cycle\n1. FETCH: CPU retrieves instruction from memory\n2. DECODE: Control unit interprets instruction\n3. EXECUTE: CPU carries out operation\n\nCPU Performance Factors:\n- Clock Speed (GHz): Higher = faster execution\n- Number of Cores: Multiple processors\n- Cache Size: Fast memory near CPU\n- Bus Width: Data transferred per cycle\n\nRegisters:\n- Accumulator: Stores arithmetic results\n- Program Counter: Points to next instruction\n- MAR: Memory Address Register\n- MDR: Memory Data Register\n`}]},
+            {title: "Data Representation", notes: [{title: "Number Systems", content: `NUMBER SYSTEMS\n\nFundamental Concepts\n- Decimal (Base 10): 0-9 (everyday)\n- Binary (Base 2): 0-1 (computers)\n- Hexadecimal (Base 16): 0-9, A-F (shorthand)\n\nBinary Representation\n- Each digit = 'bit' (binary digit)\n- 8 bits = 1 byte\nConversions:\n- Decimal 10 = Binary 1010 = Hex A\n- Decimal 255 = Binary 11111111 = Hex FF\n\nBinary Arithmetic\n- Addition: 0+0=0, 0+1=1, 1+1=10\n- Subtraction: Uses 2's complement\n- Bit Shifts: << multiply by 2, >> divide by 2\n\nFloating Point & Encoding\n- IEEE 754: sign bit, exponent, mantissa\n- ASCII: 7-bit text encoding\n- Unicode: Variable length, all languages\n- RGB Colors: Red, Green, Blue (0-255)\n`}]},
+            {title: "Logic Gates", notes: [{title: "Boolean Logic", content: `LOGIC GATES & ELECTRONICS\n\nBasic Gates:\n- AND: Output 1 only if ALL inputs 1\n- OR: Output 1 if ANY input 1\n- NOT: Output opposite of input\n- NAND: Output 0 only if ALL inputs 1\n- NOR: Output 1 only if ALL inputs 0\n- XOR: Output 1 if inputs different\n\nBoolean Algebra\n- De Morgan's Laws:\n  NOT(A AND B) = NOT A OR NOT B\n  NOT(A OR B) = NOT A AND NOT B\n- Commutative: A AND B = B AND A\n- Associative: (A AND B) AND C = A AND (B AND C)\n\nCombinatorial & Sequential Logic\n- Combinatorial: Output depends only on current input\n- Sequential: Output depends on input AND previous state\n\nTransistors\n- Building blocks of circuits\n- Electronic switch\n- Millions fit on modern processors\n`}]},
+            {title: "Computational Thinking", notes: [{title: "Problem-Solving", content: `COMPUTATIONAL THINKING\n\nFour Pillars:\n\n1. DECOMPOSITION\nBreak complex problems into manageable parts\nExample: Breaking recipe into steps\n\n2. PATTERN RECOGNITION\nIdentify similarities and reuse solutions\nExample: Sorting algorithms work on any data\n\n3. ABSTRACTION\nRemove unnecessary details, focus on essentials\nExample: Use car without understanding engine\n\n4. ALGORITHM DESIGN\nDesign step-by-step procedures\n- Correct: Solves problem\n- Efficient: Uses reasonable resources\n- Clear: Can be understood and implemented\n\nHow Together:\n- DECOMPOSE problem\n- RECOGNIZE patterns\n- ABSTRACT details\n- DESIGN algorithms\n- COMBINE solutions\n`}]},
+            {title: "Algorithms", notes: [{title: "Searching & Sorting", content: `SEARCHING & SORTING\n\nLINEAR SEARCH\n- Check each item one by one\n- Works on ANY list\n- Best: O(1), Worst: O(n)\n\nBINARY SEARCH\n- Divide search space in half\n- SORTED lists only\n- Best: O(1), Worst: O(log n) - much faster!\n\nBUBBLE SORT\n- Compare adjacent items and swap\n- Time: O(n²) - slow\n- Space: O(1) - in place\n\nINSERTION SORT\n- Build sorted list one item at a time\n- Time: O(n²) average, O(n) best\n\nQUICK SORT\n- Divide and conquer\n- Time: O(n log n) average\n- Most popular algorithm\n\nBig O Notation\n- O(1): Constant\n- O(n): Linear\n- O(n²): Quadratic\n- O(log n): Logarithmic\n- O(n log n): Optimal\n`}]},
+            {title: "Databases", notes: [{title: "Relational Databases", content: `DATABASES\n\nWhat is a Database?\nOrganized collection of data allowing:\n- Efficient storage and retrieval\n- Multiple concurrent users\n- Huge storage capacity\n- Data consistency\n\nFlat File vs Relational\n\nFlat File:\n- Single table (CSV)\n- Data duplication problems\n\nRelational:\n- Multiple related tables\n- Minimizes duplication\n- Uses primary & foreign keys\n\nKey Concepts:\n- Entity: Object (Student, Teacher)\n- Attribute: Characteristic (column)\n- Record: Single entry (row)\n- Primary Key: Unique identifier\n- Foreign Key: References other table\n\nData Types:\n- Varchar: Text\n- Integer: Whole numbers\n- Date: Calendar dates\n- Boolean: True/False\n\nRelationships:\n- One-to-One: Student ↔ Email\n- One-to-Many: Teacher → Many Students\n- Many-to-Many: Students ↔ Courses\n`}]},
+            {title: "Data Analytics", notes: [{title: "Data Processing", content: `DATA ANALYTICS\n\nThe Process:\n1. COLLECTION: Gather data\n2. STORAGE: Organize data\n3. CLEANING: Fix errors, remove duplicates\n4. ANALYSIS: Find patterns and trends\n5. VISUALIZATION: Present findings\n\nChart Types:\n- Bar: Compare categories\n- Line: Show trends over time\n- Pie: Show proportions\n- Scatter: Show relationships\n- Histogram: Show distributions\n\nStatistical Measures:\n\nCentral Tendency:\n- Mean: Average\n- Median: Middle value\n- Mode: Most frequent\n\nSpread:\n- Range: Max - Min\n- Standard Deviation: Spread\n- Variance: SD squared\n\nTechniques:\n- Clustering: Group similar data\n- Correlation: Relationship strength\n\nData Ethics:\n- Privacy: Protect information\n- Consent: Disclose collection\n- Fairness: Avoid bias\n- Security: Prevent unauthorized access\n`}]},
+            {title: "Software Development", notes: [{title: "SDLC", content: `SOFTWARE DEVELOPMENT PROCESS\n\nLife Cycle Stages:\n1. ANALYSIS: Understand requirements\n2. DESIGN: Plan architecture\n3. IMPLEMENTATION: Write code\n4. TESTING: Find bugs\n5. DEPLOYMENT: Release to users\n6. MAINTENANCE: Fix issues, updates\n\nMethodologies:\n\nWaterfall:\n- Sequential phases\n- Each phase completes before next\n- Good for: Well-defined projects\n\nAgile:\n- Iterative sprints\n- Regular feedback\n- Good for: Changing requirements\n\nTeam Roles:\n- Developers: Write code\n- Testers: Test software\n- Project Manager: Coordinates\n- System Analyst: Gathers requirements\n- DBA: Manages databases\n\nVersion Control:\n- Git, SVN, Mercurial\n- Track code changes\n- Collaborate with team\n- Rollback capability\n`}]},
+            {title: "Networks & Internet", notes: [{title: "Protocols", content: `NETWORKS & INTERNET\n\nNetwork Types:\n- PAN: Personal (10m, Bluetooth)\n- LAN: Local (building, fast)\n- WAN: Wide area (geographic)\n\nTCP/IP Model (4 Layers):\n\n1. APPLICATION\n- HTTP/HTTPS: Web\n- FTP: File transfer\n- SMTP/POP3: Email\n- DNS: Domain names\n- SSH: Secure access\n\n2. TRANSPORT\n- TCP: Reliable delivery\n- UDP: Fast, unreliable\n- Port numbers\n\n3. INTERNET\n- IP: Addressing (IPv4, IPv6)\n- Routing: Forward packets\n\n4. LINK\n- Physical transmission\n- Ethernet, WiFi\n\nIP Addressing:\n- IPv4: 32-bit (xxx.xxx.xxx.xxx)\n- IPv6: 128-bit (more addresses)\n\nDNS: Translates names to IPs\nPorts: Identify services\nSecurity: Firewalls, encryption, authentication\n`}]},
+            {title: "Embedded Systems", notes: [{title: "Microcontrollers", content: `EMBEDDED SYSTEMS\n\nCharacteristics:\n- Specific dedicated task\n- Real-time constraints\n- Power, size, cost constrained\n- Examples: Microwave, car systems\n\nMicrocontrollers:\n- Single chip computer\n- CPU, memory, I/O integrated\n- Examples: Arduino, BBC Micro:bit\n\nBBC Micro:bit Specs:\n- ARM Cortex M0 processor\n- 16 KB RAM, 256 KB flash\n- Built-in LEDs, buttons, sensors\n- Bluetooth, radio wireless\n- Programming: Block Editor, Python\n\nSensors:\n- Collect environment data\n- Temperature, light, motion, pressure\n\nActuators:\n- Take action based on signals\n- Motors, lights, buzzers, speakers\n\nInternet of Things (IoT):\n- Devices connected to internet\n- Applications: Home automation, health monitoring\n\nPower Management:\n- Battery life critical\n- Sleep modes reduce consumption\n- Trade-off: Power vs. performance\n`}]},
+            {title: "Modeling & Simulation", notes: [{title: "Models & Agents", content: `MODELING & SIMULATION\n\nModel Types:\n- Physical: Scale models\n- Mathematical: Equations\n- Computational: Computer-based\n\nSimulation: Running model over time\nUses:\n- Prediction: Weather, traffic\n- Training: Flight simulator\n- Optimization: Improve design\n- Understanding: Complex systems\n- Risk assessment: Dangerous scenarios\n\nDecision Trees:\n- Model decision-making\n- Nodes: Decisions\n- Branches: Choices\n- Leaves: Outcomes\n- Used in: Diagnostics, classification\n\nAgent-Based Modeling:\n- Simulate individual agents\n- Each follows simple rules\n- Emergent behavior from interactions\n- Examples:\n  * Traffic: Individual cars → patterns\n  * Predator-prey: Rules → cycles\n  * Markets: Traders → market behavior\n\nValidation & Verification:\n- Validation: Match reality?\n- Verification: Correct implementation?\n- Test with known data\n- Sensitivity analysis\n`}]},
+            {title: "Computing History", notes: [{title: "Evolution", content: `HISTORY OF COMPUTING\n\nEras:\n\nMechanical (Ancient-1800s):\n- Abacus, slide rule, Pascaline\n- Babbage: Difference & Analytical Engines\n\nElectronic (1940s-50s):\n- ENIAC (1946): First electronic computer\n- UNIVAC (1951): First commercial\n\nTransistor Era (1950s-60s):\n- Transistor invented (1947)\n- Smaller, faster, cooler than tubes\n\nIntegrated Circuit (1960s-70s):\n- Thousands of transistors per chip\n- Moore's Law: Doubling every 2 years\n- Personal computers begin\n\nPC Era (1980s-90s):\n- IBM PC (1981), Mac (1984)\n- Windows (1985)\n- Internet boom, World Wide Web\n\nModern (1990s-Now):\n- Internet adoption\n- E-commerce, cloud\n- Mobile computing\n- AI and Big Data\n- IoT\n\nFuture:\n- Quantum Computing\n- Brain-Computer Interfaces\n- Neuromorphic Computing\n`}]},
+            {title: "Ethics in Computing", notes: [{title: "Ethical Issues", content: `ETHICS IN COMPUTING\n\nCore Principles:\n1. INTEGRITY: Truthful, honest\n2. RESPONSIBILITY: Accountability\n3. PRIVACY: Protect information\n4. FAIRNESS: No discrimination\n5. SECURITY: Protect systems\n\nEthical Issues:\n\nPRIVACY\n- Unauthorized data collection\n- Surveillance concerns\n- Facial recognition\n\nSECURITY\n- Cybercrime, hacking\n- Ransomware, DDoS attacks\n\nBIAS & DISCRIMINATION\n- AI perpetuates human bias\n- Facial recognition less accurate for minorities\n- Hiring algorithms discriminate\n\nACCESSIBILITY\n- Digital divide: unequal access\n- Disabilities: not all accessible\n- Affordability barriers\n\nAI ETHICS\n- Job displacement\n- Autonomous weapons\n- Accountability issues\n\nREGULATIONS\n- GDPR: EU data protection\n- CCPA: California privacy\n- Computer Fraud Act\n\nDecision Making:\n1. Identify issue\n2. Gather facts\n3. Consider perspectives\n4. Evaluate consequences\n5. Choose aligned action\n6. Take responsibility\n`}]},
+            {title: "Society & Impact", notes: [{title: "Technology's Role", content: `COMPUTING TRANSFORMING SOCIETY\n\nCOMMUNICATION\n- Email, social media, video calls\n- Global connectivity\n- Challenges: Misinformation, cyberbullying\n\nBUSINESS\n- E-commerce, automation\n- Remote work\n- Supply chain optimization\n\nHEALTHCARE\n- Electronic health records\n- Telemedicine\n- AI diagnosis\n- Wearable monitoring\n\nEDUCATION\n- Online learning\n- Virtual classrooms\n- Global knowledge access\n\nENTERTAINMENT\n- Streaming services\n- Gaming, VR\n- User-generated content\n\nAI APPLICATIONS\n- Image recognition\n- Language translation\n- Recommendations\n- Autonomous systems\n\nGOVERNMENT\n- E-government services\n- Digital voting\n- Smart cities\n\nCHALLENGES\n- Digital divide: Unequal access\n- Cybersecurity threats\n- Job displacement\n- Environmental impact\n`}]},
+            {title: "Artificial Intelligence", notes: [{title: "AI & ML", content: `ARTIFICIAL INTELLIGENCE\n\nTypes:\n- NARROW AI: Specific task (current state)\n- GENERAL AI: Human-level (theoretical)\n- SUPER AI: Beyond human (speculation)\n\nMachine Learning:\nSystems improve through experience\n\nLearning Types:\n\nSUPERVISED\n- Learn from labeled examples\n- Image recognition, spam filter\n\nUNSUPERVISED\n- Learn patterns from unlabeled data\n- Clustering, recommendations\n\nREINFORCEMENT\n- Learn through rewards/penalties\n- Game AI, robot navigation\n\nNeural Networks:\n- Inspired by biological brains\n- Layers of interconnected nodes\n- Weights adjust through training\n\nDeep Learning:\n- Many hidden layers\n- Learn complex patterns\n- CNNs (images), RNNs (text)\n\nApplications:\n- Computer Vision: Images\n- NLP: Language\n- Recommendations: Netflix, Amazon\n- Predictions: Weather, stocks\n- Automation: Robots, drones\n\nChallenges:\n- Bias in training data\n- Lack of explainability\n- Data quality requirements\n- Computational cost\n- Job displacement\n- Safety concerns\n`}]},
+            {title: "Python Programming", notes: [{title: "Fundamentals", content: `PYTHON PROGRAMMING\n\nCONDITIONALS\n\nIf Statement:\nif condition:\n    # Code if True\n\nElse:\nelse:\n    # Code if False\n\nElif:\nelif condition2:\n    # Another condition\n\nComparison Operators:\n== != > < >= <=\n\nLogical Operators:\nand, or, not\n\nFUNCTIONS\n\nDefining:\ndef function_name(params):\n    # Body\n    return result\n\nCalling:\nresult = function_name(args)\n\nDefault Parameters:\ndef greet(name="Friend"):\n    print(f"Hello, {name}!")\n\nRECURSION\n\nFunction calls itself\nBase Case: When to stop\nRecursive Case: Call with simpler problem\n\nFactorial:\ndef factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n-1)\n\nAlways need base case!\nWithout it: Stack overflow\n\nWhen to use:\n- Tree traversal\n- Divide and conquer\n- Mathematical sequences\n`}]},
+            {title: "Web Development", notes: [{title: "HTML, CSS, JS", content: `WEB DEVELOPMENT\n\nHTML: Structure & Content\nTags: <h1>, <p>, <a>, <img>, <ul>, <form>\n\nStructure:\n<!DOCTYPE html>\n<html>\n  <head><title>...</title></head>\n  <body>...</body>\n</html>\n\nCSS: Style & Layout\nSelectors: Element, Class, ID\nProperties: Color, fonts, margin, padding\nResponsive: Media queries, mobile-first\n\nJavaScript: Interactivity\n- Respond to user actions\n- Manipulate page content\n- Event handlers: onclick, onload\n\nDOM: Document Object Model\n- Representation of page\n- Access/modify with JavaScript\n- document.getElementById(), innerHTML\n\nDevelopment Process:\n1. Planning: What to build?\n2. Design: How should it look?\n3. Development: HTML/CSS/JS\n4. Testing: Check functionality\n5. Deployment: Put online\n6. Maintenance: Updates, fixes\n\nBest Practices:\n- Semantic HTML\n- DRY: Don't Repeat Yourself\n- Accessibility\n- Performance\n- Security\n- Mobile-friendly\n`}]}
+        ];
+
+        function renderSidebar(topics, selectedIdx) {
+            const list = document.getElementById('topics-list');
+            list.innerHTML = '';
+            topics.forEach((section, idx) => {
+                const li = document.createElement('li');
+                li.className = 'topic-item' + (idx === selectedIdx ? ' selected' : '');
+                li.textContent = section.title;
+                li.setAttribute('data-idx', idx);
+                li.tabIndex = 0;
+                list.appendChild(li);
+            });
+        }
+
+        function renderNotes(section) {
+            const root = document.getElementById('notes-root');
+            root.innerHTML = '';
+            if (!section || !section.notes) {
+                root.innerHTML = '<div>No notes found.</div>';
+                return;
+            }
+            const grid = document.createElement('div');
+            grid.className = 'notes-grid friendlier';
+            section.notes.forEach(note => {
+                const card = document.createElement('div');
+                card.className = 'note-item friendlier';
+                const title = document.createElement('h4');
+                title.textContent = note.title || 'Untitled';
+                card.appendChild(title);
+                if (note.content) {
+                    const content = document.createElement('div');
+                    content.className = 'note-content';
+                    const preview = note.content.split('\n').slice(0, 3).join(' ');
+                    const p = document.createElement('p');
+                    p.textContent = preview;
+                    content.appendChild(p);
+                    const btn = document.createElement('button');
+                    btn.className = 'notes-expand-btn';
+                    btn.textContent = 'Show Full Note';
+                    const expanded = document.createElement('div');
+                    expanded.style.display = 'none';
+                    expanded.style.marginTop = '0.5rem';
+                    const section = document.createElement('section');
+                    section.className = 'note-slide-section';
+                    const div = document.createElement('div');
+                    div.style.whiteSpace = 'pre-line';
+                    div.textContent = note.content;
+                    section.appendChild(div);
+                    expanded.appendChild(section);
+                    btn.addEventListener('click', () => {
+                        expanded.style.display = expanded.style.display === 'none' ? 'block' : 'none';
+                        btn.textContent = expanded.style.display === 'none' ? 'Show Full Note' : 'Hide Note';
+                    });
+                    content.appendChild(btn);
+                    content.appendChild(expanded);
+                    card.appendChild(content);
+                }
+                grid.appendChild(card);
+            });
+            root.appendChild(grid);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderSidebar(notesData, 0);
+            renderNotes(notesData[0]);
+            document.querySelectorAll('.topic-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const idx = parseInt(this.getAttribute('data-idx'));
+                    document.querySelectorAll('.topic-item').forEach(i => i.classList.remove('selected'));
+                    this.classList.add('selected');
+                    renderNotes(notesData[idx]);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

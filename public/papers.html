@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Past Papers - CS Notes For You</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="container header-row">
+			<h1 class="logo">CS Notes For You</h1>
+			<nav class="main-nav">
+				<a href="index.html">Home</a>
+				<a href="papers.html">Papers</a>
+				<a href="solutions.html">Solutions</a>
+				<a href="notes.html">Notes</a>
+				<a href="revision.html">Revision</a>
+				<a href="contribute.html">Contribute</a>
+				<a href="about.html">About</a>
+			</nav>
+		</div>
+	</header>
+
+	<main class="container">
+		<section id="papers-section">
+			<h2>Past Papers</h2>
+			<div class="controls">
+				<input id="search" placeholder="Search papers..." />
+				<select id="typeFilter">
+					<option value="all">All types</option>
+					<option value="paper">Papers</option>
+				</select>
+			</div>
+			<div id="posts" class="posts-grid" aria-live="polite">
+				<!-- posts will be injected here -->
+			</div>
+		</section>
+	</main>
+
+	<footer id="footer" class="site-footer container">
+		<p>Built for CS students — view and share past papers, solutions and notes.</p>
+		<p>Want to contribute? See the <a href="contribute.html">contribute</a> page.</p>
+	</footer>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', ()=>{
+			const postsEl = document.getElementById('posts');
+			const search = document.getElementById('search');
+			const typeFilter = document.getElementById('typeFilter');
+			let posts = [];
+
+			function renderItems(list, container){
+				if(!list || !list.length){ container.innerHTML = '<p>No items yet. Check back soon!</p>'; return }
+				container.innerHTML = list.map(p => {
+					const attachments = [];
+					if(p.files && Array.isArray(p.files)){
+						p.files.forEach(f=>{
+							const lower = f.toLowerCase();
+							if(/\.pdf$/.test(lower)){
+								attachments.push(`<div><a href="${f}" target="_blank" rel="noopener">📄 ${f.split('/').pop()}</a></div>`);
+							} else if(/\.(png|jpe?g|gif)$/.test(lower)){
+								attachments.push(`<div><a href="${f}" target="_blank" rel="noopener"><img src="${f}" alt="${p.title}" style="max-width:120px;max-height:90px;border-radius:4px"/></a></div>`);
+							} else {
+								attachments.push(`<div><a href="${f}" target="_blank" rel="noopener">${f.split('/').pop()}</a></div>`);
+							}
+						});
+					} else if(p.file){
+						attachments.push(`<div><a href="${p.file}" target="_blank" rel="noopener">📄 ${p.file.split('/').pop()}</a></div>`);
+					}
+					return `
+					<article class="card">
+						<h3><a href="${(p.files && p.files[0]) || p.file}" target="_blank" rel="noopener">${p.title}</a></h3>
+						<p class="meta">${p.type} • ${p.date}</p>
+						<p>${p.excerpt}</p>
+						<div class="attachments">${attachments.join('')}</div>
+					</article>
+				`}).join('')
+			}
+
+			function applyFilters(){
+				const q = search.value.trim().toLowerCase();
+				const type = typeFilter.value;
+				const filtered = posts.filter(p => {
+					const matchesType = (type === 'all' || p.type === type);
+					const matchesQuery = !q || [p.title, p.excerpt].join(' ').toLowerCase().includes(q);
+					return matchesType && matchesQuery;
+				});
+				renderItems(filtered, postsEl);
+			}
+
+			async function loadPosts(){
+				try {
+					const res = await fetch('/api/posts');
+					if(!res.ok) throw new Error('api down');
+					const allPosts = await res.json();
+					posts = allPosts.filter(p => p.type === 'paper');
+				} catch (e) {
+					try {
+						const res2 = await fetch('data/posts.clean.json');
+						const allPosts = await res2.json();
+						posts = allPosts.filter(p => p.type === 'paper');
+					} catch (err) {
+						postsEl.innerHTML = '<p>Unable to load posts.</p>';
+						return;
+					}
+				}
+				renderItems(posts, postsEl);
+			}
+
+			loadPosts();
+			search.addEventListener('input', applyFilters);
+			typeFilter.addEventListener('change', applyFilters);
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Solutions & Marking Schemes - CS Notes For You</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="container header-row">
+			<h1 class="logo">CS Notes For You</h1>
+			<nav class="main-nav">
+				<a href="index.html">Home</a>
+				<a href="papers.html">Papers</a>
+				<a href="solutions.html">Solutions</a>
+				<a href="notes.html">Notes</a>
+				<a href="revision.html">Revision</a>
+				<a href="contribute.html">Contribute</a>
+				<a href="about.html">About</a>
+			</nav>
+		</div>
+	</header>
+
+	<main class="container">
+		<section id="solutions-section">
+			<h2>Solutions & Marking Schemes</h2>
+			<div id="solutions-container" class="posts-grid" aria-live="polite">
+				<!-- solutions will be injected here -->
+			</div>
+		</section>
+	</main>
+
+	<footer id="footer" class="site-footer container">
+		<p>Built for CS students — view and share past papers, solutions and notes.</p>
+		<p>Want to contribute? See the <a href="contribute.html">contribute</a> page.</p>
+	</footer>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', ()=>{
+			const solutionsEl = document.getElementById('solutions-container');
+			let solutions = [];
+
+			function renderItems(list, container){
+				if(!list || !list.length){ container.innerHTML = '<p>No solutions yet. Check back soon!</p>'; return }
+				container.innerHTML = list.map(p => {
+					const attachments = [];
+					if(p.files && Array.isArray(p.files)){
+						p.files.forEach(f=>{
+							const lower = f.toLowerCase();
+							if(/\.pdf$/.test(lower)){
+								attachments.push(`<div><a href="${f}" target="_blank" rel="noopener">📄 ${f.split('/').pop()}</a></div>`);
+							} else if(/\.(png|jpe?g|gif)$/.test(lower)){
+								attachments.push(`<div><a href="${f}" target="_blank" rel="noopener"><img src="${f}" alt="${p.title}" style="max-width:120px;max-height:90px;border-radius:4px"/></a></div>`);
+							} else {
+								attachments.push(`<div><a href="${f}" target="_blank" rel="noopener">${f.split('/').pop()}</a></div>`);
+							}
+						});
+					} else if(p.file){
+						attachments.push(`<div><a href="${p.file}" target="_blank" rel="noopener">📄 ${p.file.split('/').pop()}</a></div>`);
+					}
+					return `
+					<article class="card">
+						<h3><a href="${(p.files && p.files[0]) || p.file}" target="_blank" rel="noopener">${p.title}</a></h3>
+						<p class="meta">${p.type} • ${p.date}</p>
+						<p>${p.excerpt}</p>
+						<div class="attachments">${attachments.join('')}</div>
+					</article>
+				`}).join('')
+			}
+
+			async function loadSolutions(){
+				try {
+					const res = await fetch('/api/posts');
+					if(!res.ok) throw new Error('api down');
+					const allPosts = await res.json();
+					solutions = allPosts.filter(p => p.type === 'solution');
+				} catch (e) {
+					try {
+						const res2 = await fetch('data/posts.clean.json');
+						const allPosts = await res2.json();
+						solutions = allPosts.filter(p => p.type === 'solution');
+					} catch (err) {
+						solutionsEl.innerHTML = '<p>Unable to load solutions.</p>';
+						return;
+					}
+				}
+				renderItems(solutions, solutionsEl);
+			}
+
+			loadSolutions();
+		});
+	</script>
+</body>
+</html>

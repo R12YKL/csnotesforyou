@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topics - CS Notes For You</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .topics-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .topic-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+        .topic-card h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        .topic-card p {
+            margin: 0.5rem 0 0 0;
+            font-size: 0.95rem;
+            opacity: 0.95;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1>CS Notes For You</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="notes.html">Study Notes</a></li>
+                <li><a href="topics.html" class="active">Topics</a></li>
+                <li><a href="revision.html">Revision</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="papers.html">Papers</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contribute.html">Contribute</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Leaving Cert Computer Science Topics</h1>
+        <p>Navigate through organized topics covering all areas of the curriculum.</p>
+        
+        <div class="topics-container">
+            <a href="topics/introduction.html" class="topic-card">
+                <h3>Introduction to Computer Science</h3>
+                <p>Overview of the course structure and learning outcomes</p>
+            </a>
+            <a href="topics/ethics-computing.html" class="topic-card">
+                <h3>Ethics & Computing</h3>
+                <p>Explore the relationship between technology and society</p>
+            </a>
+            <a href="topics/transforming-society.html" class="topic-card">
+                <h3>Computers Transforming Society</h3>
+                <p>Impact of computing on various sectors and human life</p>
+            </a>
+            <a href="topics/embedded-systems.html" class="topic-card">
+                <h3>Embedded Systems</h3>
+                <p>Understanding micro:bit and real-world applications</p>
+            </a>
+            <a href="topics/computer-systems.html" class="topic-card">
+                <h3>Computer Systems</h3>
+                <p>Hardware, software, and computer architecture</p>
+            </a>
+            <a href="topics/computational-thinking.html" class="topic-card">
+                <h3>Computational Thinking</h3>
+                <p>Problem-solving with decomposition, abstraction, and algorithms</p>
+            </a>
+            <a href="topics/number-systems.html" class="topic-card">
+                <h3>Number Systems</h3>
+                <p>Binary, decimal, and hexadecimal representations</p>
+            </a>
+            <a href="topics/logic-gates.html" class="topic-card">
+                <h3>Electronics & Logic Gates</h3>
+                <p>Digital signals, transistors, and Boolean operations</p>
+            </a>
+            <a href="topics/data-analytics.html" class="topic-card">
+                <h3>Data Analytics</h3>
+                <p>Accessing, analyzing, and visualizing data</p>
+            </a>
+            <a href="topics/databases.html" class="topic-card">
+                <h3>Databases</h3>
+                <p>Relational databases, entities, and data organization</p>
+            </a>
+            <a href="topics/algorithms.html" class="topic-card">
+                <h3>Searching & Sorting Algorithms</h3>
+                <p>Linear/binary search, bubble/quick sort efficiency</p>
+            </a>
+            <a href="topics/modeling-simulation.html" class="topic-card">
+                <h3>Modeling & Simulation</h3>
+                <p>Computer models, decision trees, and agent-based modeling</p>
+            </a>
+            <a href="topics/software-development.html" class="topic-card">
+                <h3>Software Development Process</h3>
+                <p>SDLC, waterfall, agile, and testing methodologies</p>
+            </a>
+            <a href="topics/computing-history.html" class="topic-card">
+                <h3>Brief History of Computing</h3>
+                <p>From Babbage to modern computers and Moore's Law</p>
+            </a>
+            <a href="topics/internet-protocols.html" class="topic-card">
+                <h3>Internet & Protocols</h3>
+                <p>WWW, TCP/IP, networking, and cybersecurity</p>
+            </a>
+            <a href="topics/ai-machine-learning.html" class="topic-card">
+                <h3>Artificial Intelligence & Machine Learning</h3>
+                <p>AI concepts, types, and real-world applications</p>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CS Notes For You. All rights reserved.</p>
+    </footer>
+</body>
+</html>

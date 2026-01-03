@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computational Thinking - CS Notes For You</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+        }
+        .section h3 {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        .key-term {
+            font-weight: bold;
+            color: #764ba2;
+        }
+        .example-box {
+            background: #f0f8ff;
+            border-left: 4px solid #667eea;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .pillar-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        .pillar-card h4 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1>CS Notes For You</h1>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../notes.html">Study Notes</a></li>
+                <li><a href="../topics.html">Topics</a></li>
+                <li><a href="../revision.html">Revision</a></li>
+                <li><a href="../solutions.html">Solutions</a></li>
+                <li><a href="../papers.html">Papers</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contribute.html">Contribute</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Computational Thinking</h1>
+
+        <div class="section">
+            <h3>What is Computational Thinking?</h3>
+            <p><span class="key-term">Computational Thinking (CT)</span> is a problem-solving approach that breaks down complex problems into manageable pieces, identifies patterns, abstracts away unnecessary details, and designs step-by-step solutions (algorithms).</p>
+            <p>It's not just about programming—it's a way of thinking that applies to any field where problems need to be solved.</p>
+        </div>
+
+        <div class="section">
+            <h3>The Four Pillars of Computational Thinking</h3>
+            
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <h4>1. Decomposition</h4>
+                    <p>Breaking problems into smaller, manageable subproblems that are easier to understand and solve.</p>
+                </div>
+                <div class="pillar-card">
+                    <h4>2. Pattern Recognition</h4>
+                    <p>Identifying similarities and patterns within problems to find efficient solutions and reuse knowledge.</p>
+                </div>
+                <div class="pillar-card">
+                    <h4>3. Abstraction</h4>
+                    <p>Focusing on the essential features of a problem while ignoring irrelevant details to simplify solutions.</p>
+                </div>
+                <div class="pillar-card">
+                    <h4>4. Algorithm Design</h4>
+                    <p>Creating step-by-step procedures that solve the problem systematically and can be implemented as programs.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Decomposition</h3>
+            
+            <p>Breaking a large, complex problem into smaller, more manageable subproblems.</p>
+
+            <h4>Why Decompose?</h4>
+            <ul>
+                <li>Makes problems easier to understand</li>
+                <li>Allows different people to work on different parts</li>
+                <li>Easier to debug and test individual components</li>
+                <li>Reduces cognitive overload</li>
+            </ul>
+
+            <h4>Example: Creating a Game</h4>
+            <div class="example-box">
+                <strong>Main Problem:</strong> Develop a video game<br><br>
+                <strong>Decomposed into:</strong><br>
+                • Graphics rendering system<br>
+                • Input handling (keyboard, mouse)<br>
+                • Game physics engine<br>
+                • Sound system<br>
+                • User interface/menus<br>
+                • Collision detection<br>
+                • Score/progress tracking<br>
+            </div>
+
+            <h4>Real-World Applications:</h4>
+            <ul>
+                <li>Software development: Breaking projects into modules</li>
+                <li>Business processes: Dividing work among departments</li>
+                <li>Scientific research: Breaking investigations into experiments</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Pattern Recognition</h3>
+            
+            <p>Identifying recurring patterns, similarities, and themes that help solve new problems efficiently.</p>
+
+            <h4>How Patterns Help:</h4>
+            <ul>
+                <li>Avoid "reinventing the wheel" for similar problems</li>
+                <li>Use proven solutions for known patterns</li>
+                <li>Speed up problem-solving by recognizing familiar situations</li>
+                <li>Enable generalization of solutions</li>
+            </ul>
+
+            <h4>Common Programming Patterns:</h4>
+            <ul>
+                <li><strong>Loops:</strong> Repeating actions multiple times</li>
+                <li><strong>Conditionals:</strong> Making decisions based on conditions</li>
+                <li><strong>Functions:</strong> Reusable blocks of code</li>
+                <li><strong>Data structures:</strong> Organizing related data (lists, dictionaries)</li>
+            </ul>
+
+            <h4>Example: Data Search</h4>
+            <div class="example-box">
+                Finding a contact in your phone:<br>
+                • Linear search: Check each contact one by one<br>
+                • Binary search: Jump to middle, narrow down range (faster!)<br><br>
+                Pattern recognized: We can use binary search for ANY sorted list
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Abstraction</h3>
+            
+            <p>Focusing on the essential features of a problem while hiding or ignoring unnecessary complexity.</p>
+
+            <h4>Why Abstract?</h4>
+            <ul>
+                <li>Reduces complexity to manageable levels</li>
+                <li>Focuses attention on relevant details</li>
+                <li>Enables reuse at different levels of detail</li>
+                <li>Makes systems easier to understand and modify</li>
+            </ul>
+
+            <h4>Layers of Abstraction</h4>
+            <div class="example-box">
+                <strong>Using a web browser:</strong><br>
+                • User level: Click a link, page loads<br>
+                • Browser level: HTML/CSS/JavaScript rendering<br>
+                • Network level: HTTP requests, TCP/IP packets<br>
+                • Hardware level: Electrical signals<br><br>
+                Each layer abstracts away complexity below it
+            </div>
+
+            <h4>Abstraction in Practice:</h4>
+            <ul>
+                <li>APIs hide implementation details</li>
+                <li>Classes encapsulate data and methods</li>
+                <li>Operating systems abstract hardware</li>
+                <li>Maps abstract real-world geography</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Algorithm Design</h3>
+            
+            <p>Creating a precise, step-by-step procedure to solve a problem that can be implemented as a program.</p>
+
+            <h4>Characteristics of Good Algorithms:</h4>
+            <ul>
+                <li><strong>Correct:</strong> Produces the right answer for valid inputs</li>
+                <li><strong>Efficient:</strong> Runs quickly with minimal resources</li>
+                <li><strong>Clear:</strong> Easy to understand and implement</li>
+                <li><strong>Finite:</strong> Eventually terminates</li>
+                <li><strong>General:</strong> Works for a range of inputs</li>
+            </ul>
+
+            <h4>Representing Algorithms</h4>
+            <p>Algorithms can be expressed as:</p>
+            <ul>
+                <li><strong>Pseudocode:</strong> English-like statements that resemble programming</li>
+                <li><strong>Flowcharts:</strong> Visual diagrams showing process flow</li>
+                <li><strong>Code:</strong> Actual programming language implementation</li>
+            </ul>
+
+            <h4>Example Algorithm: Recipe</h4>
+            <div class="example-box">
+                <strong>Algorithm to make tea:</strong><br>
+                1. Fill kettle with water<br>
+                2. Switch on kettle<br>
+                3. Wait until water boils<br>
+                4. Put tea bag in cup<br>
+                5. Pour hot water into cup<br>
+                6. Wait 3-5 minutes<br>
+                7. Remove tea bag<br>
+                8. Add milk and sugar (optional)<br>
+                9. Stir and drink
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Example: Complete Problem Using CT</h3>
+            
+            <h4>Problem: Sort a list of student names alphabetically</h4>
+
+            <h4>Step 1: Decomposition</h4>
+            <ul>
+                <li>Get the list of names</li>
+                <li>Compare names pairwise</li>
+                <li>Swap if needed</li>
+                <li>Repeat until sorted</li>
+                <li>Display sorted list</li>
+            </ul>
+
+            <h4>Step 2: Pattern Recognition</h4>
+            <ul>
+                <li>This is a sorting problem</li>
+                <li>Similar to arranging books on a shelf</li>
+                <li>Could use bubble sort, insertion sort, or quick sort</li>
+            </ul>
+
+            <h4>Step 3: Abstraction</h4>
+            <ul>
+                <li>Focus on the sorting algorithm, not data source</li>
+                <li>Ignore how names are pronounced or spelled</li>
+                <li>Only care about alphabetical order</li>
+            </ul>
+
+            <h4>Step 4: Algorithm</h4>
+            <div class="example-box">
+                <strong>Bubble Sort Pseudocode:</strong><br>
+                FOR i = 1 TO length(list)-1<br>
+                &nbsp;&nbsp;FOR j = 1 TO length(list)-i<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;IF list[j] > list[j+1]<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SWAP list[j] and list[j+1]<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;END IF<br>
+                &nbsp;&nbsp;END FOR<br>
+                END FOR
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Computational Thinking in Different Domains</h3>
+            
+            <ul>
+                <li><strong>Biology:</strong> Sequence analysis, protein folding</li>
+                <li><strong>Medicine:</strong> Diagnostic algorithms, treatment planning</li>
+                <li><strong>Business:</strong> Process optimization, data analysis</li>
+                <li><strong>Geography:</strong> Route planning, resource distribution</li>
+                <li><strong>Music:</strong> Composition algorithms, audio processing</li>
+                <li><strong>Art:</strong> Computer graphics, generative art</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Key Revision Points</h3>
+            <ul>
+                <li>Computational Thinking is a universal problem-solving approach</li>
+                <li>The four pillars: decomposition, pattern recognition, abstraction, algorithms</li>
+                <li>These techniques work together to solve complex problems</li>
+                <li>CT applies beyond programming to many real-world situations</li>
+                <li>Master each pillar individually, then combine them</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CS Notes For You. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analytics - CS Notes For You</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+        }
+        .section h3 {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        .key-term {
+            font-weight: bold;
+            color: #764ba2;
+        }
+        .definition-box {
+            background: #f0f8ff;
+            border-left: 4px solid #667eea;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        .steps-box {
+            background: #fffbf0;
+            border-left: 4px solid #ff9800;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1>CS Notes For You</h1>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../notes.html">Study Notes</a></li>
+                <li><a href="../topics.html">Topics</a></li>
+                <li><a href="../revision.html">Revision</a></li>
+                <li><a href="../solutions.html">Solutions</a></li>
+                <li><a href="../papers.html">Papers</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contribute.html">Contribute</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Data Analytics</h1>
+
+        <div class="section">
+            <h3>Introduction to Data Analytics</h3>
+            <p><span class="key-term">Data Analytics</span> is the process of examining raw data to uncover patterns, draw insights, and support decision-making.</p>
+            <p>In our data-driven world, organizations use analytics to understand customer behavior, improve operations, predict trends, and make informed business decisions.</p>
+        </div>
+
+        <div class="section">
+            <h3>The Data Analytics Process</h3>
+
+            <div class="steps-box">
+                <h4>Five Stages of Data Analytics:</h4>
+                <ol>
+                    <li><strong>Data Collection:</strong> Gathering data from various sources</li>
+                    <li><strong>Data Cleaning:</strong> Removing errors and inconsistencies</li>
+                    <li><strong>Data Organization:</strong> Structuring data for analysis (often in tables/spreadsheets)</li>
+                    <li><strong>Data Analysis:</strong> Identifying patterns and relationships</li>
+                    <li><strong>Data Visualization:</strong> Presenting findings clearly through charts and graphs</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Stage 1: Data Collection</h3>
+
+            <p><span class="key-term">Data collection</span> involves gathering information from various sources.</p>
+
+            <h4>Data Sources:</h4>
+            <ul>
+                <li><strong>Surveys:</strong> Direct questions to users/customers</li>
+                <li><strong>Sensors:</strong> Automatic monitoring of temperature, movement, etc.</li>
+                <li><strong>Transactions:</strong> Business records (sales, payments, etc.)</li>
+                <li><strong>Social Media:</strong> Posts, comments, interactions</li>
+                <li><strong>Web Logs:</strong> User activity on websites</li>
+                <li><strong>APIs:</strong> Data from online services and platforms</li>
+                <li><strong>Existing Databases:</strong> Historical data sources</li>
+            </ul>
+
+            <h4>Data Collection Considerations:</h4>
+            <ul>
+                <li>Quantity: Enough data for meaningful analysis</li>
+                <li>Quality: Accurate and reliable data</li>
+                <li>Bias: Ensuring representative sample</li>
+                <li>Privacy: Respecting user data and GDPR regulations</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Stage 2: Data Cleaning</h3>
+
+            <p><span class="key-term">Data cleaning</span> is the process of identifying and fixing errors in raw data.</p>
+
+            <h4>Common Data Quality Issues:</h4>
+            <ul>
+                <li><strong>Missing Values:</strong> Empty cells in datasets</li>
+                <li><strong>Duplicates:</strong> Repeated records</li>
+                <li><strong>Typos:</strong> Spelling errors or data entry mistakes</li>
+                <li><strong>Inconsistencies:</strong> Different formats for same data type</li>
+                <li><strong>Outliers:</strong> Extreme values that may be errors</li>
+                <li><strong>Wrong Data Type:</strong> Data stored in incorrect format</li>
+            </ul>
+
+            <h4>Cleaning Operations:</h4>
+            <ul>
+                <li>Remove duplicate rows</li>
+                <li>Fill missing values appropriately</li>
+                <li>Correct typos and standardize formats</li>
+                <li>Remove or flag outliers</li>
+                <li>Convert data to proper types</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Stage 3: Data Organization</h3>
+
+            <h4>Structured Data Formats</h4>
+
+            <p><span class="key-term">CSV (Comma-Separated Values)</span> is a common format for organizing data:</p>
+            <div class="definition-box">
+                Product, Price, Quantity Sold<br>
+                Laptop, 1200, 45<br>
+                Mouse, 25, 150<br>
+                Keyboard, 80, 95<br>
+                Monitor, 350, 62
+            </div>
+
+            <h4>Structured Data in Tables:</h4>
+            <ul>
+                <li>Each row represents a record</li>
+                <li>Each column represents a field/attribute</li>
+                <li>Easy to process and analyze</li>
+                <li>Can be imported into databases or analysis tools</li>
+            </ul>
+
+            <h4>Python Lists for Data Storage:</h4>
+            <div class="definition-box">
+                products = ['Laptop', 'Mouse', 'Keyboard', 'Monitor']<br>
+                prices = [1200, 25, 80, 350]<br>
+                quantities = [45, 150, 95, 62]
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Stage 4: Data Analysis</h3>
+
+            <p><span class="key-term">Data analysis</span> involves examining data to identify patterns and relationships.</p>
+
+            <h4>Common Analysis Techniques:</h4>
+
+            <h4>Descriptive Statistics:</h4>
+            <ul>
+                <li><strong>Mean (Average):</strong> Sum of values divided by count</li>
+                <li><strong>Median:</strong> Middle value when sorted</li>
+                <li><strong>Mode:</strong> Most frequently occurring value</li>
+                <li><strong>Range:</strong> Difference between highest and lowest values</li>
+                <li><strong>Standard Deviation:</strong> How spread out values are</li>
+            </ul>
+
+            <h4>Example Calculation:</h4>
+            <div class="definition-box">
+                Sales data: [10, 15, 20, 25, 30]<br>
+                Mean = (10+15+20+25+30)/5 = 20<br>
+                Median = 20 (middle value)<br>
+                Range = 30 - 10 = 20
+            </div>
+
+            <h4>Comparative Analysis:</h4>
+            <ul>
+                <li>Year-over-year comparison</li>
+                <li>Regional comparison</li>
+                <li>Product performance comparison</li>
+                <li>Before/after analysis</li>
+            </ul>
+
+            <h4>Trend Analysis:</h4>
+            <ul>
+                <li>Identifying upward or downward trends</li>
+                <li>Forecasting future values</li>
+                <li>Detecting seasonal patterns</li>
+            </ul>
+
+            <h4>Correlation Analysis:</h4>
+            <ul>
+                <li>Finding relationships between variables</li>
+                <li>Strong correlation: variables move together</li>
+                <li>Weak correlation: little relationship</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Stage 5: Data Visualization</h3>
+
+            <p><span class="key-term">Data visualization</span> presents findings through visual representations.</p>
+
+            <h4>Common Chart Types:</h4>
+
+            <h4>Bar Chart</h4>
+            <ul>
+                <li><strong>Use:</strong> Comparing values across categories</li>
+                <li><strong>Example:</strong> Sales by region, student grades by class</li>
+            </ul>
+
+            <h4>Line Chart</h4>
+            <ul>
+                <li><strong>Use:</strong> Showing trends over time</li>
+                <li><strong>Example:</strong> Website traffic over months, temperature changes throughout day</li>
+            </ul>
+
+            <h4>Pie Chart</h4>
+            <ul>
+                <li><strong>Use:</strong> Showing parts of a whole (percentages)</li>
+                <li><strong>Example:</strong> Market share, budget allocation</li>
+            </ul>
+
+            <h4>Scatter Plot</h4>
+            <ul>
+                <li><strong>Use:</strong> Showing relationships between two variables</li>
+                <li><strong>Example:</strong> Height vs. weight, advertising spend vs. sales</li>
+            </ul>
+
+            <h4>Histogram</h4>
+            <ul>
+                <li><strong>Use:</strong> Showing distribution of continuous data</li>
+                <li><strong>Example:</strong> Test scores, age distribution</li>
+            </ul>
+
+            <h4>Visualization Best Practices:</h4>
+            <ul>
+                <li>Choose appropriate chart type for your data</li>
+                <li>Use clear, descriptive titles and labels</li>
+                <li>Limit number of data series for clarity</li>
+                <li>Use color effectively (colorblind friendly)</li>
+                <li>Include legends when necessary</li>
+                <li>Avoid distorting data with unusual scales</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Tools for Data Analytics</h3>
+
+            <h4>Spreadsheet Software:</h4>
+            <ul>
+                <li><strong>Excel:</strong> Most widely used for basic analytics</li>
+                <li><strong>Google Sheets:</strong> Cloud-based alternative</li>
+                <li>Built-in functions for calculations and charting</li>
+            </ul>
+
+            <h4>Programming Languages:</h4>
+            <ul>
+                <li><strong>Python:</strong> Popular for data analysis with libraries like Pandas, NumPy</li>
+                <li><strong>R:</strong> Specialized language for statistical analysis</li>
+            </ul>
+
+            <h4>Specialized Tools:</h4>
+            <ul>
+                <li><strong>Tableau:</strong> Professional data visualization</li>
+                <li><strong>Power BI:</strong> Microsoft's analytics platform</li>
+                <li><strong>SQL:</strong> For querying large databases</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Real-World Analytics Examples</h3>
+
+            <h4>E-Commerce:</h4>
+            <p>Analyzing customer purchase patterns to recommend products and optimize inventory.</p>
+
+            <h4>Healthcare:</h4>
+            <p>Using patient data to identify disease patterns and improve treatment outcomes.</p>
+
+            <h4>Sports:</h4>
+            <p>Analyzing player statistics to improve team performance and predict outcomes.</p>
+
+            <h4>Climate Science:</h4>
+            <p>Analyzing temperature and weather data to understand climate change.</p>
+
+            <h4>Social Media:</h4>
+            <p>Analyzing user engagement to improve algorithms and content recommendations.</p>
+        </div>
+
+        <div class="section">
+            <h3>Ethics in Data Analytics</h3>
+
+            <h4>Important Considerations:</h4>
+            <ul>
+                <li><strong>Privacy:</strong> Protecting personal data and following GDPR/privacy laws</li>
+                <li><strong>Bias:</strong> Ensuring analysis isn't skewed by prejudiced data</li>
+                <li><strong>Transparency:</strong> Being honest about findings and limitations</li>
+                <li><strong>Accuracy:</strong> Ensuring data is correct and analysis is sound</li>
+                <li><strong>Security:</strong> Protecting data from unauthorized access</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Key Revision Points</h3>
+            <ul>
+                <li>Data analytics is the process of examining data to find insights</li>
+                <li>Five stages: collection, cleaning, organization, analysis, visualization</li>
+                <li>Data cleaning is critical for accurate results</li>
+                <li>CSV files are standard format for structured data</li>
+                <li>Statistical methods identify patterns in data</li>
+                <li>Choose visualization appropriate for your data type</li>
+                <li>Ethics and privacy are essential in handling data</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CS Notes For You. All rights reserved.</p>
+    </footer>
+</body>
+</html>

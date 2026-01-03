@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Databases - CS Notes For You</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+        }
+        .section h3 {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        .key-term {
+            font-weight: bold;
+            color: #764ba2;
+        }
+        .definition-box {
+            background: #f0f8ff;
+            border-left: 4px solid #667eea;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        table th {
+            background: #667eea;
+            color: white;
+        }
+        .example-box {
+            background: #fffbf0;
+            border-left: 4px solid #ff9800;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1>CS Notes For You</h1>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../notes.html">Study Notes</a></li>
+                <li><a href="../topics.html">Topics</a></li>
+                <li><a href="../revision.html">Revision</a></li>
+                <li><a href="../solutions.html">Solutions</a></li>
+                <li><a href="../papers.html">Papers</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contribute.html">Contribute</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Databases</h1>
+
+        <div class="section">
+            <h3>Introduction to Databases</h3>
+            <p>A <span class="key-term">database</span> is an organized collection of structured data stored and accessed electronically. Databases are essential for storing and managing large amounts of information efficiently.</p>
+            <p>Most applications you use daily rely on databases: social media, email, banking, online shopping, weather apps, and more.</p>
+        </div>
+
+        <div class="section">
+            <h3>Flat Files vs. Relational Databases</h3>
+
+            <h4>Flat Files</h4>
+            <p>Data stored in simple text files (CSV, plain text, etc.).</p>
+            
+            <h4>Flat File Advantages:</h4>
+            <ul>
+                <li>Simple to understand and create</li>
+                <li>No special software required to view</li>
+                <li>Portable across systems</li>
+            </ul>
+
+            <h4>Flat File Disadvantages:</h4>
+            <ul>
+                <li>Difficult to manage large amounts of data</li>
+                <li>Data redundancy (repetition)</li>
+                <li>Slow searching and sorting</li>
+                <li>Limited query capabilities</li>
+                <li>Vulnerability to data inconsistency</li>
+            </ul>
+
+            <h4>Example Flat File:</h4>
+            <div class="definition-box">
+                <strong>students.csv</strong><br>
+                StudentID, Name, Email, Class<br>
+                001, John Smith, john@school.ie, 5A<br>
+                002, Mary Jones, mary@school.ie, 5A<br>
+                003, Peter Brown, peter@school.ie, 5B<br>
+            </div>
+
+            <h4>Relational Databases</h4>
+            <p>Data organized into related tables with structured relationships.</p>
+
+            <h4>Relational Database Advantages:</h4>
+            <ul>
+                <li>Reduces data redundancy</li>
+                <li>Fast data retrieval</li>
+                <li>Maintains data integrity</li>
+                <li>Supports complex queries</li>
+                <li>Multiple users can access simultaneously</li>
+                <li>Better security and backup capabilities</li>
+            </ul>
+
+            <h4>Relational Database Disadvantages:</h4>
+            <ul>
+                <li>More complex to design</li>
+                <li>Requires specialized software</li>
+                <li>Can be slower for very simple queries</li>
+                <li>Steeper learning curve</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Key Database Concepts</h3>
+
+            <p><span class="key-term">Table (Relation):</span> A two-dimensional structure with rows and columns.</p>
+
+            <p><span class="key-term">Record (Tuple):</span> A single row in a table representing one instance of the entity.</p>
+
+            <p><span class="key-term">Field (Attribute):</span> A column in a table representing a property of the entity.</p>
+
+            <h4>Example Table:</h4>
+            <table>
+                <tr>
+                    <th>StudentID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Class</th>
+                </tr>
+                <tr>
+                    <td>001</td>
+                    <td>John Smith</td>
+                    <td>john@school.ie</td>
+                    <td>5A</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Mary Jones</td>
+                    <td>mary@school.ie</td>
+                    <td>5A</td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Peter Brown</td>
+                    <td>peter@school.ie</td>
+                    <td>5B</td>
+                </tr>
+            </table>
+
+            <p><span class="key-term">Primary Key:</span> A field (or combination of fields) that uniquely identifies each record. No two records can have the same primary key.</p>
+
+            <h4>Example Primary Key:</h4>
+            <p>In the Students table above, <strong>StudentID</strong> is the primary key because each student has a unique ID.</p>
+
+            <p><span class="key-term">Foreign Key:</span> A field in one table that references the primary key of another table, creating relationships between tables.</p>
+
+            <h4>Example Foreign Key:</h4>
+            <div class="example-box">
+                <strong>Enrollments Table:</strong><br>
+                EnrollmentID | StudentID | CourseID | Grade<br>
+                1001 | 001 | C101 | A<br>
+                1002 | 001 | C102 | B<br>
+                1003 | 002 | C101 | A+<br><br>
+                StudentID is a foreign key linking to the Students table
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Entities and Entity-Relationship Diagrams</h3>
+
+            <p><span class="key-term">Entity:</span> A real-world object or concept that we want to store information about (e.g., Student, Course, Teacher).</p>
+
+            <p><span class="key-term">Entity-Relationship (E-R) Diagram:</span> A visual representation showing entities and their relationships.</p>
+
+            <h4>Relationship Types:</h4>
+            <ul>
+                <li><strong>One-to-One (1:1):</strong> One entity relates to exactly one other entity</li>
+                <li><strong>One-to-Many (1:M):</strong> One entity relates to many instances of another entity</li>
+                <li><strong>Many-to-Many (M:M):</strong> Many entities relate to many other entities</li>
+            </ul>
+
+            <h4>Example Relationships:</h4>
+            <div class="example-box">
+                <strong>School Database:</strong><br><br>
+                • One Teacher has Many Students (1:M)<br>
+                • One Student has Many Teachers (M:M)<br>
+                • One Student has One Homeroom Class (1:1)<br>
+                • One Class has Many Students (1:M)
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Data Types and Field Properties</h3>
+
+            <h4>Common Data Types:</h4>
+            <table>
+                <tr>
+                    <th>Data Type</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>INT/INTEGER</td>
+                    <td>Whole numbers</td>
+                    <td>100, -5, 0</td>
+                </tr>
+                <tr>
+                    <td>VARCHAR/TEXT</td>
+                    <td>Text strings</td>
+                    <td>'John Smith', 'Email'</td>
+                </tr>
+                <tr>
+                    <td>DECIMAL/FLOAT</td>
+                    <td>Numbers with decimals</td>
+                    <td>3.14, 99.99</td>
+                </tr>
+                <tr>
+                    <td>DATE/DATETIME</td>
+                    <td>Date and/or time</td>
+                    <td>2024-01-15, 14:30:00</td>
+                </tr>
+                <tr>
+                    <td>BOOLEAN</td>
+                    <td>True/False values</td>
+                    <td>TRUE, FALSE</td>
+                </tr>
+            </table>
+
+            <h4>Field Constraints:</h4>
+            <ul>
+                <li><strong>NOT NULL:</strong> Field must have a value</li>
+                <li><strong>UNIQUE:</strong> All values must be different</li>
+                <li><strong>PRIMARY KEY:</strong> Uniquely identifies records</li>
+                <li><strong>FOREIGN KEY:</strong> References another table's primary key</li>
+                <li><strong>DEFAULT:</strong> Automatic value if none provided</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Normalization</h3>
+
+            <p><span class="key-term">Normalization</span> is the process of organizing database tables to reduce redundancy and improve data integrity.</p>
+
+            <h4>First Normal Form (1NF):</h4>
+            <ul>
+                <li>All fields contain atomic (indivisible) values</li>
+                <li>No repeating groups of columns</li>
+            </ul>
+
+            <h4>Second Normal Form (2NF):</h4>
+            <ul>
+                <li>Meet 1NF requirements</li>
+                <li>All non-key fields depend on the entire primary key</li>
+            </ul>
+
+            <h4>Third Normal Form (3NF):</h4>
+            <ul>
+                <li>Meet 2NF requirements</li>
+                <li>No non-key field depends on another non-key field</li>
+            </ul>
+
+            <h4>Example of Normalization:</h4>
+            <div class="example-box">
+                <strong>Before Normalization (Not 1NF):</strong><br>
+                StudentID | Name | Courses<br>
+                001 | John | Math, English, Science<br><br>
+                <strong>After Normalization (1NF):</strong><br>
+                Separate into two tables:<br>
+                Students: StudentID, Name<br>
+                Enrollments: StudentID, CourseID
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Introduction to SQL</h3>
+
+            <p><span class="key-term">SQL (Structured Query Language)</span> is the standard language for managing databases.</p>
+
+            <h4>Basic SQL Operations:</h4>
+            
+            <p><strong>SELECT:</strong> Retrieve data from tables</p>
+            <div class="definition-box">
+                SELECT Name, Email FROM Students WHERE Class = '5A';
+            </div>
+
+            <p><strong>INSERT:</strong> Add new records</p>
+            <div class="definition-box">
+                INSERT INTO Students (StudentID, Name, Email, Class)<br>
+                VALUES (004, 'Sarah Lee', 'sarah@school.ie', '5C');
+            </div>
+
+            <p><strong>UPDATE:</strong> Modify existing records</p>
+            <div class="definition-box">
+                UPDATE Students SET Email = 'newemail@school.ie'<br>
+                WHERE StudentID = 001;
+            </div>
+
+            <p><strong>DELETE:</strong> Remove records</p>
+            <div class="definition-box">
+                DELETE FROM Students WHERE StudentID = 003;
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Database Management Systems</h3>
+
+            <h4>Common DBMS Software:</h4>
+            <ul>
+                <li><strong>MySQL:</strong> Open-source, widely used for web applications</li>
+                <li><strong>PostgreSQL:</strong> Advanced open-source database</li>
+                <li><strong>Microsoft SQL Server:</strong> Enterprise-level database</li>
+                <li><strong>Oracle Database:</strong> Large-scale enterprise database</li>
+                <li><strong>SQLite:</strong> Lightweight, embedded database</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Database Design Process</h3>
+
+            <ol>
+                <li><strong>Requirements Analysis:</strong> Understand what data needs to be stored</li>
+                <li><strong>Conceptual Design:</strong> Create E-R diagrams showing entities and relationships</li>
+                <li><strong>Logical Design:</strong> Convert E-R diagrams to table structures</li>
+                <li><strong>Normalization:</strong> Apply normalization rules to reduce redundancy</li>
+                <li><strong>Physical Design:</strong> Implement in actual DBMS software</li>
+                <li><strong>Testing and Maintenance:</strong> Test functionality and optimize as needed</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h3>Key Revision Points</h3>
+            <ul>
+                <li>Databases store and organize large amounts of structured data</li>
+                <li>Relational databases use tables with relationships between them</li>
+                <li>Primary keys uniquely identify records; foreign keys create relationships</li>
+                <li>Normalization reduces redundancy and improves data integrity</li>
+                <li>SQL is the standard language for database operations</li>
+                <li>Good database design requires planning and understanding of relationships</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CS Notes For You. All rights reserved.</p>
+    </footer>
+</body>
+</html>

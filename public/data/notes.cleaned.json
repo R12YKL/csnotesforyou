@@ -1,0 +1,46 @@
+{
+  "sections": [
+    {
+      "title": "Fundamentals",
+      "notes": [
+        {
+          "id": "1",
+          "title": "Computer Science Introduction",
+          "cleaned": true,
+          "redactions": [
+            "Teacher name (Ms Smyth)",
+            "Administrative info (assessment details, exam logistics)"
+          ],
+          "studyVersion": {
+            "title": "Introduction to Leaving Cert Computer Science",
+            "keyIdeas": [
+              "Leaving Cert Computer Science is divided into three strands: Practices and Principles, Core Concepts, and Applied Learning Tasks.",
+              "Strand 1 covers systematic problem solving and the power of computing.",
+              "Strand 2 focuses on abstraction, pattern recognition, and system description.",
+              "Strand 3 involves applied learning tasks with real-world applications.",
+              "Assessment includes a written exam and project work."
+            ],
+            "definitions": [
+              "Abstraction: Simplifying complex systems by focusing on main ideas and ignoring specific details."
+            ],
+            "steps": [
+              "Study each strand's learning outcomes.",
+              "Practice problem-solving and abstraction techniques.",
+              "Engage in applied learning tasks and projects."
+            ],
+            "mistakes": [
+              "Confusing the three strands and their focus areas.",
+              "Overlooking the importance of abstraction in problem solving."
+            ],
+            "miniCheck": [
+              {"q": "What are the three strands of Leaving Cert Computer Science?", "a": "Practices and Principles, Core Concepts, Applied Learning Tasks."},
+              {"q": "What is abstraction?", "a": "Simplifying complex systems by focusing on main ideas."},
+              {"q": "How is the course assessed?", "a": "Through a written exam and project work."}
+            ],
+            "memoryHook": "Think of the course as a triangle: Problem Solving, Core Concepts, and Real-World Application."
+          }
+		}
+	]
+  }
+ ]
+}

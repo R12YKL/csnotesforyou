@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Revision - CS Notes For You</title>
+	<link rel="stylesheet" href="styles.css">
+	<style>
+		.revision-section {
+			margin: 2rem 0;
+			padding: 2rem;
+			background: var(--card);
+			border-radius: 10px;
+			border-left: 5px solid var(--accent);
+			box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+		}
+		.revision-section h3 {
+			color: var(--accent);
+			font-size: 1.3rem;
+			margin-top: 0;
+			margin-bottom: 1.5rem;
+		}
+		.revision-content ul {
+			list-style: disc;
+			padding-left: 2rem;
+			line-height: 1.8;
+		}
+		.revision-content li {
+			margin: 0.5rem 0;
+		}
+		.revision-content ul ul {
+			list-style: circle;
+			padding-left: 2rem;
+			margin: 0.5rem 0 0.5rem 0;
+		}
+		.revision-content strong {
+			color: var(--accent);
+			font-weight: 700;
+		}
+	</style>
+</head>
+<body>
+	<header class="site-header">
+		<div class="container header-row">
+			<h1 class="logo">CS Notes For You</h1>
+			<nav class="main-nav">
+				<a href="index.html">Home</a>
+				<a href="papers.html">Papers</a>
+				<a href="solutions.html">Solutions</a>
+				<a href="notes.html">Notes</a>
+				<a href="revision.html">Revision</a>
+				<a href="contribute.html">Contribute</a>
+				<a href="about.html">About</a>
+			</nav>
+		</div>
+	</header>
+
+	<main class="container">
+		<section id="revision-section">
+			<h2>Revision Notes</h2>
+			<p>Quick reference guide covering key concepts across all topics.</p>
+
+			<div class="revision-section">
+				<h3>History of Computing</h3>
+				<div class="revision-content">
+					<ul>
+						<li><strong>E.W Dijkstra Quote:</strong> "When all is said and done, the only thing computers can do for us is to manipulate symbols and produce results of such manipulations."</li>
+						<li><strong>Computer:</strong> A device that can be programmed to carry out general purpose logical/mathematical computations.</li>
+						<li><strong>Programmable Computer:</strong> Can be re-programmed to improve solutions, or adapted when the problem changes.</li>
+						<li><strong>General Purpose Computer:</strong> Can carry out a wide range of tasks, not built for a specific purpose.</li>
+						<li><strong>Digital Computer:</strong> One that operates using digital signals.</li>
+						<li><strong>Signals:</strong> Used to represent changing information. Discrete, can only have a limited number of values.</li>
+						<li><strong>Electronic Computer:</strong> A computer that operates through the use of electricity.</li>
+						<li><strong>Electricity:</strong> The movement of electrons through a material.</li>
+						<li><strong>Semiconductor:</strong> A material that falls somewhere between a conductor and an insulator. E.g. Silicon. They can be used to control the flow of electricity making modern computers possible.</li>
+						<li><strong>Modern Computers:</strong>
+							<ul>
+								<li>Able to carry out general purpose computation via programs.</li>
+								<li>Fairly inexpensive, robust and portable.</li>
+								<li>Have good performance.</li>
+								<li>Relatively good energy efficiency.</li>
+								<li>Fairly durable.</li>
+							</ul>
+						</li>
+						<li><strong>Abacus:</strong> Aid to a person doing computations.</li>
+						<li><strong>Computers (People):</strong> As early as the 17th century the term Computers referred to people doing mathematical calculations.</li>
+						<li><strong>Slide Rule:</strong> 1600s analog computer. Able to calculate logarithms, trigonometric functions, squares, and cubes with their roots.</li>
+						<li><strong>Difference Engine (1822):</strong> Charles Babbage designed a mechanical computer used to calculate polynomials. Solved the problem of human error in computing. Size of a car, thousands of moving parts.</li>
+						<li><strong>Analytical Engine:</strong> Charles Babbage, general purpose computer able to store data on punched cards. Programs stored on punched cards. Never built.</li>
+						<li><strong>Ada Lovelace:</strong> First computer programmer. Realized the Analytic Engine could be used for general purpose computing. Wrote the first algorithm designed to be carried out by a machine.</li>
+						<li><strong>Percy Ludgate:</strong> Irish, designed a similar machine to Babbage's Analytical Engine, smaller and more portable. Also never built.</li>
+						<li><strong>Turing Machine:</strong> Alan Turing's A-machine (automatic machine). Demonstrated the true power of computing before modern computers existed. Consists of:
+							<ul>
+								<li>A tape that symbols can be written to and read from.</li>
+								<li>A head that does the reading and writing.</li>
+								<li>A state register that stores the state of the machine at any given time.</li>
+								<li>A table of instructions that tells the machine what to do next.</li>
+							</ul>
+						</li>
+						<li><strong>Vacuum Tubes:</strong> Small devices that control the flow of electricity.</li>
+						<li><strong>ENIAC:</strong> Electronic Numerical Integrator and Computer. First electronic, digital, programmable, general purpose computer. Kathleen McNulty, an Irish woman, was one of the first programmers to work on it.</li>
+						<li><strong>Transistors:</strong> Small electronic switches, performed the same job as a vacuum tube but more efficiently.</li>
+						<li><strong>Integrated Circuits:</strong> Third Generation of Computers, a number of electronic circuits on one semiconductor, a Chip. Example: AGS (Apollo Guidance System).</li>
+						<li><strong>Microprocessors:</strong> Fourth Generation, CPUs. 1971, Intel 4004.</li>
+						<li><strong>Personal Computers:</strong> PCs made possible by microprocessors with billions of transistors. Commodore, Apple, IBM. Development of OS such as Windows.</li>
+						<li><strong>Generations:</strong>
+							<ul>
+								<li>First Generation: Vacuum Tubes.</li>
+								<li>Second Generation: Transistors.</li>
+								<li>Third Generation: Integrated Circuits.</li>
+								<li>Fourth Generation: Microprocessors.</li>
+								<li>Potential Fifth Generation: Quantum Computing (Far future).</li>
+							</ul>
+						</li>
+						<li><strong>Ireland and Supercomputers:</strong> 14 of the 500 fastest computers on Earth in Ireland. One named Kay after Kathleen McNulty.</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="revision-section">
+				<h3>Computer Systems</h3>
+				<div class="revision-content">
+					<ul>
+						<li><strong>Computer System:</strong> A system that involves interaction between hardware, software, data and the user.</li>
+						<li><strong>Computer Architecture:</strong> Specification of how a computer's parts are physically and logically laid out and connected.</li>
+						<li><strong>Von Neumann Architecture (1945):</strong> Comprised of four main parts:
+							<ul>
+								<li>Central Processing Unit (CPU) which processes instructions.</li>
+								<li>Memory that stores data and instructions.</li>
+								<li>A bus connecting CPU to memory.</li>
+								<li>Input and output devices.</li>
+							</ul>
+						</li>
+						<li><strong>CPU:</strong> Carries out computations on data by following instructions. Contains ALU, control unit and registers.</li>
+						<li><strong>ALU:</strong> Arithmetic and logic unit where arithmetic and logical operations take place.</li>
+						<li><strong>Registers:</strong> Temporary memory that the CPU can access very quickly. Examples: Programme Counter, Data Registers, Address Registers.</li>
+						<li><strong>Programme Counter:</strong> A register that stores where the CPU is in the programme sequence and contains the memory location of the next instruction.</li>
+						<li><strong>Address Registers:</strong> Store memory addresses.</li>
+						<li><strong>RAM:</strong> Random access memory. Volatile - temporary memory that holds data and instructions of the program currently being executed.</li>
+						<li><strong>Volatile Memory:</strong> When the computer loses power the data is lost.</li>
+						<li><strong>ROM:</strong> Read only memory, non-volatile. Used to store the BIOS.</li>
+						<li><strong>BIOS:</strong> Basic input/output system. Stores basic startup routines and performs necessary checks before handing control to the OS.</li>
+						<li><strong>Fetch and Execute Cycle:</strong> CPU fetches instruction from memory, decodes it, executes it, and returns the result to memory if required.</li>
+						<li><strong>Clock:</strong> Generates a signal of continuous electrical pulses at a stable frequency.</li>
+						<li><strong>CPU Speed:</strong> Mainly determined by clock speed. 5GHz = 5 billion instructions per second. Also affected by number of cores.</li>
+						<li><strong>Cores:</strong> Parts of the CPU that execute instructions simultaneously.</li>
+						<li><strong>Bus:</strong> Connects the CPU and Memory. Communication channel that carries data between computer components.</li>
+						<li><strong>Input and Output Devices:</strong> Examples include display, secondary storage, USBs, mice.</li>
+						<li><strong>Secondary Storage:</strong> Stores data persistently. Slower but cheaper than primary storage.</li>
+						<li><strong>Hard Drives:</strong> Two main types: Magnetic and SSD.</li>
+						<li><strong>Magnetic Drive:</strong> Has rotating magnetic "platter" with data read by "head". Cheaper than SSDs, holds more storage.</li>
+						<li><strong>SSD:</strong> Solid state drive, faster and more durable than magnetic drives. No moving parts. Based on flash memory.</li>
+						<li><strong>Motherboard:</strong> Circuit board that parts are physically mounted on.</li>
+						<li><strong>Circuit Board:</strong> Board of non-conductive material that contains pathways connecting devices.</li>
+						<li><strong>Binary:</strong> Symbol pairs (1,0). Used to represent all information on a computer.</li>
+						<li><strong>Operating System:</strong> Series of programs that control the operation of the computer. Functions include managing I/O, interactions with other computers, memory management, UI, file system, hardware, and security.</li>
+						<li><strong>Layer Model:</strong> User interacts with program, program interacts with OS, OS interacts with hardware.</li>
+						<li><strong>WWW (1989):</strong> World Wide Web by Tim Berners-Lee. System of connected files hosted on the internet.</li>
+						<li><strong>Internet (1969):</strong> Two computers interacted in first instance of real-time data sharing. Today billions of computers connected via various media.</li>
+						<li><strong>IOT:</strong> Internet of Things. Non-computer objects such as cars and TVs becoming interconnected.</li>
+						<li><strong>Client-Server Model:</strong> Client issues request to server, server responds. Distributed system with workloads shared across multiple computers.</li>
+						<li><strong>Communication Protocols:</strong> Rules describing how to transmit data across a network. Layers: Application (HTTP/HTTPS), Transport (TCP), Network (IP), Physical (WiFi).</li>
+						<li><strong>HTTP:</strong> Hypertext Transport Protocol. Request-response protocol allowing clients to request resources.</li>
+						<li><strong>HTTPS:</strong> Hypertext Transport Protocol Secure. Automatically encrypts data.</li>
+						<li><strong>URL:</strong> Uniform Resource Locator. Format of addressing resources on the internet.</li>
+						<li><strong>TCP:</strong> Transmission Control Protocol. Transport layer. Ensures binary is transported reliably via packets.</li>
+						<li><strong>IP:</strong> Internet Protocol. Network layer. Handles creation of packets and routing. Every connected computer has unique IP address.</li>
+						<li><strong>WiFi:</strong> Wireless Fidelity. Radio wave technology allowing wireless communication and internet access.</li>
+						<li><strong>VOIP:</strong> Voice Over Internet Protocol. Delivers voice and video data across the Internet. E.g. Skype, Facetime.</li>
+						<li><strong>MAC Address:</strong> Media access control address. Unique hardware identification for each device on a network.</li>
+						<li><strong>DNS:</strong> Domain Name Server. Identifies website names by converting IP addresses into readable domain names.</li>
+						<li><strong>Internet Hardware Components:</strong> Gateways, Routers, Network Bridges, Switches, Repeaters.</li>
+						<li><strong>Gateways:</strong> Connect two networks with different protocols.</li>
+						<li><strong>Routers:</strong> Forward data packets between computer networks.</li>
+						<li><strong>Network Bridges:</strong> Create a single network from multiple segments.</li>
+						<li><strong>Switches:</strong> Forward data to only devices that need to receive it.</li>
+						<li><strong>Repeaters:</strong> Receive data and re-transmit it.</li>
+						<li><strong>Cloud Computing:</strong> Storing, processing and accessing data over the Internet on servers designed for this purpose. Provides elasticity - pay only for what you use.</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="revision-section">
+				<h3>Software Development</h3>
+				<div class="revision-content">
+					<ul>
+						<li><strong>Agile Approach:</strong> Flexible and collaborative way of working on projects.</li>
+						<li><strong>Waterfall Approach:</strong> More formal and less flexible way of working on projects.</li>
+						<li><strong>Steps of Software Development:</strong>
+							<ul>
+								<li>Investigate: Identifying and analyzing the nature of the problem.</li>
+								<li>Plan: Planning what to do, timeframes, staff, and management.</li>
+								<li>Design: Top-down or modular approaches.</li>
+								<li>Create: Writing the actual code.</li>
+								<li>Evaluate: Testing the software.</li>
+								<li>Iterate: Improving on the original design.</li>
+								<li>Document: Creating documentation on the project.</li>
+							</ul>
+						</li>
+						<li><strong>Design Approaches:</strong>
+							<ul>
+								<li>Top-down: Starts with main system and breaks into smaller units.</li>
+								<li>Modular: Similar to top-down but each task is a "module" a team works on.</li>
+							</ul>
+						</li>
+						<li><strong>Teams:</strong>
+							<ul>
+								<li>Business Analyst: Identifies users and stakeholders.</li>
+								<li>Project Manager: Forms and supervises the team.</li>
+								<li>System Analyst: Establishes hardware and software requirements.</li>
+								<li>Designer: Designs the software.</li>
+								<li>Developer: Develops the code.</li>
+								<li>Tester: Ensures software functions as expected.</li>
+								<li>Admin Support: Organizes meetings and correspondence.</li>
+								<li>User Liaison: Ensures communication between users and team.</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="revision-section">
+				<h3>Computational Thinking</h3>
+				<div class="revision-content">
+					<ul>
+						<li><strong>Computational Thinking:</strong> A way of approaching problems particularly useful in computing.</li>
+						<li><strong>Pattern Matching:</strong> Identifying patterns and recognizing when two patterns are similar.</li>
+						<li><strong>Abstraction:</strong> Ignoring irrelevant details and reducing a problem to its essential features.</li>
+						<li><strong>Decomposition:</strong> Breaking a complex task down into smaller and simpler tasks.</li>
+						<li><strong>Algorithms:</strong> Using a sequence of steps to solve a problem.</li>
+						<li><strong>Binary:</strong> A system of storing data using 1s and 0s.</li>
+						<li><strong>Hex:</strong> A base16 system of storing data (0 to F).</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="revision-section">
+				<h3>Python</h3>
+				<div class="revision-content">
+					<ul>
+						<li><strong>Python:</strong> General purpose language used to solve various problems.</li>
+						<li><strong>Variable Types:</strong>
+							<ul>
+								<li>String: Alphanumeric characters - "abcde"</li>
+								<li>Int (integer): Whole number - 1</li>
+								<li>Float: Number with decimal point - 1.2</li>
+								<li>Boolean: True/False, 0/1</li>
+							</ul>
+						</li>
+						<li><strong>Assigning Variables:</strong> Use snake_case by convention. Can't use Python keywords, start with number, contain spaces or special characters.</li>
+						<li><strong>Type Function:</strong> Use type() to print out the variable type.</li>
+						<li><strong>Swapping Variables:</strong> a,b = b,a (Canonical swap)</li>
+						<li><strong>Operators:</strong> +, -, *, /, // (floor divide), % (modulus), ** (exponent)</li>
+						<li><strong>Incrementing:</strong> x+=1, x-=1, x*=1, x/=1</li>
+						<li><strong>Rounding:</strong> round(x, 2) rounds x to two decimal places.</li>
+						<li><strong>String Concatenation:</strong> Joins strings using + operator.</li>
+						<li><strong>String Replication:</strong> Multiplies a string using * operator.</li>
+						<li><strong>ASCII:</strong> American Standard Code for Information Interchange - A system of encoding characters.</li>
+						<li><strong>ord():</strong> Returns the decimal value of a character.</li>
+						<li><strong>chr():</strong> Converting decimal value into a character.</li>
+						<li><strong>Case Conversion:</strong> x.upper(), x.lower()</li>
+						<li><strong>String Length:</strong> len(x)</li>
+						<li><strong>Indexing:</strong> Starts at [0]. Last value: [-1]. Substring: [6:10]</li>
+						<li><strong>Inputs:</strong> input("Input an example: ")</li>
+						<li><strong>Boolean Logic:</strong> And, Or, Not - Returns True or False.</li>
+						<li><strong>Comparative Operators:</strong> ==, !=, &lt;, &gt;, &lt;=, &gt;=</li>
+						<li><strong>Conditionals:</strong> If, Elif, Else</li>
+						<li><strong>Nested Conditionals:</strong> If statement inside another if statement.</li>
+						<li><strong>Iteration:</strong> Repeating a task using while or for loop.</li>
+						<li><strong>While Loop:</strong> while i &lt; 10: repeats code while condition is true.</li>
+						<li><strong>Infinite Loop:</strong> while True: with break to exit.</li>
+						<li><strong>For Loop:</strong> for i in range(6): repeats code 6 times.</li>
+						<li><strong>For Loop with Range:</strong> for i in range(2,100,2) starts at 2, goes to 100, uses every other number.</li>
+						<li><strong>Nested Loops:</strong> Two loops, one inside the other.</li>
+						<li><strong>Lists:</strong> example_list = [x,y,z]</li>
+						<li><strong>List Methods:</strong> append(), clear(), copy(), count(), extend(), index(), insert(), pop(), remove(), reverse(), sort()</li>
+						<li><strong>Testing Software:</strong> Check if code works as expected. Record in table: test case ID, description, test data, expected result, actual result, pass(Y/N).</li>
+						<li><strong>Equivalence Partitions:</strong> Partition input ranges into areas that behave similarly.</li>
+						<li><strong>Extreme Values:</strong> Identify possible extreme values in testing.</li>
+						<li><strong>Boundary Values:</strong> Values between two outcomes where bugs are often found.</li>
+						<li><strong>Error Anticipation:</strong> Predict possible errors that may occur.</li>
+						<li><strong>Unit Testing:</strong> A function that tests if the original function outputs the expected result.</li>
+						<li><strong>Functions:</strong> A block of code callable from any other part of the code.</li>
+						<li><strong>Argument:</strong> A value(s) taken in by a function.</li>
+						<li><strong>Importing Functions:</strong> import filename.py</li>
+						<li><strong>Recursion:</strong> Breaking a problem into smaller pieces.</li>
+						<li><strong>Searching Algorithms:</strong>
+							<ul>
+								<li>Linear: Iterates through each item until it finds the right one.</li>
+								<li>Binary Search: Requires sorted list. Finds halfway index and searches through new smaller list.</li>
+							</ul>
+						</li>
+						<li><strong>Sorting Algorithms:</strong>
+							<ul>
+								<li>Selection Sort: Takes first value, finds smallest in unsorted section, swaps it.</li>
+								<li>Insertion Sort: Same as selection but starts at second and works right.</li>
+								<li>Bubble Sort: Checks two adjacent items and swaps if necessary.</li>
+								<li>Quicksort: Divide and conquer approach.</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="revision-section">
+				<h3>Modelling</h3>
+				<div class="revision-content">
+					<ul>
+						<li><strong>Computer Modelling:</strong> Any activity that involves using software abstractions to represent a problem.</li>
+						<li><strong>Model:</strong> A block of code that takes argument(s) and returns output(s).</li>
+						<li><strong>Scenario:</strong> A condition/situation in the environment that can change.</li>
+						<li><strong>Simulation:</strong> Running a model to allow different scenarios to be tested.</li>
+						<li><strong>Agent Based Modelling:</strong> A model that simulates actions and interactions of individual agents within an environment.</li>
+						<li><strong>Emergent Behaviours:</strong> Behaviours examined in the environment as a whole but not within individual agents.</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="revision-section">
+				<h3>AI and Machine Learning</h3>
+				<div class="revision-content">
+					<ul>
+						<li><strong>Machine Learning:</strong> The use of computers to identify patterns in data and make decisions based on this data.</li>
+						<li><strong>Deep Learning:</strong> A subset of machine learning that aims to create algorithms mimicking the human brain.</li>
+						<li><strong>Supervised Learning:</strong> Learning a function that maps input to output based on labelled datasets.</li>
+						<li><strong>Unsupervised Learning:</strong> Algorithms that find patterns in unlabelled data.</li>
+						<li><strong>Semi-Supervised Learning:</strong> Algorithms using combination of labelled and unlabelled data.</li>
+						<li><strong>Reinforcement Learning:</strong> Algorithms that learn by interacting with environment using reward and punishment system.</li>
+						<li><strong>Data Quality:</strong> Poor data quality leads to inaccurate outputs. Remove missing values, outliers and imbalanced data.</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="revision-section">
+				<h3>Databases</h3>
+				<div class="revision-content">
+					<ul>
+						<li><strong>Database:</strong> A way of organizing data/information so that it can be accessed easily.</li>
+						<li><strong>Benefits:</strong> Store large amounts of data, hold data in organized way, faster searches, freely available, interact with different systems.</li>
+						<li><strong>Flat File Databases:</strong> Simplest database, single table.</li>
+						<li><strong>Attributes:</strong> Column name and the data it contains (fields).</li>
+						<li><strong>Records:</strong> One entry in the table (instance).</li>
+						<li><strong>Data Types:</strong> Varchar, Number, Date.</li>
+						<li><strong>Varchar:</strong> Variable Character - series of numbers, letters and other characters.</li>
+						<li><strong>Number:</strong> A number that can be used in calculations.</li>
+						<li><strong>Date:</strong> Typically date/month/year format.</li>
+						<li><strong>CSV:</strong> Comma Separated Value - file type for storing flat file databases.</li>
+						<li><strong>Relational Databases:</strong> Stores and provides access to data points related to one another.</li>
+						<li><strong>Problems with Single Tables:</strong> Duplicate data, wasted time and storage space, hard to extract specific data.</li>
+						<li><strong>Primary Key:</strong> Unique identifier generated to reference records.</li>
+						<li><strong>Foreign Key:</strong> Attribute created to link different tables.</li>
+						<li><strong>ERD:</strong> Entity Relationship Diagram - Used to visualize relationships between entities (tables).</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="revision-section">
+				<h3>HTML</h3>
+				<div class="revision-content">
+					<ul>
+						<li><strong>HTML:</strong> Markup language.</li>
+						<li><strong>Tags:</strong> Always grounded by anchor brackets &lt;&gt;. Closed using /.</li>
+						<li><strong>Metadata:</strong> Information stored inside the &lt;body&gt; tag about the website.</li>
+						<li><strong>Attribute:</strong> Provides extra info about an element (e.g. class/id).</li>
+						<li><strong>Comments:</strong> Done using &lt;!-- content --&gt;</li>
+						<li><strong>Hyperlink:</strong> Links two pages together using anchor element &lt;a&gt;.</li>
+						<li><strong>Absolute URL:</strong> Takes you to another URL.</li>
+						<li><strong>Relative URL:</strong> Takes you to another page of the website you're on.</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="revision-section">
+				<h3>CSS</h3>
+				<div class="revision-content">
+					<ul>
+						<li><strong>CSS:</strong> Cascading Style Sheets.</li>
+						<li><strong>Purpose:</strong> Provides instructions on how HTML should display its content.</li>
+						<li><strong>Proposed by:</strong> Håkon Wium Lee in 1994.</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="revision-section">
+				<h3>JavaScript</h3>
+				<div class="revision-content">
+					<ul>
+						<li><strong>JavaScript:</strong> Created by Brendan Eich in 1995.</li>
+						<li><strong>Purpose:</strong> Used to make a webpage interactive.</li>
+						<li><strong>Implementation:</strong> Introduced into a website using the &lt;script&gt; tag.</li>
+						<li><strong>DOM:</strong> Document Object Model - A model of all elements in an HTML website used by JavaScript to trigger functions.</li>
+						<li><strong>Capabilities:</strong> Can be used to modify HTML and CSS elements.</li>
+						<li><strong>Operators:</strong> Same as Python except ++ and -- for increment/decrement instead of += and -=.</li>
+						<li><strong>Boolean Operators:</strong> &amp;&amp; (And), || (Or), ! (Not).</li>
+						<li><strong>Variable Assignment:</strong> var age=18</li>
+						<li><strong>Lists:</strong> Assigned same as Python using var syntax.</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer id="footer" class="site-footer container">
+		<p>Built for CS students — view and share past papers, solutions and notes.</p>
+		<p>Want to contribute? See the <a href="contribute.html">contribute</a> page.</p>
+	</footer>
+</body>
+</html>

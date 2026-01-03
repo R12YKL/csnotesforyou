@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contribute — CS Notes For You</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <h1 class="logo">CS Notes For You</h1>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="papers.html">Papers</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="notes.html">Notes</a>
+        <a href="revision.html">Revision</a>
+        <a href="contribute.html">Contribute</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="card">
+      <h2>How to contribute</h2>
+      <p>Thanks for wanting to help! For now, you can contribute by:</p>
+      <ul>
+        <li>Uploading files to the repo and opening a pull request on GitHub.</li>
+        <li>Sending materials to the site maintainers (email or chat) for review.</li>
+      </ul>
+      <h3>Guidelines</h3>
+      <ul>
+        <li>Provide a clear title and short excerpt.</li>
+        <li>Include author name and date.</li>
+        <li>Prefer PDF or text files for readability.</li>
+      </ul>
+      <h3>Quick form</h3>
+      <form id="contributeForm">
+        <label>Title<br><input type="text" name="title" id="title" style="width:100%" required/></label>
+        <label>Author<br><input type="text" name="author" id="author" style="width:100%" required/></label>
+        <label>Type<br>
+          <select name="type" id="type"><option value="solution">solution</option><option value="notes">notes</option><option value="example">example</option></select>
+        </label>
+        <label>Excerpt<br><textarea name="excerpt" id="excerpt" style="width:100%" rows="3"></textarea></label>
+
+        <label>Files (images, PDF)<br>
+          <div id="dropArea" style="border:1px dashed #ccc;padding:1rem;border-radius:6px;">
+            <input type="file" id="fileInput" name="files" accept=".pdf,.txt,.png,.jpg,.jpeg,.gif" multiple style="width:100%" />
+            <small>Or drag & drop files here</small>
+          </div>
+        </label>
+
+        <div id="preview" style="margin-top:.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.5rem"></div>
+        <p id="msg" style="color:green"></p>
+        <button type="submit">Submit</button>
+      </form>
+      <script>
+        (function(){
+          const form = document.getElementById('contributeForm');
+          const fileInput = document.getElementById('fileInput');
+          const dropArea = document.getElementById('dropArea');
+          const preview = document.getElementById('preview');
+          const msg = document.getElementById('msg');
+
+          let files = [];
+
+          function updatePreview(){
+            preview.innerHTML = '';
+            files.forEach((f, i) => {
+              const el = document.createElement('div');
+              el.className = 'card';
+              el.style.padding = '0.5rem';
+              el.style.display = 'flex';
+              el.style.flexDirection = 'column';
+              el.style.alignItems = 'center';
+              const name = document.createElement('div');
+              name.textContent = f.name;
+              name.style.fontSize = '0.85rem';
+              name.style.marginBottom = '0.5rem';
+              if(f.type.startsWith('image/')){
+                const img = document.createElement('img');
+                img.style.maxWidth = '100%';
+                img.style.maxHeight = '120px';
+                img.src = URL.createObjectURL(f);
+                el.appendChild(img);
+              } else {
+                const icon = document.createElement('div');
+                icon.textContent = '📄';
+                icon.style.fontSize = '2rem';
+                el.appendChild(icon);
+              }
+              el.appendChild(name);
+              const remove = document.createElement('button');
+              remove.textContent = 'Remove';
+              remove.addEventListener('click', ()=>{ files.splice(i,1); updatePreview(); });
+              el.appendChild(remove);
+              preview.appendChild(el);
+            });
+          }
+
+          fileInput.addEventListener('change', (e)=>{ files = files.concat(Array.from(e.target.files)); updatePreview(); });
+
+          ['dragenter','dragover'].forEach(ev => dropArea.addEventListener(ev, (e)=>{ e.preventDefault(); dropArea.style.background='#f3f7ff'; }));
+          ['dragleave','drop'].forEach(ev => dropArea.addEventListener(ev, (e)=>{ e.preventDefault(); dropArea.style.background=''; }));
+          dropArea.addEventListener('drop', (e)=>{ files = files.concat(Array.from(e.dataTransfer.files)); updatePreview(); });
+
+          form.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            if(files.length===0) return alert('Please add at least one file');
+            const fd = new FormData();
+            fd.append('title', document.getElementById('title').value.trim());
+            fd.append('author', document.getElementById('author').value.trim());
+            fd.append('type', document.getElementById('type').value);
+            fd.append('excerpt', document.getElementById('excerpt').value.trim());
+            files.forEach(f => fd.append('files', f));
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '/api/upload');
+            xhr.upload.onprogress = (ev) => {
+              if(ev.lengthComputable){
+                const pct = Math.round((ev.loaded/ev.total)*100);
+                msg.style.color = 'black';
+                msg.textContent = 'Uploading: ' + pct + '%';
+              }
+            };
+            xhr.onload = ()=>{
+              try{
+                const res = JSON.parse(xhr.responseText);
+                if(xhr.status >= 200 && xhr.status < 300 && res.success){
+                  msg.style.color = 'green';
+                  msg.textContent = 'Upload successful — thank you!';
+                  files = [];
+                  updatePreview();
+                } else {
+                  msg.style.color = 'red';
+                  msg.textContent = 'Upload failed: ' + (res.error||'unknown');
+                }
+              }catch(err){ msg.style.color='red'; msg.textContent='Upload failed'; }
+            };
+            xhr.onerror = ()=>{ msg.style.color='red'; msg.textContent='Upload error'; };
+            xhr.send(fd);
+          });
+        })();
+      </script>
+    </article>
+  </main>
+
+  <footer class="site-footer container">
+    <p class="meta">CS Notes For You — community contributions encouraged.</p>
+  </footer>
+</body>
+</html>
