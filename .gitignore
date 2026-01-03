@@ -47,4 +47,7 @@ Thumbs.db
 
 # Project specific
 *.pdf
+*.pptx
+public/Notes/
+public/pdfs/
 uploads/
