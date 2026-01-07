@@ -290,6 +290,11 @@
 </head>
 <body>
   <header class="site-header">
+    <div class="pause-banner" style="background: #fee2e2; border-bottom: 2px solid #dc2626; padding: 1rem; text-align: center;">
+      <p style="color: #991b1b; font-weight: 600; margin: 0;">
+        ⏸️ This website is temporarily paused. New contributions are not being accepted at this time.
+      </p>
+    </div>
     <div class="container header-row">
       <h1 class="logo">CS Notes For You</h1>
       <nav class="main-nav">
@@ -368,6 +373,18 @@
           const submitBtn = document.getElementById('submitBtn');
 
           let files = [];
+          const isPaused = true; // Site is paused
+
+          // Disable form when paused
+          if(isPaused) {
+            fileInput.disabled = true;
+            submitBtn.disabled = true;
+            submitBtn.textContent = '⏸️ Site Paused - Contributions Disabled';
+            submitBtn.style.background = '#cbd5e1';
+            submitBtn.style.cursor = 'not-allowed';
+            dropArea.style.opacity = '0.6';
+            dropArea.style.cursor = 'not-allowed';
+          }
 
           function updatePreview(){
             preview.innerHTML = '';
@@ -423,6 +440,11 @@
 
           form.addEventListener('submit', (e)=>{
             e.preventDefault();
+            
+            if(isPaused) {
+              showMessage('❌ Website is currently paused. Contributions are disabled.', 'error');
+              return;
+            }
             
             const title = document.getElementById('title').value.trim();
             const type = document.getElementById('type').value;
