@@ -5,6 +5,288 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Contribute — CS Notes For You</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .contribute-container {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    
+    @media (max-width: 900px) {
+      .contribute-container {
+        grid-template-columns: 1fr;
+      }
+      .contribute-sidebar {
+        display: none;
+      }
+    }
+    
+    .contribute-form-card {
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    .contribute-form-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--accent-2);
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.75rem;
+    }
+    
+    .form-section {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-section-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--accent-2);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.7rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: border 0.2s, box-shadow 0.2s;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--accent-2);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    
+    #dropArea {
+      border: 2px dashed #cbd5e1;
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      background: #f8f9fa;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    #dropArea:hover {
+      border-color: var(--accent-2);
+      background: #eef2ff;
+    }
+    
+    #dropArea.dragover {
+      border-color: var(--accent-2);
+      background: #eef2ff;
+    }
+    
+    #dropArea small {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    
+    #fileInput {
+      cursor: pointer;
+    }
+    
+    #preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    
+    #preview .file-item {
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      position: relative;
+    }
+    
+    #preview .file-item img {
+      max-width: 100%;
+      max-height: 80px;
+      border-radius: 4px;
+    }
+    
+    #preview .file-item .file-icon {
+      font-size: 1.8rem;
+    }
+    
+    #preview .file-item .file-name {
+      word-break: break-word;
+      text-align: center;
+      color: var(--text);
+    }
+    
+    #preview .file-item .remove-btn {
+      background: #ef4444;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    #preview .file-item .remove-btn:hover {
+      background: #dc2626;
+    }
+    
+    .form-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    
+    #submitBtn {
+      background: var(--accent-2);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      flex: 1;
+    }
+    
+    #submitBtn:hover {
+      background: #4c1d95;
+    }
+    
+    #submitBtn:disabled {
+      background: #cbd5e1;
+      cursor: not-allowed;
+    }
+    
+    #msg {
+      font-size: 0.9rem;
+      padding: 0.75rem;
+      border-radius: 6px;
+      margin-top: 1rem;
+      display: none;
+    }
+    
+    #msg.success {
+      background: #d1fae5;
+      color: #065f46;
+      display: block;
+      border: 1px solid #a7f3d0;
+    }
+    
+    #msg.error {
+      background: #fee2e2;
+      color: #991b1b;
+      display: block;
+      border: 1px solid #fecaca;
+    }
+    
+    #msg.info {
+      background: #e0e7ff;
+      color: #3730a3;
+      display: block;
+      border: 1px solid #c7d2fe;
+    }
+    
+    .contribute-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .sidebar-card {
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      padding: 1.25rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    .sidebar-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+      color: var(--accent-2);
+    }
+    
+    .sidebar-card p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    
+    .sidebar-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .sidebar-card li {
+      font-size: 0.9rem;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    
+    .sidebar-card li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #059669;
+      font-weight: bold;
+    }
+    
+    .info-badge {
+      display: inline-block;
+      background: #eef2ff;
+      color: var(--accent-2);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -22,40 +304,60 @@
     </div>
   </header>
 
-  <main class="container">
-    <article class="card">
-      <h2>How to contribute</h2>
-      <p>Thanks for wanting to help! For now, you can contribute by:</p>
-      <ul>
-        <li>Uploading files to the repo and opening a pull request on GitHub.</li>
-        <li>Sending materials to the site maintainers (email or chat) for review.</li>
-      </ul>
-      <h3>Guidelines</h3>
-      <ul>
-        <li>Provide a clear title and short excerpt.</li>
-        <li>Include author name and date.</li>
-        <li>Prefer PDF or text files for readability.</li>
-      </ul>
-      <h3>Quick form</h3>
-      <form id="contributeForm">
-        <label>Title<br><input type="text" name="title" id="title" style="width:100%" required/></label>
-        <label>Author<br><input type="text" name="author" id="author" style="width:100%" required/></label>
-        <label>Type<br>
-          <select name="type" id="type"><option value="solution">solution</option><option value="notes">notes</option><option value="example">example</option></select>
-        </label>
-        <label>Excerpt<br><textarea name="excerpt" id="excerpt" style="width:100%" rows="3"></textarea></label>
+  <div class="contribute-container">
+    <div>
+      <div class="contribute-form-card">
+        <h2>📤 Share Your Content</h2>
+        
+        <form id="contributeForm">
+          <div class="form-section">
+            <div class="form-section-title">Content Details</div>
+            
+            <div class="form-group">
+              <label for="title">Title *</label>
+              <input type="text" name="title" id="title" placeholder="e.g., Algorithm Study Guide - Sorting" required/>
+            </div>
 
-        <label>Files (images, PDF)<br>
-          <div id="dropArea" style="border:1px dashed #ccc;padding:1rem;border-radius:6px;">
-            <input type="file" id="fileInput" name="files" accept=".pdf,.txt,.png,.jpg,.jpeg,.gif" multiple style="width:100%" />
-            <small>Or drag & drop files here</small>
+          
+
+            <div class="form-group">
+              <label for="type">Content Type *</label>
+              <select name="type" id="type">
+                <option value="">Select a type...</option>
+                <option value="solution">Solution</option>
+                <option value="notes">Study Notes</option>
+                <option value="example">Example/Tutorial</option>
+                <option value="paper">Paper/Exam</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="excerpt">Description</label>
+              <textarea name="excerpt" id="excerpt" placeholder="Brief description of what you're sharing..."></textarea>
+            </div>
           </div>
-        </label>
 
-        <div id="preview" style="margin-top:.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.5rem"></div>
-        <p id="msg" style="color:green"></p>
-        <button type="submit">Submit</button>
-      </form>
+          <div class="form-section">
+            <div class="form-section-title">Upload Files</div>
+            
+            <div id="dropArea">
+              <input type="file" id="fileInput" name="files" accept=".pdf,.txt,.png,.jpg,.jpeg,.gif,.doc,.docx" multiple />
+              <div style="margin-top: 0.5rem;">
+                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📁</div>
+                <small>Drag and drop files here, or click to select</small>
+              </div>
+            </div>
+
+            <div id="preview"></div>
+          </div>
+
+          <div id="msg"></div>
+
+          <div class="form-actions">
+            <button type="submit" id="submitBtn">Share Content</button>
+          </div>
+        </form>
       <script>
         (function(){
           const form = document.getElementById('contributeForm');
@@ -63,6 +365,7 @@
           const dropArea = document.getElementById('dropArea');
           const preview = document.getElementById('preview');
           const msg = document.getElementById('msg');
+          const submitBtn = document.getElementById('submitBtn');
 
           let files = [];
 
@@ -70,82 +373,160 @@
             preview.innerHTML = '';
             files.forEach((f, i) => {
               const el = document.createElement('div');
-              el.className = 'card';
-              el.style.padding = '0.5rem';
-              el.style.display = 'flex';
-              el.style.flexDirection = 'column';
-              el.style.alignItems = 'center';
-              const name = document.createElement('div');
-              name.textContent = f.name;
-              name.style.fontSize = '0.85rem';
-              name.style.marginBottom = '0.5rem';
+              el.className = 'file-item';
+              
               if(f.type.startsWith('image/')){
                 const img = document.createElement('img');
-                img.style.maxWidth = '100%';
-                img.style.maxHeight = '120px';
                 img.src = URL.createObjectURL(f);
                 el.appendChild(img);
               } else {
                 const icon = document.createElement('div');
+                icon.className = 'file-icon';
                 icon.textContent = '📄';
-                icon.style.fontSize = '2rem';
                 el.appendChild(icon);
               }
+              
+              const name = document.createElement('div');
+              name.className = 'file-name';
+              name.textContent = f.name.length > 20 ? f.name.substring(0, 17) + '...' : f.name;
               el.appendChild(name);
+              
               const remove = document.createElement('button');
-              remove.textContent = 'Remove';
+              remove.className = 'remove-btn';
+              remove.type = 'button';
+              remove.textContent = '✕';
               remove.addEventListener('click', ()=>{ files.splice(i,1); updatePreview(); });
               el.appendChild(remove);
+              
               preview.appendChild(el);
             });
           }
 
           fileInput.addEventListener('change', (e)=>{ files = files.concat(Array.from(e.target.files)); updatePreview(); });
 
-          ['dragenter','dragover'].forEach(ev => dropArea.addEventListener(ev, (e)=>{ e.preventDefault(); dropArea.style.background='#f3f7ff'; }));
-          ['dragleave','drop'].forEach(ev => dropArea.addEventListener(ev, (e)=>{ e.preventDefault(); dropArea.style.background=''; }));
-          dropArea.addEventListener('drop', (e)=>{ files = files.concat(Array.from(e.dataTransfer.files)); updatePreview(); });
+          dropArea.addEventListener('click', () => fileInput.click());
+          
+          ['dragenter','dragover'].forEach(ev => dropArea.addEventListener(ev, (e)=>{ 
+            e.preventDefault();
+            dropArea.classList.add('dragover');
+          }));
+          
+          ['dragleave','drop'].forEach(ev => dropArea.addEventListener(ev, (e)=>{ 
+            e.preventDefault();
+            dropArea.classList.remove('dragover');
+          }));
+          
+          dropArea.addEventListener('drop', (e)=>{ 
+            files = files.concat(Array.from(e.dataTransfer.files)); 
+            updatePreview(); 
+          });
 
           form.addEventListener('submit', (e)=>{
             e.preventDefault();
-            if(files.length===0) return alert('Please add at least one file');
+            
+            const title = document.getElementById('title').value.trim();
+            const type = document.getElementById('type').value;
+            
+            if(!title) {
+              showMessage('Please enter a title', 'error');
+              return;
+            }
+            
+            if(!type) {
+              showMessage('Please select a content type', 'error');
+              return;
+            }
+            
+            if(files.length === 0) {
+              showMessage('Please add at least one file', 'error');
+              return;
+            }
+            
+            submitBtn.disabled = true;
+            showMessage('Uploading...', 'info');
+            
             const fd = new FormData();
-            fd.append('title', document.getElementById('title').value.trim());
+            fd.append('title', title);
             fd.append('author', document.getElementById('author').value.trim());
-            fd.append('type', document.getElementById('type').value);
+            fd.append('type', type);
             fd.append('excerpt', document.getElementById('excerpt').value.trim());
             files.forEach(f => fd.append('files', f));
 
             const xhr = new XMLHttpRequest();
             xhr.open('POST', '/api/upload');
+            
             xhr.upload.onprogress = (ev) => {
               if(ev.lengthComputable){
                 const pct = Math.round((ev.loaded/ev.total)*100);
-                msg.style.color = 'black';
-                msg.textContent = 'Uploading: ' + pct + '%';
+                showMessage('Uploading: ' + pct + '%', 'info');
               }
             };
+            
             xhr.onload = ()=>{
               try{
                 const res = JSON.parse(xhr.responseText);
                 if(xhr.status >= 200 && xhr.status < 300 && res.success){
-                  msg.style.color = 'green';
-                  msg.textContent = 'Upload successful — thank you!';
+                  showMessage('✓ Upload successful — thank you for contributing!', 'success');
+                  form.reset();
                   files = [];
                   updatePreview();
                 } else {
-                  msg.style.color = 'red';
-                  msg.textContent = 'Upload failed: ' + (res.error||'unknown');
+                  showMessage('Upload failed: ' + (res.error||'unknown'), 'error');
                 }
-              }catch(err){ msg.style.color='red'; msg.textContent='Upload failed'; }
+              }catch(err){ 
+                showMessage('Upload failed', 'error'); 
+              }
+              submitBtn.disabled = false;
             };
-            xhr.onerror = ()=>{ msg.style.color='red'; msg.textContent='Upload error'; };
+            
+            xhr.onerror = ()=>{ 
+              showMessage('Upload error', 'error');
+              submitBtn.disabled = false;
+            };
+            
             xhr.send(fd);
           });
+          
+          function showMessage(text, type) {
+            msg.textContent = text;
+            msg.className = type;
+          }
         })();
       </script>
-    </article>
-  </main>
+    </div>
+
+    <div class="contribute-sidebar">
+      <div class="sidebar-card">
+        <h3>📋 Guidelines</h3>
+        <p>Help us maintain quality content:</p>
+        <ul>
+          <li>Clear, descriptive title</li>
+          <li>Author name and date</li>
+          <li>Relevant to CS topics</li>
+          <li>Original or properly attributed</li>
+          <li>PDF or text format preferred</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>✨ What We Accept</h3>
+        <p>Types of content:</p>
+        <ul>
+          <li>Study notes</li>
+          <li>Past papers & solutions</li>
+          <li>Tutorials & guides</li>
+          <li>Practice problems</li>
+          <li>Revision materials</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>🔍 Review Process</h3>
+        <p>Your submission will be reviewed by our team.</p>
+        <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem;">Thank you for helping the community!</p>
+      </div>
+    </div>
+  </div>
 
   <footer class="site-footer container">
     <p class="meta">CS Notes For You — community contributions encouraged.</p>
